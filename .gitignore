@@ -42,3 +42,4 @@ settings
 # Chef
 Berksfile.lock
 /test.sh
+/grap_database.dump
