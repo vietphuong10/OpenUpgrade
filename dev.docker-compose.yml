@@ -4,7 +4,6 @@ networks:
       name: vd
 services:
   db:
-    container_name: grap8-instance_db
     environment:
     - POSTGRES_USER=odoo
     - POSTGRES_DB=db
@@ -12,29 +11,20 @@ services:
     volumes:
     - .db/data/:/var/lib/postgresql/data
     - .db/socket/:/var/run/postgresql/
-  mailcatcher:
-    container_name: grap8-instance_mailcatcher
-    image: akretion/lightweight-mailcatcher
   odoo:
-    container_name: grap8-instance
     environment:
     - PYTHONDONTWRITEBYTECODE=True
     - USERMAP_UID=1000
     - USERMAP_GID=1000
+    - VIRTUAL_HOST=grap8-instance.vd
+    - VIRTUAL_PORT=8069
     - MAINTAINER_QUALITY_TOOLS=/home/sylvain/.voodoo/shared/maintainer_quality_tools
     image: akretion/voodoo:latest
     links:
     - db
-    - pgadmin
-    - mailcatcher
     volumes:
     - .:/workspace
     - .db/socket/:/var/run/postgresql/
-    - /pro/grap/backup/GRP/:/workspace/backup
+    - /opt/sylvain/grap/backup/GRP/:/workspace/backup
     - /home/sylvain/.voodoo/shared:/home/sylvain/.voodoo/shared
-  pgadmin:
-    container_name: grap8-instance_pgadmin
-    image: fenglc/pgadmin4
-    links:
-    - db
 version: '2'
