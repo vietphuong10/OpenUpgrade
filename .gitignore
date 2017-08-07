@@ -1,3 +1,5 @@
+upgrade_8/secret_configuration.py
+
 # sphinx build directories
 _build/
 
