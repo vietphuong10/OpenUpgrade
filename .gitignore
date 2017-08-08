@@ -1,4 +1,7 @@
 upgrade_8/secret_configuration.py
+buildout.current.cfg
+odoo_bootstrap_anybox.py
+test_multiprocess.py
 
 # sphinx build directories
 _build/
