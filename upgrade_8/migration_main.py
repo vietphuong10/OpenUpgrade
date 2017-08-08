@@ -6,7 +6,7 @@ from migration_function import (
 # Stop Odoo Service
 manage_odoo_process(False)
 # Use OpenUpgrade folder
-set_upgrade_mode(True) 
+set_upgrade_mode(True)
 # Create new database
 new_database = create_new_database()
 # Use OCB folder
