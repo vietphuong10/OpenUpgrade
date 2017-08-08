@@ -1,4 +1,5 @@
 upgrade_8/secret_configuration.py
+upgrade_8/zz*
 buildout.current.cfg
 odoo_bootstrap_anybox.py
 test_multiprocess.py
