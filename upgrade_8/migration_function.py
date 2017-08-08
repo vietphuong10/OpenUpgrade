@@ -28,6 +28,15 @@ def set_upgrade_mode(upgrade_mode=False):
         os.rename(ODOO_FOLDER_NORMAL, ODOO_FOLDER_UPGRADE)
         os.rename(ODOO_FOLDER_BACKUP, ODOO_FOLDER_NORMAL)
 
+def create_new_database():
+    template_database = 'coincoin'
+    new_database = 'coincoin_1'
+    call([
+        'sudo', 'su', 'postgres', '-c', 
+        '"psql -c \'create database %s with template %s;\'"' % (
+        new_database, template_database)])
+    return new_database
+
 def execute_sql_file(sql_file):
     log("Execute SQL File : %s" % (sql_file)
     call(['sudo', 'su', 'postgres', '"psql -f %s %s"' %(sql_file, ODOO_LOCAL_DATABASE)
