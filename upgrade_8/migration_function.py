@@ -44,7 +44,7 @@ def _bash_execute(command, user=False, raise_error=True):
         try:
             call(my_list)
         except Exception as e:
-            _log("ERROR during the execution" % e)
+            _log("ERROR during the execution", e)
             return False
     return True
 
