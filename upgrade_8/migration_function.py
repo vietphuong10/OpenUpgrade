@@ -7,11 +7,11 @@ import traceback
 from subprocess import call, Popen
 from datetime import datetime
 
-from migration_import import erppeek
+from migration_import import erppeek, psutil
 
 from secret_configuration import (
     ODOO_FOLDER_BACKUP, ODOO_FOLDER_NORMAL, ODOO_FOLDER_UPGRADE,
-    ODOO_LOCAL_DATABASE, ODOO_LOCAL_URL,
+    ODOO_LOCAL_URL,
     #    ODOO_EXTERNAL_DATABASE, ODOO_EXTERNAL_URL,
     ODOO_USER, ODOO_PASSWORD, USE_SUDO)
 
@@ -46,9 +46,10 @@ def _generate_command(command, user):
         return 'sudo su %s -c "%s"' % (user, command)
 
 
-def _bash_execute(command, user=False):
+def _bash_execute(command, user=False, log=True):
     full_command = _generate_command(command, user)
-    _log("CALLING (Sync) %s" % full_command)
+    if log:
+        _log("CALLING (Sync) %s" % full_command)
     try:
         call(full_command, shell=True)
     except Exception as e:
@@ -57,9 +58,10 @@ def _bash_execute(command, user=False):
     return True
 
 
-def _bash_subprocess(command, user=False):
+def _bash_subprocess(command, user=False, log=True):
     full_command = _generate_command(command, user)
-    _log("CALLING (async) %s" % full_command)
+    if log:
+        _log("CALLING (async) %s" % full_command)
     try:
         res = Popen(full_command, shell=True)
     except Exception as e:
@@ -88,35 +90,50 @@ def set_upgrade_mode(upgrade_mode):
         os.rename(ODOO_FOLDER_BACKUP, ODOO_FOLDER_NORMAL)
 
 
-def execute_sql_file(database, sql_file):
-    return _bash_execute(
-        "psql -f %s %s -o %szz_result_%s__%s" % (
-            sql_file, database, TEMPORARY_FOLDER, database, sql_file),
-        user='postgres')
+def execute_sql_file(database, step, step_name):
+    sql_file = '%d_before_%s.sql' % (step, step_name)
+    if os.path.exists(sql_file):
+        return _bash_execute(
+            "psql -f %s %s -o %szz_%s__output_%s" % (
+                sql_file, database, TEMPORARY_FOLDER, database, sql_file),
+            user='postgres')
 
 
-def create_new_database():
-    _bash_execute("psql -l -o %s" % TEMPORARY_FILE_DB_LIST, user='postgres')
+def create_new_database(target_database, step, step_name):
+    _bash_execute(
+        "psql -l -o %s" % TEMPORARY_FILE_DB_LIST, user='postgres', log=False)
     file_database_list = open(TEMPORARY_FILE_DB_LIST, 'r')
-    content = file_database_list.readlines()
-    found = True
-    i = 1
-    database = False
-    while found:
-        database = '%s_%s' % (ODOO_LOCAL_DATABASE, str(i).zfill(3))
-        found = ' %s ' % database in ''.join(content)
-        i += 1
+    content = ''.join(file_database_list.readlines())
+    if step == 1:
+        # found a name for the database to create
+        found = True
+        i = 1
+        template_database = target_database
+        while found:
+            new_database = '%s_%s_current' % (target_database, str(i).zfill(3))
+            found = ' %s ' % new_database in content
+            i += 1
+
+    else:
+        template_database = '%s___%d_%s' % (target_database, step, step_name)
+        new_database = '%s_current' % (target_database)
+        if new_database in content:
+            # Drop database
+            _bash_execute("dropdb %s" % (new_database), user='postgres')
+
     _bash_execute(
         "createdb %s --template %s --owner odoo" % (
-            database, ODOO_LOCAL_DATABASE), user='postgres')
-    _bash_execute("rm %s" % TEMPORARY_FILE_DB_LIST)
-    return database
+            new_database, template_database), user='postgres')
+
+    _bash_execute("rm %s" % TEMPORARY_FILE_DB_LIST, log=False)
+    return new_database
 
 
-def backup_database(database, step_name):
-    backup = '%s___%s' % (database, step_name)
+def backup_database(database, step, step_name):
+    backup = '%s___%d_%s' % (database.replace('_current', ''), step, step_name)
     # Search for previous backup
-    _bash_execute("psql -l -o %s" % TEMPORARY_FILE_DB_LIST, user='postgres')
+    _bash_execute(
+        "psql -l -o %s" % TEMPORARY_FILE_DB_LIST, user='postgres', log=False)
     file_database_list = open(TEMPORARY_FILE_DB_LIST, 'r')
     content = file_database_list.readlines()
     found = ' %s ' % backup in ''.join(content)
@@ -127,7 +144,7 @@ def backup_database(database, step_name):
     _bash_execute(
         "createdb %s --template %s --owner odoo" % (
             backup, database), user='postgres')
-    _bash_execute("rm %s" % TEMPORARY_FILE_DB_LIST)
+    _bash_execute("rm %s" % TEMPORARY_FILE_DB_LIST, log=False)
 
 
 def update_instance(database, module_list):
@@ -143,15 +160,13 @@ def run_instance():
 
 
 def kill_process(process):
-    pid = process.pid
-    _log("KILL Process #%d" % (pid))
-    try:
-        os.kill(pid, signal.SIGTERM)
-        time.sleep(5)
-        if process.poll() is None:  # Force kill if process is still alive
-            os.killpg(pid, signal.SIGKILL)
-    except Exception as e:
-        _log("ERROR during the kill of #d process" % pid, e)
+    parent = psutil.Process(process.pid)
+    children_pids = [x.pid for x in parent.children(recursive=True)]
+    pids = [process.pid] + children_pids
+    _log("KILL Process(es) #%s" % (', '.join([str(pid) for pid in pids])))
+    for pid in pids:
+        _bash_execute("kill -9 %d" % pid)
+    time.sleep(5)
 
 
 def _connect_instance(url, database, login, password):
@@ -202,6 +217,7 @@ def install_modules(database, module_list):
             else:
                 _log("WARNING : '%s' module in '%s' state" % (
                     module.name, module.state))
+
 
 def uninstall_modules(database, module_list):
     # Uninstall each module
