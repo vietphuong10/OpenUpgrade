@@ -85,3 +85,6 @@ UNINSTALL_MODULE_LIST = [
     'web_confirm_window_close',
     'web_popup_large',
 ]
+
+INSTALL_MODULE_LIST = []
+UNINSTALL_MODULE_LIST = []

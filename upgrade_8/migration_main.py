@@ -26,7 +26,7 @@ backup_database(new_database, '02_after_upgrade')
 execute_sql_file(new_database, '02_script_after_upgrade_7_8.sql')
 
 ## Use OCB folder
-#set_upgrade_mode(False)
+set_upgrade_mode(False)
 
 # Update With OCB and backup
 update_instance(new_database, 'all')

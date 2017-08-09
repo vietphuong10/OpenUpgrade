@@ -2,6 +2,8 @@
 import os
 import signal
 import time
+import traceback
+
 from subprocess import call, Popen
 from datetime import datetime
 
@@ -25,55 +27,52 @@ def _log(text, error=False):
     res = '%s - %s' % (datetime.today().strftime("%d-%m-%y - %H:%M:%S"), text)
     print res
     if error:
-        print "faultCode : %s" % error.faultCode
-        print "message : %s" % error.message
-        print "faultString : %s" % error.faultString
+        traceback.print_stack()
+        print error
 
 
-def _bash_execute(command, user=False, raise_error=True):
-    my_list = []
-    if USE_SUDO:
-        my_list.append('sudo')
-        if user:
-            my_list += ['su', user]
-    my_list += command.split(' ')
-    _log("CALLING (Sync) %s" % (' '.join(my_list)))
-    if raise_error:
-        call(my_list)
-    else:
-        try:
-            call(my_list)
-        except Exception as e:
-            _log("ERROR during the execution", e)
-            return False
+def _bash_execute(command, user=False):
+    prefix = USE_SUDO and 'sudo ' or ''
+    prefix += USE_SUDO and user and 'su %s ' % user or ''
+    full_command = prefix + command
+    _log("CALLING (Sync) %s" % full_command)
+    try:
+        call(full_command, shell=True)
+    except Exception as e:
+        _log("ERROR during the execution", e)
+        return False
     return True
 
 
 def _bash_subprocess(command, user=False):
-    my_list = []
-    if USE_SUDO:
-        my_list.append('sudo')
-        if user:
-            my_list += ['su', user]
-    my_list += command.split(' ')
-    _log("CALLING (async) %s" % (' '.join(my_list)))
-    return Popen(my_list)
+    prefix = USE_SUDO and 'sudo ' or ''
+    prefix += USE_SUDO and user and 'su %s ' % user or ''
+    full_command = prefix + command
+    _log("CALLING (async) %s" % full_command)
+    try:
+        res = Popen(full_command, shell=True)
+    except Exception as e:
+        _log("ERROR during the execution", e)
+        return False
+    return res
 
 
 def manage_odoo_process(active=False):
     _log("%s Odoo Process" % ('Start' if active else 'Stop'))
     if active:
-        _bash_execute("service odoo start", raise_error=False)
+        _bash_execute("service odoo start")
     else:
-        _bash_execute("service odoo stop", raise_error=False)
+        _bash_execute("service odoo stop")
 
 
-def set_upgrade_mode(upgrade_mode=False):
+def set_upgrade_mode(upgrade_mode):
     _log("Set Upgrade mode to %s" % upgrade_mode)
     if upgrade_mode and not os.path.isdir(ODOO_FOLDER_BACKUP):
         os.rename(ODOO_FOLDER_NORMAL, ODOO_FOLDER_BACKUP)
         os.rename(ODOO_FOLDER_UPGRADE, ODOO_FOLDER_NORMAL)
+        os.mkdir(ODOO_FOLDER_UPGRADE)
     elif not upgrade_mode and os.path.isdir(ODOO_FOLDER_BACKUP):
+        os.rmdir(ODOO_FOLDER_UPGRADE)
         os.rename(ODOO_FOLDER_NORMAL, ODOO_FOLDER_UPGRADE)
         os.rename(ODOO_FOLDER_BACKUP, ODOO_FOLDER_NORMAL)
 
