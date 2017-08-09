@@ -15,6 +15,7 @@ from secret_configuration import (
     #    ODOO_EXTERNAL_DATABASE, ODOO_EXTERNAL_URL,
     ODOO_USER, ODOO_PASSWORD, USE_SUDO)
 
+TEMPORARY_FILE_DB_LIST = '/tmp/xx_database_list'
 
 ODOO_UPDATE_SCRIPT = "../bin/start_openerp --stop-after-init"\
     " -u {module_list} -d {database}"
@@ -89,8 +90,8 @@ def execute_sql_file(database, sql_file):
 
 
 def create_new_database():
-    _bash_execute("psql -l -o xx_database_list", user='postgres')
-    file_database_list = open('xx_database_list', 'r')
+    _bash_execute("psql -l -o %s" % TEMPORARY_FILE_DB_LIST, user='postgres')
+    file_database_list = open(TEMPORARY_FILE_DB_LIST, 'r')
     content = file_database_list.readlines()
     found = True
     i = 1
@@ -102,15 +103,15 @@ def create_new_database():
     _bash_execute(
         "createdb %s --template %s --owner odoo" % (
             database, ODOO_LOCAL_DATABASE), user='postgres')
-    _bash_execute("rm xx_database_list")
+    _bash_execute("rm %s" % TEMPORARY_FILE_DB_LIST)
     return database
 
 
 def backup_database(database, step_name):
     backup = '%s___%s' % (database, step_name)
     # Search for previous backup
-    _bash_execute("psql -l -o xx_database_list", user='postgres')
-    file_database_list = open('xx_database_list', 'r')
+    _bash_execute("psql -l -o %s" % TEMPORARY_FILE_DB_LIST, user='postgres')
+    file_database_list = open(TEMPORARY_FILE_DB_LIST, 'r')
     content = file_database_list.readlines()
     found = ' %s ' % backup in ''.join(content)
     if found:
@@ -120,7 +121,7 @@ def backup_database(database, step_name):
     _bash_execute(
         "createdb %s --template %s --owner odoo" % (
             backup, database), user='postgres')
-    _bash_execute("rm xx_database_list")
+    _bash_execute("rm %s" % TEMPORARY_FILE_DB_LIST)
 
 
 def update_instance(database, module_list):
