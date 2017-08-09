@@ -31,10 +31,17 @@ def _log(text, error=False):
         print error
 
 
+def _generate_command(command, user):
+    if not USE_SUDO:
+        return command
+    elif not user:
+        return 'sudo %s' % command
+    else:
+        return 'sudo su %s -c "%s"' % (user, command)
+
+
 def _bash_execute(command, user=False):
-    prefix = USE_SUDO and 'sudo ' or ''
-    prefix += USE_SUDO and user and 'su %s ' % user or ''
-    full_command = prefix + command
+    full_command = _generate_command(command, user)
     _log("CALLING (Sync) %s" % full_command)
     try:
         call(full_command, shell=True)
@@ -45,9 +52,7 @@ def _bash_execute(command, user=False):
 
 
 def _bash_subprocess(command, user=False):
-    prefix = USE_SUDO and 'sudo ' or ''
-    prefix += USE_SUDO and user and 'su %s ' % user or ''
-    full_command = prefix + command
+    full_command = _generate_command(command, user)
     _log("CALLING (async) %s" % full_command)
     try:
         res = Popen(full_command, shell=True)
