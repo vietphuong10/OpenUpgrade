@@ -33,6 +33,8 @@ def _log(text, error=False):
         if error:
             print error
             traceback.print_stack()
+    except:
+        pass
 
 
 def _generate_command(command, user):
@@ -88,9 +90,8 @@ def set_upgrade_mode(upgrade_mode):
 
 def execute_sql_file(database, sql_file):
     return _bash_execute(
-        "psql -f %s %s -o zz_result_%s__%s" % (
-            os.path.join(TEMPORARY_FOLDER, sql_file),
-            database, database, sql_file),
+        "psql -f %s %s -o %szz_result_%s__%s" % (
+            sql_file, database, TEMPORARY_FOLDER, database, sql_file),
         user='postgres')
 
 
