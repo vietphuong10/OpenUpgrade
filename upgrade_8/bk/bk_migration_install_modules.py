@@ -6,61 +6,6 @@ openerp = erppeek.Client(URL)
 uid = openerp.login(LOGIN, password=PASSWORD, database=DATABASE)
 
 
-INSTALL_MODULES = [
-    'web_sheet_full_width',
-    'stock_picking_mass_action',
-    'pos_default_empty_image',
-    'pos_pricelist',
-    'pos_margin',
-    'product_standard_price_tax_included', # Check si ça remplace un module existant.
-    'product_supplierinfo_tree_price_info',
-    'web_ckeditor4',
-    'web_favicon',
-    'web_clean_navbar',
-    'web_graph_sort',
-    'web_graph_improved',
-    'web_group_expand',
-    'web_invalid_tab',
-
-    'web_offline_warning',
-    'web_invalid_tab',
-    'web_switch_company_warning',
-    'bi_sql_editor',
-
-    # TEST AND INSTALL
-    'pos_order_to_sale_order',
-    'account_invoice_merge_purchase',
-
-    'account_invoice_supplierinfo_update',
-    'account_invoice_supplierinfo_update_discount',
-    'invoice_margin',
-    'stock_picking_mass_action',
-    'purchase_supplier_rounding_method',
-    'product_margin_classification',
-    'stock_disable_barcode_interface',
-    'product_supplierinfo_tree_price_info',
-
-    # TO INSTALL after
-    # account_product_fiscal_classification (replace product_tax_group)
-    # product_standard_price_tax_included (replace product_standard_price_vat_incl)
-
-    # A TESTER
-    # purchase_add_product_supplierinfo
-    # account_invoice_line_price_subtotal_gross
-    # purchase_last_price_info
-#    'base_mail_bcc',
-
-#    'product_replenishment_cost',
-#    'pos_order_load',
-
-    # FIXME !, en conflit avec invoice_pricelist.
-#    'account_invoice_pricelist',
-#    'account_invoice_pricelist_sale',
-#    'account_invoice_pricelist_sale_stock',
-
-#     FIXME : ca m'a l'air bien long, ce module à cul
-#     'web_menu_navbar_needaction',
-]
 
 # Fix 2 bugs de view de merde
 # delete from ir_ui_view where id = 1761;
