@@ -15,6 +15,7 @@ from secret_configuration import (
     #    ODOO_EXTERNAL_DATABASE, ODOO_EXTERNAL_URL,
     ODOO_USER, ODOO_PASSWORD, USE_SUDO)
 
+TEMPORARY_FOLDER = '/tmp/'
 TEMPORARY_FILE_DB_LIST = '/tmp/xx_database_list'
 
 ODOO_UPDATE_SCRIPT = "../bin/start_openerp --stop-after-init"\
@@ -25,11 +26,13 @@ ODOO_RUN_SCRIPT = "../bin/start_openerp"
 
 
 def _log(text, error=False):
-    res = '%s - %s' % (datetime.today().strftime("%d-%m-%y - %H:%M:%S"), text)
-    print res
-    if error:
-        traceback.print_stack()
-        print error
+    try:
+        res = '%s - %s' % (
+            datetime.today().strftime("%d-%m-%y - %H:%M:%S"), text)
+        print res
+        if error:
+            print error
+            traceback.print_stack()
 
 
 def _generate_command(command, user):
@@ -85,7 +88,9 @@ def set_upgrade_mode(upgrade_mode):
 
 def execute_sql_file(database, sql_file):
     return _bash_execute(
-        "psql -f %s %s -o zz_result_%s" % (sql_file, database, sql_file),
+        "psql -f %s %s -o zz_result_%s__%s" % (
+            os.path.join(TEMPORARY_FOLDER, sql_file),
+            database, database, sql_file),
         user='postgres')
 
 
@@ -126,11 +131,12 @@ def backup_database(database, step_name):
 
 def update_instance(database, module_list):
     _bash_execute(
-        ODOO_UPDATE_SCRIPT.format(database=database, module_list=module_list))
+        ODOO_UPDATE_SCRIPT.format(database=database, module_list=module_list),
+        user='odoo')
 
 
 def run_instance():
-    res = _bash_subprocess(ODOO_RUN_SCRIPT)
+    res = _bash_subprocess(ODOO_RUN_SCRIPT, user='odoo')
     time.sleep(5)
     return res
 
