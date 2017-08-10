@@ -97,9 +97,14 @@ def run_step(step, database, backup_step):
 # Stop Odoo Service
 manage_odoo_process(False)
 
-# Create current database, based on the option database
-current_database = create_new_database(
-    target_database, target_step, STEP_DICT[target_step])
+if '_current' in target_database:
+    # Use the target database. (could be instable, but avoid to rerun all
+    # the process
+    current_database = target_database
+else:
+    # Create current database, based on the option database
+    current_database = create_new_database(
+        target_database, target_step, STEP_DICT[target_step])
 
 backup_step = False
 
