@@ -5,3 +5,17 @@ SET module = 'grap_change_account_move_line'
 WHERE
     module = 'pos_tax'
     AND model='ir.model.fields';
+
+-- Disable all ir cron
+UPDATE ir_cron
+SET active = false
+where id != 1;
+
+-- Delete obsolete Tiles
+DELETE
+FROM tile_tile
+WHERE model_id in (
+    SELECT id
+    FROM ir_model
+    WHERE model in ('stock.picking.in', 'stock.picking.out')
+    );
