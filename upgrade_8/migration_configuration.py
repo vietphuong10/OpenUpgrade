@@ -50,6 +50,7 @@ INSTALL_MODULE_LIST = [
 ]
 
 UNINSTALL_MODULE_LIST = [
+    'pos_tax',
     'process',
     'account_delete_move_null_amount',
     'account_mass_drop_moves',
