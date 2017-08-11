@@ -19,10 +19,10 @@ TEMPORARY_FOLDER = '/tmp/'
 TEMPORARY_FILE_DB_LIST = '/tmp/xx_database_list'
 
 ODOO_UPDATE_SCRIPT = "../bin/start_openerp --stop-after-init"\
-    " -u {module_list} -d {database}"
+    " -u {module_list} -d {database} --log-level {log_level}"
 
 
-ODOO_RUN_SCRIPT = "../bin/start_openerp"
+ODOO_RUN_SCRIPT = "../bin/start_openerp --log-level {log_level}"
 
 
 def _log(text, error=False):
@@ -147,14 +147,16 @@ def backup_database(database, step, step_name):
     _bash_execute("rm %s" % TEMPORARY_FILE_DB_LIST, log=False)
 
 
-def update_instance(database, module_list):
+def update_instance(database, module_list, log_level):
     _bash_execute(
-        ODOO_UPDATE_SCRIPT.format(database=database, module_list=module_list),
+        ODOO_UPDATE_SCRIPT.format(
+            database=database, module_list=module_list, log_level=log_level),
         user='odoo')
 
 
-def run_instance():
-    res = _bash_subprocess(ODOO_RUN_SCRIPT, user='odoo')
+def run_instance(log_level):
+    res = _bash_subprocess(
+        ODOO_RUN_SCRIPT.format(log_level=log_level), user='odoo')
     time.sleep(5)
     return res
 

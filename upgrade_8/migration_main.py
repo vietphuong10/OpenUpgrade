@@ -35,6 +35,14 @@ parser.add_option(
     " database defined in this option\n"
     "If step != 1, the database used will be the database named"
     " {database_arg}_{step_name}")
+parser.add_option(
+    "-l", "--log-level", dest="log_level", default='info',
+    help="Log Level to use:\n"
+    "debug : DEBUG\n"
+    "info : INFO (Default Value)\n"
+    "warn : WARNING\n"
+    "error : ERROR\n"
+    "critical : CRITICAL")
 (options, args) = parser.parse_args()
 target_step = int(options.step)
 if not options.database:
@@ -42,6 +50,7 @@ if not options.database:
 target_database = str(options.database)
 if int(target_step) not in STEP_DICT.keys():
     raise Exception("Invalid value 'step'")
+target_log_level = options.log_level
 
 
 # ----------------
@@ -61,31 +70,31 @@ def run_step(step, database, backup_step):
     if step == 1:
         # Upgrade with OpenUpgrade
         set_upgrade_mode(True)
-        update_instance(database, 'all')
+        update_instance(database, 'all', target_log_level)
 
     elif step == 2:
         # Update With OCB
         set_upgrade_mode(False)
-        update_instance(database, 'all')
+        update_instance(database, 'all', target_log_level)
 
     elif step == 3:
         # Install New Modules
         set_upgrade_mode(False)
-        proc = run_instance()
+        proc = run_instance(target_log_level)
         install_modules(database, INSTALL_MODULE_LIST)
         kill_process(proc)
 
     elif step == 4:
         # Uninstall Obsolete Modules
         set_upgrade_mode(False)
-        proc = run_instance()
+        proc = run_instance(target_log_level)
         uninstall_modules(database, UNINSTALL_MODULE_LIST)
         kill_process(proc)
 
     elif step == 5:
         # Create Inventories, to populate quants
         set_upgrade_mode(False)
-        proc = run_instance()
+        proc = run_instance(target_log_level)
         # TODO, create inventories
         kill_process(proc)
 

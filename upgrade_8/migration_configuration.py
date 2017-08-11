@@ -4,8 +4,6 @@ INSTALL_MODULE_LIST = [
     'web_sheet_full_width',
     'stock_picking_mass_action',
     'pos_default_empty_image',
-    'pos_pricelist',
-    'pos_margin',
     'product_supplierinfo_tree_price_info',
     'web_ckeditor4',
     'web_favicon',
@@ -22,12 +20,15 @@ INSTALL_MODULE_LIST = [
     'account_invoice_merge_purchase',
     'account_invoice_supplierinfo_update',
     'account_invoice_supplierinfo_update_discount',
-    'invoice_margin',
     'stock_picking_mass_action',
     'purchase_supplier_rounding_method',
     'product_margin_classification',
     'stock_disable_barcode_interface',
     'product_supplierinfo_tree_price_info',
+
+    'pos_pricelist',
+    'pos_margin',
+    'invoice_margin',
 
     # REPLACE
     # account_product_fiscal_classification
