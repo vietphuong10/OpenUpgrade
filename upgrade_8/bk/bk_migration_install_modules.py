@@ -16,14 +16,7 @@ uid = openerp.login(LOGIN, password=PASSWORD, database=DATABASE)
 
 
 # Améliore la création de pos_default_empty_image
-# ALTER TABLE product_product ADD COLUMN has_image bool DEFAULT False;
-# update product_product set has_image = true where product_tmpl_id in (select id from product_template where image is not null);
 # update stock_location set company_id = null where id = 1;
-    
-# Améliore l'installtion de invoice_margin
-# ALTER TABLE account_invoice ADD COLUMN margin float;
-# ALTER TABLE account_invoice_line ADD COLUMN margin float;
-# ALTER TABLE account_invoice_line ADD COLUMN purchase_price float;
 
 # Fix pos_order : set correct picking_type_id
 # update purchase_order po set picking_type_id = (select id from stock_picking_type stp where code= 'incoming' and stp.company_id = po.company_id limit 1) where picking_type_id != (select id from stock_picking_type stp where code='incoming' and stp.company_id = po.company_id limit 1);

@@ -19,3 +19,7 @@ WHERE model_id in (
     FROM ir_model
     WHERE model in ('stock.picking.in', 'stock.picking.out')
     );
+
+-- Delete all tiles
+DELETE
+FROM tile_tile;

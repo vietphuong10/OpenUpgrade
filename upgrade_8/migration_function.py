@@ -130,6 +130,8 @@ def create_new_database(target_database, step, step_name):
 
 
 def backup_database(database, step, step_name):
+    # TODO FIXME, disabled backup for the time being
+    return
     backup = '%s___%d_%s' % (database.replace('_current', ''), step, step_name)
     # Search for previous backup
     _bash_execute(

@@ -23,3 +23,13 @@ WHERE id IN (
 
 -- Disable fucking 3PP picking type
 update stock_picking_type set active=false where company_id = 1 and warehouse_id != 1;
+
+-- Fast creation of product_product.has_image
+ALTER TABLE product_product ADD COLUMN has_image bool DEFAULT False;
+
+UPDATE product_product
+    SET has_image = true
+    WHERE product_tmpl_id in (
+        SELECT id
+        FROM product_template
+        WHERE image is not null);

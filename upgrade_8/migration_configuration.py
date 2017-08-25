@@ -25,10 +25,7 @@ INSTALL_MODULE_LIST = [
     'product_margin_classification',
     'stock_disable_barcode_interface',
     'product_supplierinfo_tree_price_info',
-
     'pos_pricelist',
-    'pos_margin',
-    'invoice_margin',
 
     # REPLACE
     # account_product_fiscal_classification
@@ -39,15 +36,23 @@ INSTALL_MODULE_LIST = [
     # A TESTER
     # 'purchase_add_product_supplierinfo'
     # 'account_invoice_line_price_subtotal_gross'
-    # 'purchase_last_price_info'
     # 'base_mail_bcc',
     # 'product_replenishment_cost',
     # 'pos_order_load',
 
-    # FIXME !, en conflit avec invoice_pricelist.
+    ## FIXME / later
+    ## > en conflit avec invoice_pricelist.
     # 'account_invoice_pricelist',
     # 'account_invoice_pricelist_sale',
     # 'account_invoice_pricelist_sale_stock',
+
+    ## > Init values.
+    # 'grap_standard_price
+
+    ## > Later, when grap_standard_price will be installed.
+    # 'pos_margin',
+    # 'invoice_margin',
+
 ]
 
 UNINSTALL_MODULE_LIST = [
