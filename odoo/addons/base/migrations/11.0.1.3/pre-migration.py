@@ -41,6 +41,22 @@ def handle_partner_sector(env):
         )
 
 
+def remove_currency_rates_of_the_same_day(env):
+    """
+    Odoo version <= v10 may have multiple currency rates of the same day for the same currency.
+    We will try to find and delete them
+    """
+    dup = True
+    while dup:
+        env.cr.execute(
+            "SELECT MIN(id), count(*) FROM res_currency_rate GROUP BY name, currency_id, company_id HAVING count(*) > 1",
+        )
+        dup = env.cr.fetchone()
+        if dup:
+            env.cr.execute("""DELETE FROM res_currency_rate WHERE id = %s""" % dup[0])
+            _logger.info("Currency rate with ID %s has been deleted" % dup[0])
+
+
 def fill_cron_action_server_pre(env):
     """Prefill the column with a fixed value for avoiding the not null error,
     but wait until post for filling correctly the field and related record.
@@ -102,3 +118,4 @@ def migrate(env, version):
         UPDATE ir_cron SET interval_type = 'days'
         WHERE interval_type = 'work_days'""")
     fill_cron_action_server_pre(env)
+    remove_currency_rates_of_the_same_day(env)

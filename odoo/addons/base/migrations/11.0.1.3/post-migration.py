@@ -148,7 +148,7 @@ def fill_cron_action_server_post(env):
 @openupgrade.migrate()
 def migrate(env, version):
     map_ir_actions_server_fields(env.cr)
-    set_currency_rate_dates(env.cr)
+#     set_currency_rate_dates(env.cr)
     merge_default_ir_values(env.cr)
     fill_cron_action_server_post(env)
     openupgrade.load_data(
