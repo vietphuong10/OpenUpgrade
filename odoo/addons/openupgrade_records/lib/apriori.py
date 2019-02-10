@@ -16,8 +16,13 @@ renamed_modules = {
     # OCA/crm > OCA/partner-contact
     'crm_deduplicate_acl': 'partner_deduplicate_acl',
     'crm_deduplicate_filter': 'partner_deduplicate_filter',
-    # OCA/hr
-    'hr_employee_seniority': 'hr_employee_service_contract',
+
+    # erponline-enterprise
+    'account_accountant': 'to_account_accountant',
+    'account_asset': 'to_account_asset',
+    'mrp_account': 'to_mrp_account',
+    'quality': 'to_quality',
+    'stock_barcode': 'to_stock_barcode',
     # OCA/stock-logistics-workflow
     'stock_pack_operation_auto_fill': 'stock_move_line_auto_fill',
 }
@@ -57,9 +62,14 @@ merged_modules = {
     # OCA/stock-logistics-warehouse
     'stock_putaway_product': 'stock',
     # OCA/web
+    'web_no_bubble': 'web',
     'web_sheet_full_width': 'web_responsive',
     # OCA/website
     'website_form_metadata': 'website_form',
+    
+    # tvtmaaddons
+    'to_vietnam_states': 'l10n_vn',
+    'to_account_invoice_tax_analytic_tags': 'account'
 }
 
 # only used here for openupgrade_records analysis:
