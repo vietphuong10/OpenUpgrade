@@ -70,7 +70,8 @@ merged_modules = {
     # tvtmaaddons
     'to_vietnam_states': 'l10n_vn',
     'to_account_invoice_tax_analytic_tags': 'account',
-    'to_sale_auto_sections': 'sale'
+    'to_sale_auto_sections': 'sale',
+    'to_purchase_reports': 'purchase',
 }
 
 # only used here for openupgrade_records analysis:
