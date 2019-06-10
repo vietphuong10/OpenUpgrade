@@ -72,6 +72,9 @@ merged_modules = {
     'to_account_invoice_tax_analytic_tags': 'account',
     'to_sale_auto_sections': 'sale',
     'to_purchase_reports': 'purchase',
+    'to_sale_backdate_delivery': 'to_sale_backdate',
+    'to_sale_backdate_timesheet': 'to_sale_backdate',
+    'to_sale_backdate_website_quote': 'to_sale_backdate',
 }
 
 # only used here for openupgrade_records analysis:
