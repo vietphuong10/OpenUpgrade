@@ -25,6 +25,9 @@ renamed_modules = {
     'stock_barcode': 'to_stock_barcode',
     # OCA/stock-logistics-workflow
     'stock_pack_operation_auto_fill': 'stock_move_line_auto_fill',
+    
+    # tvtma
+    'to_refesh_sale_order': 'to_refresh_sale_order',
 }
 
 merged_modules = {
