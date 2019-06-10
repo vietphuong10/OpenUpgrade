@@ -75,6 +75,11 @@ merged_modules = {
     'to_sale_backdate_delivery': 'to_sale_backdate',
     'to_sale_backdate_timesheet': 'to_sale_backdate',
     'to_sale_backdate_website_quote': 'to_sale_backdate',
+    
+    # joomla2odoo
+    'to_multi_website': 'website',
+    'to_multi_website_blog': 'website_blog',
+    'to_multi_website_slide': 'website_slides',
 }
 
 # only used here for openupgrade_records analysis:
