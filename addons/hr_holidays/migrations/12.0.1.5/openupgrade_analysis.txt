@@ -1,14 +1,14 @@
 ---Fields in module 'hr_holidays'---
-hr_holidays  / hr.employee              / current_leave_id (many2one)   : relation is now 'hr.leave.type' ('hr.holidays.status')
+hr_holidays  / hr.employee              / current_leave_id (many2one)   : relation is now 'hr.leave.type' ('hr.holidays.status') [nothing to do]
 hr_holidays  / hr.holidays              / date_from (datetime)          : now required, default = function
 hr_holidays  / hr.holidays              / date_to (datetime)            : now required, default = function
-hr_holidays  / hr.holidays              / holiday_status_id (many2one)  : relation is now 'hr.leave.type' ('hr.holidays.status')
+hr_holidays  / hr.holidays              / holiday_status_id (many2one)  : relation is now 'hr.leave.type' ('hr.holidays.status') [nothing to do]
 hr_holidays  / hr.holidays              / holiday_type (selection)      : selection_keys is now '['category', 'company', 'department', 'employee']' ('['category', 'employee']')
-hr_holidays  / hr.holidays              / linked_request_ids (one2many) : relation is now 'hr.leave' ('hr.holidays')
+hr_holidays  / hr.holidays              / linked_request_ids (one2many) : relation is now 'hr.leave' ('hr.holidays') [nothing to do]
 hr_holidays  / hr.holidays              / message_last_post (datetime)  : DEL
 hr_holidays  / hr.holidays              / number_of_days (float)        : not a function anymore
 hr_holidays  / hr.holidays              / number_of_days_temp (float)   : DEL
-hr_holidays  / hr.holidays              / parent_id (many2one)          : relation is now 'hr.leave' ('hr.holidays')
+hr_holidays  / hr.holidays              / parent_id (many2one)          : relation is now 'hr.leave' ('hr.holidays') [nothing to do]
 hr_holidays  / hr.holidays              / type (selection)              : DEL required: required, selection_keys: ['add', 'remove'], req_default: function
 hr_holidays  / hr.holidays.status       / double_validation (boolean)   : not stored anymore
 hr_holidays  / hr.holidays.status       / double_validation (boolean)   : now a function
@@ -60,7 +60,7 @@ hr_holidays  / hr.leave.type            / unpaid (boolean)              : NEW
 hr_holidays  / hr.leave.type            / validation_type (selection)   : NEW selection_keys: ['both', 'hr', 'manager']
 hr_holidays  / hr.leave.type            / validity_start (date)         : NEW
 hr_holidays  / hr.leave.type            / validity_stop (date)          : NEW
-hr_holidays  / resource.calendar.leaves / holiday_id (many2one)         : relation is now 'hr.leave' ('hr.holidays')
+hr_holidays  / resource.calendar.leaves / holiday_id (many2one)         : relation is now 'hr.leave' ('hr.holidays') [nothing to do]
 ---XML records in module 'hr_holidays'---
 NEW ir.actions.act_window: hr_holidays.hr_leave_action_action_approve_department
 NEW ir.actions.act_window: hr_holidays.hr_leave_action_action_department

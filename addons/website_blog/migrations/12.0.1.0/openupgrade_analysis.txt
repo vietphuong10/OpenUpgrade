@@ -1,7 +1,6 @@
 ---Fields in module 'website_blog'---
 website_blog / blog.blog                / message_last_post (datetime)  : DEL
 website_blog / blog.blog                / message_main_attachment_id (many2one): NEW relation: ir.attachment
-website_blog / blog.blog                / website_id (many2one)         : NEW relation: website
 website_blog / blog.blog                / website_meta_og_img (char)    : NEW
 website_blog / blog.post                / is_published (boolean)        : NEW
 website_blog / blog.post                / message_last_post (datetime)  : DEL

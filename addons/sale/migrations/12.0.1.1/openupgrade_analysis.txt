@@ -4,15 +4,14 @@ sale         / account.invoice.line     / layout_category_sequence (integer): DE
 sale         / crm.team                 / dashboard_graph_model (False) : selection_keys is now '['account.invoice.report', 'crm.lead', 'sale.report']' ('['account.invoice.report', 'crm.opportunity.report', 'sale.report']')
 sale         / payment.acquirer         / so_reference_type (selection) : NEW selection_keys: ['partner', 'so_name']
 sale         / payment.transaction      / sale_order_ids (many2many)    : NEW relation: sale.order
-sale         / product.attribute        / type (selection)              : previously in module website_sale
+sale         / product.attribute        / type (selection)              : NEW required: required, selection_keys: ['color', 'radio', 'select'], req_default: function
 sale         / product.attribute.custom.value / attribute_value_id (many2one) : NEW relation: product.attribute.value
 sale         / product.attribute.custom.value / custom_value (char)           : NEW
 sale         / product.attribute.custom.value / sale_order_line_id (many2one) : NEW relation: sale.order.line
-sale         / product.attribute.value  / html_color (char)             : previously in module website_sale
+sale         / product.attribute.value  / html_color (char)             : NEW
 sale         / product.attribute.value  / is_custom (boolean)           : NEW
-sale         / product.product          / optional_product_ids (many2many): previously in module website_sale_options
 sale         / product.product          / sales_count (integer)         : type is now 'float' ('integer')
-sale         / product.template         / optional_product_ids (many2many): previously in module website_sale_options
+sale         / product.template         / optional_product_ids (many2many): NEW relation: product.template
 sale         / product.template         / sales_count (integer)         : type is now 'float' ('integer')
 sale         / res.company              / portal_confirmation_pay (boolean): NEW
 sale         / res.company              / portal_confirmation_sign (boolean): NEW
@@ -25,7 +24,7 @@ sale         / sale.order               / activity_date_deadline (date) : not re
 sale         / sale.order               / activity_date_deadline (date) : not stored anymore
 sale         / sale.order               / activity_date_deadline (date) : now a function
 sale         / sale.order               / amount_undiscounted (float)   : previously in module website_quote
-sale         / sale.order               / currency_rate (float)         : NEW
+sale         / sale.order               / currency_rate (float)         : NEW isfunction: function, stored: stored
 sale         / sale.order               / message_last_post (datetime)  : DEL
 sale         / sale.order               / message_main_attachment_id (many2one): NEW relation: ir.attachment
 sale         / sale.order               / reference (char)              : NEW
@@ -42,16 +41,15 @@ sale         / sale.order.line          / layout_category_id (many2one) : DEL re
 sale         / sale.order.line          / layout_category_sequence (integer): DEL
 sale         / sale.order.line          / product_custom_attribute_value_ids (one2many): NEW relation: product.attribute.custom.value
 sale         / sale.order.line          / product_no_variant_attribute_value_ids (many2many): NEW relation: product.template.attribute.value
-sale         / sale.order.line          / product_uom (many2one)        : relation is now 'uom.uom' ('product.uom')
+sale         / sale.order.line          / product_uom (many2one)        : relation is now 'uom.uom' ('product.uom') [nothing to do]
 sale         / sale.order.line          / qty_delivered (float)         : now a function
 sale         / sale.order.line          / qty_delivered_manual (float)  : NEW
-sale         / sale.order.line          / qty_delivered_method (selection): NEW selection_keys: ['analytic', 'manual']
-sale         / sale.order.line          / untaxed_amount_invoiced (float): NEW
-sale         / sale.order.line          / untaxed_amount_to_invoice (float): NEW
-sale_order_dates / sale.order               / commitment_date (datetime)    : not stored anymore
-sale_order_dates / sale.order               / commitment_date (datetime)    : was renamed to expected_date [nothing to do]
+sale         / sale.order.line          / qty_delivered_method (selection): NEW selection_keys: ['analytic', 'manual'], isfunction: function, stored: stored
+sale         / sale.order.line          / untaxed_amount_invoiced (float): NEW isfunction: function, stored: stored
+sale         / sale.order.line          / untaxed_amount_to_invoice (float): NEW isfunction: function, stored: stored
+sale_order_dates / sale.order               / commitment_date (datetime)    : not a function anymore
 sale_order_dates / sale.order               / effective_date (date)         : module is now 'sale_stock' ('sale_order_dates')
-sale_order_dates / sale.order               / requested_date (datetime)     : was renamed to commitment_date [nothing to do]
+sale_order_dates / sale.order               / requested_date (datetime)     : DEL
 sale_payment / payment.transaction      / sale_order_id (many2one)      : DEL relation: sale.order
 sale_payment / sale.order               / payment_acquirer_id (many2one): DEL relation: payment.acquirer
 sale_payment / sale.order               / payment_tx_id (many2one)      : DEL relation: payment.transaction

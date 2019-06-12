@@ -1,11 +1,9 @@
 ---Fields in module 'website'---
+to_multi_website / website.page             / website_id (False)            : DEL mode: modify
 website      / ir.attachment            / key (char)                    : NEW
-website      / ir.attachment            / website_id (many2one)         : NEW relation: website
 website      / ir.ui.view               / page_ids (one2many)           : is now stored
 website      / ir.ui.view               / page_ids (one2many)           : not a function anymore
 website      / ir.ui.view               / website_meta_og_img (char)    : NEW
-website      / res.partner              / website_id (many2one)         : NEW relation: website
-website      / res.users                / website_id (many2one)         : NEW relation: website
 website      / website                  / auth_signup_uninvited (selection): NEW selection_keys: ['b2b', 'b2c']
 website      / website                  / company_id (many2one)         : now required, default = function
 website      / website                  / country_group_ids (many2many) : NEW relation: res.country.group
@@ -44,6 +42,8 @@ website      / website.redirect         / url_to (char)                 : now re
 DEL ir.actions.act_url: website.action_website_homepage (noupdate)
 NEW ir.actions.act_window: website.action_website_add_features
 NEW ir.actions.act_window: website.action_website_list
+DEL ir.actions.act_window: to_multi_website.action_website_menu
+DEL ir.actions.act_window: to_multi_website.open_website_management_view
 DEL ir.actions.act_window: website.action_module_theme (noupdate)
 DEL ir.actions.act_window: website.action_module_website (noupdate)
 NEW ir.actions.server: website.ir_actions_server_website_google_analytics
@@ -67,6 +67,8 @@ NEW ir.ui.menu: website.menu_website_dashboard
 NEW ir.ui.menu: website.menu_website_google_analytics
 NEW ir.ui.menu: website.menu_website_menu_list
 NEW ir.ui.menu: website.menu_website_websites_list
+DEL ir.ui.menu: to_multi_website.menu_website_management
+DEL ir.ui.menu: to_multi_website.menu_website_menu
 NEW ir.ui.view: website._assets_frontend_helpers
 NEW ir.ui.view: website._assets_primary_variables
 NEW ir.ui.view: website._assets_secondary_variables
@@ -119,6 +121,7 @@ NEW ir.ui.view: website.view_partner_form_inherit_website
 NEW ir.ui.view: website.view_redirect_search
 NEW ir.ui.view: website.view_view_tree_inherit_website
 NEW ir.ui.view: website.website_menus_form_view
+DEL ir.ui.view: to_multi_website.website_tree_view_inherit
 DEL ir.ui.view: website.edit_website_pages
 DEL ir.ui.view: website.footer_default
 DEL ir.ui.view: website.s_big_message

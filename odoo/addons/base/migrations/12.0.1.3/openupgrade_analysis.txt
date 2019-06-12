@@ -2,12 +2,12 @@
 auth_crypt   / res.users                / password_crypt (char)         : DEL
 base         / ir.actions.report        / report_type (selection)       : selection_keys is now '['qweb-html', 'qweb-pdf', 'qweb-text']' ('['qweb-html', 'qweb-pdf']')
 base         / ir.attachment            / active (boolean)              : NEW
-base         / ir.attachment            / res_model_name (char)         : NEW
+base         / ir.attachment            / res_model_name (char)         : NEW isfunction: function, stored: stored
 base         / ir.attachment            / thumbnail (binary)            : NEW attachment: True
 base         / ir.model                 / rule_ids (one2many)           : NEW relation: ir.rule
 base         / ir.model.fields          / copy (boolean)                : was renamed to copied [nothing to do]
-base         / ir.model.fields          / related_field_id (many2one)   : NEW relation: ir.model.fields
-base         / ir.model.fields          / relation_field_id (many2one)  : NEW relation: ir.model.fields
+base         / ir.model.fields          / related_field_id (many2one)   : NEW relation: ir.model.fields, isfunction: function, stored: stored
+base         / ir.model.fields          / relation_field_id (many2one)  : NEW relation: ir.model.fields, isfunction: function, stored: stored
 base         / ir.module.module         / to_buy (boolean)              : NEW
 base         / ir.server.object.lines   / type (selection)              : selection_keys is now '['equation', 'reference', 'value']' ('['equation', 'value']')
 base         / ir.translation           / type (selection)              : selection_keys is now '['code', 'constraint', 'model', 'model_terms', 'selection', 'sql_constraint']' ('['code', 'constraint', 'field', 'help', 'model', 'report', 'selection', 'sql_constraint', 'view']')

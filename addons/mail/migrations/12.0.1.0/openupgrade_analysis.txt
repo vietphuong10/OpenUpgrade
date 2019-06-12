@@ -9,7 +9,7 @@ mail         / ir.actions.server        / activity_user_field_name (char): NEW
 mail         / ir.actions.server        / activity_user_id (many2one)   : NEW relation: res.users
 mail         / ir.actions.server        / activity_user_type (selection): NEW required: required, selection_keys: ['generic', 'specific'], req_default: function
 mail         / ir.actions.server        / state (False)                 : selection_keys is now '['code', 'email', 'followers', 'multi', 'next_activity', 'object_create', 'object_write']' ('['code', 'email', 'followers', 'multi', 'object_create', 'object_write']')
-mail         / ir.ui.view               / type (False)                  : NEW selection_keys: ['activity', 'calendar', 'diagram', 'form', 'gantt', 'graph', 'kanban', 'pivot', 'qweb', 'search', 'tree'], mode: modify
+mail         / ir.ui.view               / type (False)                  : NEW selection_keys: ['activity', 'calendar', 'diagram', 'form', 'gantt', 'graph', 'kanban', 'pivot', 'qweb', 'search', 'timeline', 'tree'], mode: modify
 mail         / mail.activity            / automated (boolean)           : NEW
 mail         / mail.activity            / create_user_id (many2one)     : NEW relation: res.users
 mail         / mail.activity.type       / active (boolean)              : NEW
@@ -48,46 +48,6 @@ mail         / mail.notification        / failure_type (selection)      : NEW se
 mail         / mail.notification        / mail_id (many2one)            : NEW relation: mail.mail
 mail         / mail.shortcode           / shortcode_type (selection)    : DEL required: required, selection_keys: ['image', 'text'], req_default: function
 mail         / mail.shortcode           / unicode_source (char)         : DEL
-mail         / mail.test                / __last_update (datetime)      : module is now 'test_mail' ('mail')
-mail         / mail.test                / _inherits (False)             : module is now 'test_mail' ('mail')
-mail         / mail.test                / alias_contact (selection)     : module is now 'test_mail' ('mail')
-mail         / mail.test                / alias_defaults (text)         : module is now 'test_mail' ('mail')
-mail         / mail.test                / alias_domain (char)           : module is now 'test_mail' ('mail')
-mail         / mail.test                / alias_force_thread_id (integer): module is now 'test_mail' ('mail')
-mail         / mail.test                / alias_id (many2one)           : module is now 'test_mail' ('mail')
-mail         / mail.test                / alias_model_id (many2one)     : module is now 'test_mail' ('mail')
-mail         / mail.test                / alias_name (char)             : module is now 'test_mail' ('mail')
-mail         / mail.test                / alias_parent_model_id (many2one): module is now 'test_mail' ('mail')
-mail         / mail.test                / alias_parent_thread_id (integer): module is now 'test_mail' ('mail')
-mail         / mail.test                / alias_user_id (many2one)      : module is now 'test_mail' ('mail')
-mail         / mail.test                / description (text)            : module is now 'test_mail' ('mail')
-mail         / mail.test                / display_name (char)           : module is now 'test_mail' ('mail')
-mail         / mail.test                / message_channel_ids (many2many): module is now 'test_mail' ('mail')
-mail         / mail.test                / message_follower_ids (one2many): module is now 'test_mail' ('mail')
-mail         / mail.test                / message_ids (one2many)        : module is now 'test_mail' ('mail')
-mail         / mail.test                / message_is_follower (boolean) : module is now 'test_mail' ('mail')
-mail         / mail.test                / message_last_post (datetime)  : DEL
-mail         / mail.test                / message_needaction (boolean)  : module is now 'test_mail' ('mail')
-mail         / mail.test                / message_needaction_counter (integer): module is now 'test_mail' ('mail')
-mail         / mail.test                / message_partner_ids (many2many): module is now 'test_mail' ('mail')
-mail         / mail.test                / message_unread (boolean)      : module is now 'test_mail' ('mail')
-mail         / mail.test                / message_unread_counter (integer): module is now 'test_mail' ('mail')
-mail         / mail.test                / name (char)                   : module is now 'test_mail' ('mail')
-mail         / mail.test.simple         / __last_update (datetime)      : module is now 'test_mail' ('mail')
-mail         / mail.test.simple         / description (text)            : DEL
-mail         / mail.test.simple         / display_name (char)           : module is now 'test_mail' ('mail')
-mail         / mail.test.simple         / email_from (char)             : module is now 'test_mail' ('mail')
-mail         / mail.test.simple         / message_channel_ids (many2many): module is now 'test_mail' ('mail')
-mail         / mail.test.simple         / message_follower_ids (one2many): module is now 'test_mail' ('mail')
-mail         / mail.test.simple         / message_ids (one2many)        : module is now 'test_mail' ('mail')
-mail         / mail.test.simple         / message_is_follower (boolean) : module is now 'test_mail' ('mail')
-mail         / mail.test.simple         / message_last_post (datetime)  : DEL
-mail         / mail.test.simple         / message_needaction (boolean)  : module is now 'test_mail' ('mail')
-mail         / mail.test.simple         / message_needaction_counter (integer): module is now 'test_mail' ('mail')
-mail         / mail.test.simple         / message_partner_ids (many2many): module is now 'test_mail' ('mail')
-mail         / mail.test.simple         / message_unread (boolean)      : module is now 'test_mail' ('mail')
-mail         / mail.test.simple         / message_unread_counter (integer): module is now 'test_mail' ('mail')
-mail         / mail.test.simple         / name (char)                   : module is now 'test_mail' ('mail')
 mail         / mail.tracking.value      / track_sequence (integer)      : NEW
 mail         / res.partner              / activity_date_deadline (date) : not related anymore
 mail         / res.partner              / activity_date_deadline (date) : not stored anymore
