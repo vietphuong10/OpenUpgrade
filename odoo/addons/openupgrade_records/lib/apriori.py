@@ -26,6 +26,8 @@ renamed_modules = {
     # OCA/stock-logistics-workflow
     'stock_pack_operation_auto_fill': 'stock_move_line_auto_fill',
     
+    # tvtmaaddons
+    'to_odoo_module_website_quote': 'to_odoo_module_sale_template',
     # tvtma
     'to_refesh_sale_order': 'to_refresh_sale_order',
 }
