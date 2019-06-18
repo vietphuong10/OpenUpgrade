@@ -35,6 +35,7 @@ NEW ir.rule: sale_timesheet.sale_order_line_rule_project_manager (noupdate)
 DEL ir.rule: sale_timesheet.account_analytic_line_rule_billing_user (noupdate)
 NEW ir.ui.menu: sale_timesheet.menu_project_profitability_analysis
 DEL ir.ui.menu: sale_timesheet.menu_timesheet_report_cost_revenue
+NEW ir.ui.view: sale_timesheet.product_template_view_search_sale_timesheet
 NEW ir.ui.view: sale_timesheet.project_create_invoice_view_form
 NEW ir.ui.view: sale_timesheet.project_create_sale_order_view_form
 NEW ir.ui.view: sale_timesheet.project_profitability_report_view_graph
@@ -43,6 +44,8 @@ NEW ir.ui.view: sale_timesheet.project_profitability_report_view_search
 NEW ir.ui.view: sale_timesheet.project_project_view_form
 NEW ir.ui.view: sale_timesheet.project_project_view_search
 NEW ir.ui.view: sale_timesheet.project_task_assign_so_line_view_form
+NEW ir.ui.view: sale_timesheet.project_task_view_form_inherit_sale_line_editable
+NEW ir.ui.view: sale_timesheet.project_task_view_form_sale_order
 NEW ir.ui.view: sale_timesheet.project_task_view_search
 NEW ir.ui.view: sale_timesheet.qunit_suite
 DEL ir.ui.view: sale_timesheet.hr_timesheet_employee_extd_form
