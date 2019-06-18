@@ -1,7 +1,7 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
 # * event
-# 
+#
 # Translators:
 # Phạm Lân <phamquanglan@gmail.com>, 2017
 # son dang <son.dang@doda100.com>, 2017
@@ -20,10 +20,10 @@ msgstr ""
 "PO-Revision-Date: 2017-09-20 10:17+0000\n"
 "Last-Translator: thanh nguyen <thanhnguyen.icsc@gmail.com>, 2019\n"
 "Language-Team: Vietnamese (https://www.transifex.com/odoo/teams/41243/vi/)\n"
+"Language: vi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Language: vi\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #. module: event
@@ -389,7 +389,7 @@ msgstr "%s (bản sao)"
 #: model:event.event,description:event.event_1
 #: model:event.event,description:event.event_3
 msgid "5 Intensive Days"
-msgstr ""
+msgstr "5 Ngày Chuyên sâu"
 
 #. module: event
 #: model:event.event,description:event.event_2
@@ -404,6 +404,8 @@ msgid ""
 "<font style=\"color: rgb(255, 255, 255); font-size: 24px;\">to learn <i>Odoo"
 " Programming</i></font>"
 msgstr ""
+"<font style=\"color: rgb(255, 255, 255); font-size: 24px;\">để học <i>Lập "
+"trình Odoo</i></font>"
 
 #. module: event
 #: model:event.event,description:event.event_1
@@ -411,6 +413,8 @@ msgid ""
 "<font style=\"color: rgb(255, 255, 255); font-size: 24px;\">to learn "
 "<i>technical aspects</i></font>"
 msgstr ""
+"<font style=\"color: rgb(255, 255, 255); font-size: 24px;\">để học <i>các "
+"khía cạnh kỹ thuật</i></font>"
 
 #. module: event
 #: model:event.event,description:event.event_3
@@ -418,6 +422,8 @@ msgid ""
 "<font style=\"font-size: 24px;\">to learn <i>business applications "
 "development</i></font>"
 msgstr ""
+"<font style=\"font-size: 24px;\">để học <i>phát triển các ứng dụng doanh "
+"nghiệp</i></font>"
 
 #. module: event
 #: model:ir.ui.view,arch_db:event.view_event_kanban
@@ -425,6 +431,8 @@ msgid ""
 "<i class=\"fa fa-clock-o\"/>\n"
 "                                        <b>To</b>"
 msgstr ""
+"<i class=\"fa fa-clock-o\"/>\n"
+"                                        <b>Đến</b>"
 
 #. module: event
 #: model:event.event,description:event.event_0
@@ -481,11 +489,16 @@ msgstr ""
 #: model:event.event,description:event.event_1
 #: model:event.event,description:event.event_3
 msgid ""
-"<span style=\"text-align: -webkit-center; \">This course is dedicated to "
-"developers who need to grasp knowledge of the <strong>business applications "
-"development </strong>process. This course is for new developers or for IT "
-"professionals eager to learn more about technical aspects.</span>"
+"<span style=\"text-align: -webkit-center; \">This course is dedicated "
+"to developers who need to grasp knowledge of the <strong>business "
+"applications development </strong>process. This course is for new developers"
+" or for IT professionals eager to learn more about technical aspects.</span>"
 msgstr ""
+"<span style=\"text-align: -webkit-center; \">Khoá học này được thiết kế "
+"riêng cho các nhà phát triển mà cần kiến thức thấu đáo về quy trình "
+"<strong>phát triển các ứng dụng quản trị doanh nghiệp</strong>. Khoá này "
+"dành cho các nhà phát triển mới hoặc các chuyên gia IT thiết tha với việc "
+"học thêm về các khía cạnh kỹ thuật.</span>"
 
 #. module: event
 #: model:event.event,description:event.event_2
@@ -581,7 +594,7 @@ msgstr ""
 #: model:event.event,description:event.event_1
 #: model:event.event,description:event.event_3
 msgid "Arrays"
-msgstr "Danh sách"
+msgstr ""
 
 #. module: event
 #: model:ir.ui.view,arch_db:event.res_config_settings_view_form
@@ -688,7 +701,7 @@ msgstr "Trân trọng,"
 #: model:event.event,description:event.event_1
 #: model:event.event,description:event.event_3
 msgid "Bootstrap CSS"
-msgstr "Trân trọng,"
+msgstr ""
 
 #. module: event
 #: model:event.event,description:event.event_0
@@ -1234,7 +1247,7 @@ msgstr "Tham dự xong hội thảo này, người tham dự sẽ có thể:"
 #: model:event.event,description:event.event_1
 #: model:event.event,description:event.event_3
 msgid "Hello World"
-msgstr "Chào thế giới"
+msgstr ""
 
 #. module: event
 #: selection:event.mail,interval_unit:0
@@ -1247,7 +1260,7 @@ msgstr "Giờ"
 #: model:event.event,description:event.event_1
 #: model:event.event,description:event.event_3
 msgid "How to Debug"
-msgstr ""
+msgstr "Cách Debug (Gỡ lỗi)"
 
 #. module: event
 #: model:event.event,description:event.event_0
@@ -1257,6 +1270,8 @@ msgid ""
 "I did not expect such a great learning experience. I feel like I can develop"
 " anything now."
 msgstr ""
+"Tôi đã không mong đợi một trải nghiệp học tuyệt vời như vậy. Tôi dưới nhu "
+"thấy hiện giờ tôi đã có thể phát triển ứng cho cho Odoo."
 
 #. module: event
 #: model:ir.model.fields,field_description:event.field_event_confirm_id
@@ -1300,7 +1315,7 @@ msgstr "Cài đặt và Quản trị máy chủ của chính bạn;"
 #: model:event.event,description:event.event_1
 #: model:event.event,description:event.event_3
 msgid "Integrated Help"
-msgstr "Trợ giúp được Tích hợp"
+msgstr "Trợ giúp Tích hợp"
 
 #. module: event
 #: model:ir.model.fields,field_description:event.field_event_mail_interval_nbr
@@ -1403,7 +1418,7 @@ msgstr "Địa điểm"
 #: model:event.event,description:event.event_1
 #: model:event.event,description:event.event_3
 msgid "Loops"
-msgstr ""
+msgstr "Lặp"
 
 #. module: event
 #: model:event.event,description:event.event_2
@@ -1539,7 +1554,7 @@ msgstr ""
 #: model:event.event,description:event.event_1
 #: model:event.event,description:event.event_3
 msgid "Odoo Official Website"
-msgstr "Website Chính thức của Hệ thống"
+msgstr "Website chính thức của Odoo"
 
 #. module: event
 #: model:event.event,description:event.event_0
@@ -1668,7 +1683,7 @@ msgstr "Đối tượng Python"
 #: model:event.event,description:event.event_1
 #: model:event.event,description:event.event_3
 msgid "Read Great Contents"
-msgstr ""
+msgstr "Đọc Thêm"
 
 #. module: event
 #: model:ir.model.fields,help:event.field_event_registration_origin
@@ -1741,7 +1756,7 @@ msgstr ""
 #: model:event.event,description:event.event_1
 #: model:event.event,description:event.event_3
 msgid "Report Engine"
-msgstr "Công cụ báo cáo"
+msgstr ""
 
 #. module: event
 #: model:ir.ui.menu,name:event.menu_reporting_events
@@ -1886,6 +1901,8 @@ msgid ""
 "This course help me build my first application within a month. Definetly "
 "worth its price."
 msgstr ""
+"Khoá học này đã giúp tôi xây dựng ứng dụng đầu tiên của tôi trong vòng 1 "
+"tháng. Nó thực sự xứng đáng với số tiền tôi đa bỏ ra."
 
 #. module: event
 #: model:ir.model.fields,help:event.field_event_mail_template_id
@@ -1927,7 +1944,7 @@ msgstr "Đào tạo"
 #: model:event.event,description:event.event_1
 #: model:event.event,description:event.event_3
 msgid "Training Center Module"
-msgstr ""
+msgstr "Phân hệ Trung tâm Đào tạo"
 
 #. module: event
 #: model:ir.model.fields,field_description:event.field_event_type_mail_interval_type
@@ -1961,7 +1978,7 @@ msgstr "Đặt chỗ Chưa xác nhận"
 #: model:event.event,description:event.event_1
 #: model:event.event,description:event.event_3
 msgid "Underscore"
-msgstr "Dấu gạch dưới"
+msgstr "Gạch chân"
 
 #. module: event
 #: model:event.event,description:event.event_0
@@ -2060,7 +2077,7 @@ msgstr "Tuần"
 #: model:event.event,description:event.event_1
 #: model:event.event,description:event.event_3
 msgid "What do people say about this course?"
-msgstr ""
+msgstr "Người ta nói gì về khoá học này?"
 
 #. module: event
 #: model:event.event,description:event.event_0

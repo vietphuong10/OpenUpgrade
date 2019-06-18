@@ -31,7 +31,7 @@ msgstr ""
 #: code:addons/stock_landed_costs/models/stock_landed_cost.py:369
 #, python-format
 msgid " already out"
-msgstr "đã xuất"
+msgstr " đã xuất rồi"
 
 #. module: stock_landed_costs
 #: model:ir.model.fields,field_description:stock_landed_costs.field_stock_landed_cost_lines_account_id
@@ -130,8 +130,7 @@ msgid ""
 "Cost and adjustments lines do not match. You should maybe recompute the "
 "landed costs."
 msgstr ""
-"Chi phí và các dòng phân bổ không khớp. Bạn nên tính toán lại Chi phí vận "
-"chuyển."
+"Chi phí và các dòng phân bổ không khớp. Bạn nên tính toán lại landed cost."
 
 #. module: stock_landed_costs
 #: model:ir.model.fields,field_description:stock_landed_costs.field_stock_landed_cost_create_uid
@@ -235,7 +234,7 @@ msgstr "Thông tin"
 #: model:ir.model.fields,field_description:stock_landed_costs.field_product_product_landed_cost_ok
 #: model:ir.model.fields,field_description:stock_landed_costs.field_product_template_landed_cost_ok
 msgid "Is a Landed Cost"
-msgstr "Là  Chi phí vận chuyển"
+msgstr ""
 
 #. module: stock_landed_costs
 #: model:ir.model.fields,field_description:stock_landed_costs.field_stock_landed_cost_description
@@ -263,7 +262,7 @@ msgstr "Tên Landed Cost"
 #: model:ir.ui.menu,name:stock_landed_costs.menu_stock_landed_cost_type
 #: model:ir.ui.view,arch_db:stock_landed_costs.res_config_settings_view_form
 msgid "Landed Cost Types"
-msgstr "Loại Chi phí vận chuyển"
+msgstr ""
 
 #. module: stock_landed_costs
 #: model:ir.actions.act_window,name:stock_landed_costs.action_stock_landed_cost
@@ -274,7 +273,7 @@ msgstr "Loại Chi phí vận chuyển"
 #: model:ir.ui.view,arch_db:stock_landed_costs.view_stock_landed_cost_tree
 #: model:ir.ui.view,arch_db:stock_landed_costs.view_stock_landed_cost_type_form
 msgid "Landed Costs"
-msgstr "Chi phí vận chuyển"
+msgstr "Landed Costs"
 
 #. module: stock_landed_costs
 #: model:ir.ui.view,arch_db:stock_landed_costs.view_stock_landed_cost_form
@@ -331,14 +330,14 @@ msgstr "Mới"
 msgid ""
 "No valuation adjustments lines. You should maybe recompute the landed costs."
 msgstr ""
-"Không thấy dòng điều chỉnh/phân bổ giá trị nào cả. Bạn nên tính toán lại Chi"
-" phí vận chuyển."
+"Không thấy dòng điều chỉnh/phân bổ giá trị nào cả. Bạn nên tính toán lại "
+"landed cost."
 
 #. module: stock_landed_costs
 #: code:addons/stock_landed_costs/models/stock_landed_cost.py:87
 #, python-format
 msgid "Only draft landed costs can be validated"
-msgstr "Chỉ có các Chi phí vận chuyển dự thảo mới có thể được xác nhận"
+msgstr "Chỉ có các landed cost dự thảo mới có thể được xác nhận"
 
 #. module: stock_landed_costs
 #: model:ir.model.fields,field_description:stock_landed_costs.field_stock_landed_cost_picking_ids
@@ -430,10 +429,10 @@ msgid ""
 " time valuation with real price costing method. Please make sure it is the "
 "case, or you selected the correct picking"
 msgstr ""
-"Lô hàng nhận không chứa bất kỳ dịch chuyển nào mà có thể bị tác động bởi Chi"
-" phí vận chuyển. Chi phí vận chuyển chỉ khả thi đối với sản phẩm được cấu "
-"hình để định giá theo thời gian thực với phương pháp giá vốn thực tế. Hãy "
-"xem xem có đúng trường hợp này không, hoặc bạn đã chọn đúng lô hàng chưa"
+"Lô hàng nhận không chứa bất kỳ dịch chuyển nào mà có thể bị tác động bởi chi"
+" phí nhập kho. Chi phí nhập kho chỉ khả thi đối với sản phẩm được cấu hình "
+"để định giá theo thời gian thực với phương pháp giá vốn thực tế. Hãy xem xem"
+" có đúng trường hợp này không, hoặc bạn đã chọn đúng lô hàng chưa"
 
 #. module: stock_landed_costs
 #: model:ir.model.fields,field_description:stock_landed_costs.field_stock_landed_cost_amount_total
@@ -452,8 +451,8 @@ msgid ""
 "Validated landed costs cannot be cancelled, but you could create negative "
 "landed costs to reverse them"
 msgstr ""
-"Các Chi phí vận chuyển đã xác nhận không thể bị hủy, nhưng bạn có thể tạo "
-"Chi phí vận chuyển khác với giá trị âm để đảo ngược chúng"
+"Các chi phí nhập kho đã xác nhận không thể bị huy, nhưng bạn có thể tạo chi "
+"phí nhập kho khác với giá trị âm để đảo ngược chúng"
 
 #. module: stock_landed_costs
 #: model:ir.model.fields,field_description:stock_landed_costs.field_stock_landed_cost_valuation_adjustment_lines

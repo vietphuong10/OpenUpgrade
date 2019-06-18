@@ -1,7 +1,7 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
 # * anonymization
-# 
+#
 # Translators:
 # fanha99 <fanha99@hotmail.com>, 2017
 # Phạm Lân <phamquanglan@gmail.com>, 2017

@@ -1,12 +1,11 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
 # * survey
-# 
+#
 # Translators:
 # fanha99 <fanha99@hotmail.com>, 2017
-# Duy BQ <duybq86@gmail.com>, 2017
 # Martin Trigaux, 2017
-# son dang <son.dang@doda100.com>, 2017
+# Duy BQ <duybq86@gmail.com>, 2017
 # Phạm Lân <phamquanglan@gmail.com>, 2017
 # thanh nguyen <thanhnguyen.icsc@gmail.com>, 2018
 msgid ""
@@ -17,10 +16,10 @@ msgstr ""
 "PO-Revision-Date: 2017-10-02 11:26+0000\n"
 "Last-Translator: thanh nguyen <thanhnguyen.icsc@gmail.com>, 2018\n"
 "Language-Team: Vietnamese (https://www.transifex.com/odoo/teams/41243/vi/)\n"
+"Language: vi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Language: vi\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #. module: survey
@@ -58,7 +57,7 @@ msgstr "%s (bản sao)"
 #. module: survey
 #: model:ir.ui.view,arch_db:survey.page
 msgid "&amp;times;"
-msgstr "&amp;times;"
+msgstr ""
 
 #. module: survey
 #: model:ir.ui.view,arch_db:survey.result
@@ -865,7 +864,7 @@ msgstr ""
 #. module: survey
 #: model:survey.label,value:survey.frow_2_1_4
 msgid "It is complete"
-msgstr ""
+msgstr "e"
 
 #. module: survey
 #: model:survey.label,value:survey.frow_2_1_1
@@ -932,7 +931,7 @@ msgstr "Trang được hiển thị lần cuối"
 #. module: survey
 #: model:ir.ui.view,arch_db:survey.survey_survey_view_search
 msgid "Late Activities"
-msgstr "Các hoạt động gần nhất"
+msgstr "Hoạt động bị Trễ"
 
 #. module: survey
 #: selection:survey.user_input,type:0
@@ -1475,7 +1474,7 @@ msgstr "Hiển thị Trường Bình luận"
 #. module: survey
 #: model:ir.ui.view,arch_db:survey.survey_survey_view_search
 msgid "Show all records which has next action date is before today"
-msgstr "Hiển thị tất cả dữ liệu có ngày xử lý tiếp theo trước ngày hôm nay"
+msgstr "Hiển thị tất cả bản ghi mà có ngày xử lý tiếp theo trước ngày hôm nay"
 
 #. module: survey
 #: selection:survey.question,type:0
@@ -1695,7 +1694,7 @@ msgstr ""
 #: code:addons/survey/models/survey.py:819
 #, python-format
 msgid "The answer must be in the right type"
-msgstr ""
+msgstr "Câu trả lời phải là kiểu dữ liệu hợp lệ"
 
 #. module: survey
 #: code:addons/survey/models/survey.py:485

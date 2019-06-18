@@ -163,8 +163,8 @@ msgid ""
 "you, read on..."
 msgstr ""
 "Vì sự phát triển không ngừng nghỉ, chúng tôi hiện đang tìm kiếm người để "
-"củng cố đội ngũ nhân viên kỹ thuật nhiệt tình với hoài bảo lớn của chúng "
-"tôi. Vì vậy, nếu làm việc trên một dự án lớn trong một môi trường thân thiện"
+"củng cố đội ngũ nhân viên kỹ thuật nhiệt tình với hoài bão lớn của chúng "
+"tôi. Vì vậy, nếu làm một dự án lớn trong một môi trường thân thiện"
 " và hợp tác có vẻ giống như niềm vui đối với bạn, hãy đọc tiếp ..."
 
 #. module: hr
@@ -308,7 +308,7 @@ msgstr "Thông tin liên hệ"
 #: model:hr.job,website_description:hr.job_developer
 #: model:hr.job,website_description:hr.job_trainee
 msgid "Contributions to open source projects"
-msgstr "Đóng góp cho các dự án nguồn mở"
+msgstr "Đóng góp vào các dự án mã nguồn mở"
 
 #. module: hr
 #: model:ir.model.fields,field_description:hr.field_hr_department_create_uid
@@ -346,7 +346,7 @@ msgstr "Tạo 1 chiến lược giao tiếp rõ ràng"
 #. module: hr
 #: model:hr.job,website_description:hr.job_consultant
 msgid "Deliver generic Odoo functional training sessions"
-msgstr "Cung cấp các buổi đào tạo chức năng chung của Hệ thống"
+msgstr "Cung cấp các buổi đào tạo tính năng Odoo"
 
 #. module: hr
 #: model:ir.model.fields,field_description:hr.field_hr_employee_department_id
@@ -512,7 +512,7 @@ msgstr "Giới tính"
 #. module: hr
 #: model:hr.job,website_description:hr.job_developer
 msgid "Good knowledge of HTML and Javascript"
-msgstr "Kiến thức tốt về HTML và Javascript"
+msgstr "Có hiểu biết sâu sắc về HTML và Javascript"
 
 #. module: hr
 #: model:hr.job,website_description:hr.job_cto
@@ -558,7 +558,7 @@ msgstr "Nhóm theo"
 #. module: hr
 #: model:ir.model,name:hr.model_hr_department
 msgid "HR Department"
-msgstr "Phòng nhân sự"
+msgstr "Phòng/Ban (HR)"
 
 #. module: hr
 #: model:ir.ui.view,arch_db:hr.view_employee_form
@@ -1301,7 +1301,7 @@ msgstr "Goá"
 #. module: hr
 #: model:hr.job,website_description:hr.job_consultant
 msgid "Will report to the Head of Professional Services"
-msgstr "Sẽ báo cáo cho Giám đốc Dịch vụ chuyên nghiệp"
+msgstr "Sẽ báo cáo cho Giám đốc Dịch vụ Chuyên nghiệp"
 
 #. module: hr
 #: model:ir.actions.act_window,help:hr.act_employee_from_department
@@ -1533,22 +1533,22 @@ msgstr "Bạn sẽ được hướng dẫn bởi những người có kinh nghi�
 #: model:hr.job,website_description:hr.job_developer
 #: model:hr.job,website_description:hr.job_trainee
 msgid "You will report to the head of R&amp;D"
-msgstr "Bạn sẽ bảo cáo cho trưởng phòng R&amp;D"
+msgstr "Bạn sẽ báo cáo cho trường bộ phận R&amp;D"
 
 #. module: hr
 #: model:hr.job,website_description:hr.job_developer
 msgid "You will work closely with all developers"
-msgstr "Bạn sẽ làm việc trực tiếp với người phát triển"
+msgstr "Bạn sẽ làm việc gần gũi với tất cả các nhà phát triển"
 
 #. module: hr
 #: model:hr.job,website_description:hr.job_cto
 msgid "You will work closely with all technical officer"
-msgstr "Bạn sẽ làm việc trực tiếp với tất cả các nhân viên kỹ thuật"
+msgstr "Bạn sẽ làm việc gần gũi với các cán bộ kỹ thuật"
 
 #. module: hr
 #: model:hr.job,website_description:hr.job_trainee
 msgid "You will work closely with all trainees"
-msgstr "Bạn sẽ làm việc trực tiếp với các thực tập sinh"
+msgstr "Bạn sẽ làm việc gần gũi với tất cả các thực tập sinh"
 
 #. module: hr
 #: model:mail.template,subject:hr.mail_template_data_unknown_employee_email_address

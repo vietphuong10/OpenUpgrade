@@ -1,7 +1,7 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
 # * purchase_requisition
-# 
+#
 # Translators:
 # Su Pham Nghiep Vu <nghiepvusupham58@gmail.com>, 2017
 # son dang <son.dang@doda100.com>, 2017

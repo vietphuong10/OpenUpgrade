@@ -1,7 +1,7 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
 # * web_editor
-# 
+#
 # Translators:
 # son dang <son.dang@doda100.com>, 2017
 # Phạm Lân <phamquanglan@gmail.com>, 2017
@@ -915,7 +915,7 @@ msgstr ""
 #: code:addons/web_editor/static/src/xml/editor.xml:259
 #, python-format
 msgid "Medium"
-msgstr "Trung bình"
+msgstr "Phương thức"
 
 #. module: web_editor
 #. openerp-web

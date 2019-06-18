@@ -176,7 +176,7 @@ msgstr "Thay thế đĩa phanh"
 #. module: fleet
 #: model:ir.model,name:fleet.model_fleet_vehicle_model_brand
 msgid "Brand of the vehicle"
-msgstr ""
+msgstr "Nhãn hiệu của phương tiện"
 
 #. module: fleet
 #: model:fleet.vehicle.tag,name:fleet.vehicle_tag_break
@@ -500,6 +500,9 @@ msgid ""
 "Costs paid at regular intervals, depending on the cost frequency. If the "
 "cost frequency is set to unique, the cost will be logged at the start date"
 msgstr ""
+"Các chi phí được thanh toán theo các khoảng thời gian nhất định, phụ thuộc "
+"vào tần suất của chi phí. Nếu tần suất của chi phí được thiết lập mang tính "
+"duy nhất, chi phí sẽ được ghi nhật ký vào ngày bắt đầu"
 
 #. module: fleet
 #: model:ir.ui.view,arch_db:fleet.fleet_vehicle_log_contract_view_form
@@ -1058,7 +1061,7 @@ msgstr "Cho thuê"
 #. module: fleet
 #: model:ir.model.fields,field_description:fleet.field_fleet_vehicle_license_plate
 msgid "License Plate"
-msgstr ""
+msgstr "Biển số"
 
 #. module: fleet
 #: code:addons/fleet/models/fleet_vehicle.py:224
@@ -1472,12 +1475,12 @@ msgstr "Giá"
 #. module: fleet
 #: model:ir.model.fields,field_description:fleet.field_fleet_vehicle_log_fuel_price_per_liter
 msgid "Price Per Liter"
-msgstr ""
+msgstr "Giá mỗi Lít"
 
 #. module: fleet
 #: model:fleet.vehicle.tag,name:fleet.vehicle_tag_purchased
 msgid "Purchased"
-msgstr "Đã mua"
+msgstr "Được mua về"
 
 #. module: fleet
 #: model:ir.model.fields,field_description:fleet.field_fleet_vehicle_log_fuel_purchaser_id

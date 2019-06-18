@@ -76,7 +76,7 @@ msgstr " không thể nạp được"
 #: code:addons/web/static/src/xml/base.xml:660
 #, python-format
 msgid "# Code editor"
-msgstr "# Chỉnh sửa mã"
+msgstr ""
 
 #. module: web
 #. openerp-web
@@ -84,14 +84,14 @@ msgstr "# Chỉnh sửa mã"
 #: code:addons/web/static/src/js/chrome/search_filters.js:349
 #, python-format
 msgid "%(field)s %(operator)s"
-msgstr "%(field)s %(operator)s"
+msgstr ""
 
 #. module: web
 #. openerp-web
 #: code:addons/web/static/src/js/chrome/search_filters.js:108
 #, python-format
 msgid "%(field)s %(operator)s \"%(value)s\""
-msgstr "%(field)s %(operator)s \"%(value)s\""
+msgstr ""
 
 #. module: web
 #. openerp-web
@@ -133,7 +133,7 @@ msgstr "%d tháng trước"
 #: code:addons/web/static/src/js/widgets/debug_manager.js:140
 #, python-format
 msgid "%d requests (%d ms) %d queries (%d ms)"
-msgstr "%d yêu cầu (%d ms) %d truy vấn (%d ms)"
+msgstr ""
 
 #. module: web
 #. openerp-web
@@ -149,9 +149,6 @@ msgid ""
 "                        &lt;body class=\"ie9\"&gt;\n"
 "                    &lt;![endif]--&gt;"
 msgstr ""
-"&lt;!--[if lt IE 10]&gt;\n"
-" &lt;body class=\"ie9\"&gt;\n"
-" &lt;![endif]--&gt;"
 
 #. module: web
 #: model:ir.ui.view,arch_db:web.minimal_layout
@@ -226,7 +223,7 @@ msgstr "(không nhãn)"
 #: code:addons/web/static/src/js/fields/field_utils.js:256
 #, python-format
 msgid "1 record"
-msgstr "1 bảng ghi"
+msgstr "1 bản ghi"
 
 #. module: web
 #: model:ir.ui.view,arch_db:web.menu_secondary
@@ -236,7 +233,7 @@ msgstr "<span class=\"oe_logo_edit\">Sửa dữ liệu công ty</span>"
 #. module: web
 #: model:ir.ui.view,arch_db:web.menu_secondary
 msgid "<span>Odoo</span>"
-msgstr "<span>Hệ thống</span>"
+msgstr ""
 
 #. module: web
 #. openerp-web
@@ -246,8 +243,8 @@ msgid ""
 "A popup window with your report was blocked.  You may need to change your "
 "browser settings to allow popup windows for this page."
 msgstr ""
-"Kèm một cửa sổ với báo cáo bị chặn của bạn.  Bạn có thể cần phải thay đổi "
-"thiết lập trên trình duyệt để cho phép thông báo của trang này."
+"Một cửa sổ popup theo báo cáo của bạn đã bị chặn. Bạn có thể cần thay đổi thiết "
+"lập trình duyệt của bạn để cho phép cửa sổ popup đối với trang này."
 
 #. module: web
 #. openerp-web
@@ -554,7 +551,7 @@ msgid ""
 "base64-encoded. That does not seem to be the case for %s."
 msgstr ""
 "Trường Nhị phân không thể xuất ra Excel trừ phi nội dung của nó được mã hoá "
-"base64 (base64-encoded). Đó dường như không phải tình huống cho %s "
+"base64 (base64-encoded). Đó dường như không phải tình huống %s "
 
 #. module: web
 #. openerp-web
@@ -618,7 +615,7 @@ msgstr "Hủy"
 #: code:addons/web/static/src/js/views/graph/graph_renderer.js:92
 #, python-format
 msgid "Cannot render chart with mode : "
-msgstr "Không thể hiển thị biểu đồ với chế độ:"
+msgstr "Không thể biểu diễn (render) đồ thị với chế độ: "
 
 #. module: web
 #. openerp-web
@@ -1069,8 +1066,8 @@ msgstr "Sửa giao diện Pivot"
 #. openerp-web
 #: code:addons/web/static/src/xml/base.xml:278
 #, python-format
-msgid "Edit Search view"
-msgstr "Chỉnh sửa khung Tìm kiếm"
+msgid "Edit SearchView"
+msgstr "Sửa Giao diện Tìm kiếm"
 
 #. module: web
 #. openerp-web
@@ -1094,7 +1091,7 @@ msgstr "Tên đăng nhập / Email"
 #. module: web
 #: model:ir.ui.view,arch_db:web.external_layout_standard
 msgid "Email:"
-msgstr "Email:"
+msgstr ""
 
 #. module: web
 #. openerp-web
@@ -1321,7 +1318,8 @@ msgstr "Mẫu"
 #: code:addons/web/static/src/xml/base.xml:1349
 #, python-format
 msgid "Get this feature and much more with Odoo Enterprise!"
-msgstr "Nhận được tính năng này và nhiều hơn nữa với phiên bản Doanh nghiệp!"
+msgstr ""
+"Nhận được tính năng này và nhiều hơn nữa với phiên bản Odoo Enterprise!"
 
 #. module: web
 #. openerp-web
@@ -1424,7 +1422,7 @@ msgstr "Miền không hợp lệ"
 #: code:addons/web/static/src/xml/base.xml:742
 #, python-format
 msgid "Invalid field chain"
-msgstr "Chuỗi trường không hợp lệ"
+msgstr ""
 
 #. module: web
 #. openerp-web
@@ -1438,7 +1436,7 @@ msgstr "Chế độ không hợp lệ cho đồ thị"
 #: code:addons/web/static/src/js/widgets/debug_manager.js:208
 #, python-format
 msgid "JS Mobile Tests"
-msgstr "JS Mobile Tests"
+msgstr ""
 
 #. module: web
 #. openerp-web
@@ -1572,14 +1570,14 @@ msgstr "Khớp"
 #: code:addons/web/static/src/xml/base.xml:651
 #, python-format
 msgid "Match records with"
-msgstr "Kết hợp các bản ghi với"
+msgstr ""
 
 #. module: web
 #. openerp-web
 #: code:addons/web/static/src/xml/base.xml:649
 #, python-format
 msgid "Match records with the following rule:"
-msgstr "Kết hợp các bản ghi với quy tắc sau:"
+msgstr "Khớp các bản ghi với quy tắc sau:"
 
 #. module: web
 #. openerp-web
@@ -1679,14 +1677,14 @@ msgstr "Di chuyển lên"
 #: code:addons/web/static/src/xml/base.xml:1334
 #, python-format
 msgid "My Odoo.com account"
-msgstr "Tài khoản Hệ thống"
+msgstr "Tài khoản Odoo.com"
 
 #. module: web
 #. openerp-web
 #: code:addons/web/static/src/xml/base.xml:639
 #, python-format
 msgid "NONE"
-msgstr "KHÔNG CÓ GÌ"
+msgstr ""
 
 #. module: web
 #. openerp-web
@@ -1778,7 +1776,7 @@ msgstr "Không có metadata nào"
 #: code:addons/web/static/src/js/fields/field_utils.js:254
 #, python-format
 msgid "No records"
-msgstr "Không có bảng ghi"
+msgstr "Không có bản ghi"
 
 #. module: web
 #. openerp-web
@@ -2091,7 +2089,7 @@ msgstr "Được hỗ trợ bởi"
 #. module: web
 #: model:ir.ui.view,arch_db:web.login_layout
 msgid "Powered by <span>Odoo</span>"
-msgstr "Được hỗ trợ bởi <span>Hệ thống</span>"
+msgstr "Được hỗ trợ bởi <span>Hệ thống Odoo</span>"
 
 #. module: web
 #. openerp-web
@@ -2130,7 +2128,7 @@ msgstr "Quý"
 #: code:addons/web/static/src/js/widgets/model_field_selector.js:455
 #, python-format
 msgid "Relation not allowed"
-msgstr "Quan hệ không cho phép"
+msgstr "Quan hệ không được phép"
 
 #. module: web
 #. openerp-web
@@ -2193,14 +2191,14 @@ msgstr "Khôi phục các bản ghi"
 #: code:addons/web/static/src/xml/base.xml:222
 #, python-format
 msgid "Run JS Mobile Tests"
-msgstr "Chạy kiểm tra JS Điện thoại"
+msgstr "Chạy Kiểm thử Mobile JS"
 
 #. module: web
 #. openerp-web
 #: code:addons/web/static/src/xml/base.xml:221
 #, python-format
 msgid "Run JS Tests"
-msgstr "Chạy kiểm tra JS"
+msgstr "Chạy Kiểm thử JS"
 
 #. module: web
 #. openerp-web
@@ -2479,7 +2477,7 @@ msgstr "Điện thoại:"
 #: code:addons/web/static/src/js/widgets/domain_selector.js:567
 #, python-format
 msgid "The domain you entered is not properly formed"
-msgstr "Tên miền bạn đã nhập không được định dạng đúng"
+msgstr "Miền bạn đã nhập không được định dạng đúng"
 
 #. module: web
 #. openerp-web
@@ -2489,8 +2487,6 @@ msgid ""
 "The field chain is not valid. Did you maybe use a non-existing field name or"
 " followed a non-relational field?"
 msgstr ""
-"Chuỗi trường không hợp lệ. Bạn có thể sử dụng một tên trường không tồn tại "
-"hoặc theo một trường không quan hệ?"
 
 #. module: web
 #. openerp-web
@@ -2612,8 +2608,8 @@ msgid ""
 "one. The time in Odoo is displayed according to your field timezone."
 msgstr ""
 "Múi giờ không khớp: Múi giờ ở trình duyệt của bạn không khớp với múi giờ bạn"
-" chọn trong Hệ thống. Thời gian trong Hệ thống được hiển thị theo thiết lập "
-"múi giờ của bạn."
+" chọn trong Odoo. Thời gian trong Odoo được hiển thị theo thiết lập múi giờ "
+"của bạn."
 
 #. module: web
 #. openerp-web
@@ -2634,7 +2630,7 @@ msgstr "Hôm nay"
 #: code:addons/web/static/src/xml/base.xml:226
 #, python-format
 msgid "Toggle Timelines"
-msgstr "Chuyển đổi dòng thời gian"
+msgstr ""
 
 #. module: web
 #. openerp-web
@@ -2656,7 +2652,7 @@ msgstr "Traceback:"
 #: code:addons/web/static/src/js/fields/field_utils.js:62
 #, python-format
 msgid "True"
-msgstr "Đúng"
+msgstr ""
 
 #. module: web
 #. openerp-web
@@ -2681,8 +2677,8 @@ msgid ""
 "system. The report will be shown in html.<br><br><a href=\"http://wkhtmltopdf.org/\" target=\"_blank\">\n"
 "wkhtmltopdf.org</a>"
 msgstr ""
-"Không thể tìm thấy Wkhtmltopdf trên trang này\n"
-"hệ thống. Báo cáo sẽ được hiển thị bằng html.<br><br><a href=\"http://wkhtmltopdf.org/\" target=\"_blank\">\n"
+"Không thể tìm thấy Wkhtmltopdf trong\n"
+"hệ thống này. Báo cáo sẽ được hiển thị bằng html.<br><br><a href=\"http://wkhtmltopdf.org/\" target=\"_blank\">\n"
 "wkhtmltopdf.org"
 
 #. module: web
@@ -2718,7 +2714,7 @@ msgstr "Widget không được kiểm soát"
 #: code:addons/web/static/src/js/chrome/abstract_web_client.js:187
 #, python-format
 msgid "Unknown CORS error"
-msgstr "Lỗi CORS không xác định"
+msgstr ""
 
 #. module: web
 #. openerp-web
@@ -2827,7 +2823,7 @@ msgstr "Cảnh báo"
 #. module: web
 #: model:ir.ui.view,arch_db:web.benchmark_suite
 msgid "Web Benchmarks"
-msgstr "Chấm điểm Web"
+msgstr ""
 
 #. module: web
 #: model:ir.ui.view,arch_db:web.qunit_mobile_suite
@@ -2843,7 +2839,7 @@ msgstr "Kiểm tra Web"
 #: model:ir.ui.view,arch_db:web.external_layout_boxed
 #: model:ir.ui.view,arch_db:web.external_layout_standard
 msgid "Web:"
-msgstr "Web:"
+msgstr ""
 
 #. module: web
 #. openerp-web
@@ -2929,7 +2925,6 @@ msgstr "Bạn đang tạo mới một %s, Bạn chắc chắc nó không có s�
 #, python-format
 msgid "You cannot follow relations for this field chain construction"
 msgstr ""
-"Bạn không thể theo dõi các mối quan hệ cho việc xây dựng chuỗi trường này"
 
 #. module: web
 #: code:addons/web/controllers/main.py:794
@@ -2985,7 +2980,7 @@ msgstr ""
 #, python-format
 msgid "Your Odoo session expired. Please refresh the current web page."
 msgstr ""
-"Phiên làm việc của bạn đã hết hạn. Hãy nạp lại trang hiện tại (F5 hoặc "
+"Phiên làm việc của bạn đã hết hạn. Xin hãy nạp lại trang hiện tại (F5 hoặc "
 "Ctrl+F5)."
 
 #. module: web
@@ -3048,19 +3043,19 @@ msgstr "khoảng một giờ trước"
 #: code:addons/web/static/src/xml/base.xml:644
 #, python-format
 msgid "all records"
-msgstr "tất cả hồ sơ"
+msgstr "tất cả bản ghi"
 
 #. module: web
 #: model:ir.model,name:web.model_base
 msgid "base"
-msgstr "cơ bản"
+msgstr ""
 
 #. module: web
 #. openerp-web
 #: code:addons/web/static/src/js/widgets/domain_selector.js:28
 #, python-format
 msgid "child of"
-msgstr "cấp con của"
+msgstr ""
 
 #. module: web
 #. openerp-web
@@ -3098,12 +3093,12 @@ msgstr "lớn hơn hoặc bằng"
 #: code:addons/web/static/src/js/widgets/domain_selector.js:25
 #, python-format
 msgid "in"
-msgstr "trong"
+msgstr ""
 
 #. module: web
 #: model:ir.model,name:web.model_ir_qweb_field_image
 msgid "ir.qweb.field.image"
-msgstr "ir.qweb.field.image"
+msgstr ""
 
 #. module: web
 #. openerp-web
@@ -3120,7 +3115,7 @@ msgstr "là"
 #: code:addons/web/static/src/js/chrome/search_filters.js:183
 #, python-format
 msgid "is after"
-msgstr "là sau"
+msgstr "sau"
 
 #. module: web
 #. openerp-web
@@ -3134,7 +3129,7 @@ msgstr ""
 #: code:addons/web/static/src/js/chrome/search_filters.js:184
 #, python-format
 msgid "is before"
-msgstr "là trước"
+msgstr "trước"
 
 #. module: web
 #. openerp-web
@@ -3221,7 +3216,7 @@ msgstr "bằng true"
 #: code:addons/web/static/src/js/core/utils.js:127
 #, python-format
 msgid "kMGTPE"
-msgstr "kMGTPE"
+msgstr ""
 
 #. module: web
 #. openerp-web
@@ -3252,7 +3247,7 @@ msgstr "nhỏ hơn hoặc bằng"
 #: code:addons/web/static/src/xml/base.xml:734
 #, python-format
 msgid "not"
-msgstr "không"
+msgstr ""
 
 #. module: web
 #. openerp-web
@@ -3273,21 +3268,21 @@ msgstr "không phải là một số hợp lệ"
 #: code:addons/web/static/src/js/widgets/domain_selector.js:24
 #, python-format
 msgid "not contains"
-msgstr "không chứa"
+msgstr ""
 
 #. module: web
 #. openerp-web
 #: code:addons/web/static/src/js/widgets/domain_selector.js:26
 #, python-format
 msgid "not in"
-msgstr "không ở"
+msgstr ""
 
 #. module: web
 #. openerp-web
 #: code:addons/web/static/src/js/widgets/domain_selector.js:658
 #, python-format
 msgid "not set (false)"
-msgstr "chưa được đặt (sai)"
+msgstr ""
 
 #. module: web
 #. openerp-web
@@ -3337,11 +3332,11 @@ msgstr "còn lại)"
 #: code:addons/web/static/src/xml/base.xml:734
 #, python-format
 msgid "set"
-msgstr "đặt"
+msgstr ""
 
 #. module: web
 #. openerp-web
 #: code:addons/web/static/src/js/widgets/domain_selector.js:658
 #, python-format
 msgid "set (true)"
-msgstr "đặt (đúng)"
+msgstr ""

@@ -1,7 +1,7 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
 # * theme_default
-# 
+#
 # Translators:
 # Martin Trigaux, 2017
 # Duy BQ <duybq86@gmail.com>, 2018

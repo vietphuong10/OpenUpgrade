@@ -32,7 +32,7 @@ msgstr "<span class=\"fa fa-1x fa-tags\"/> Tất cả"
 #. module: website_customer
 #: model:ir.model.fields,field_description:website_customer.field_res_partner_tag_active
 msgid "Active"
-msgstr "Có hiệu lực"
+msgstr "Hiệu lực"
 
 #. module: website_customer
 #: code:addons/website_customer/controllers/main.py:80
@@ -44,7 +44,7 @@ msgstr "Tất cả Quốc gia"
 #: code:addons/website_customer/controllers/main.py:61
 #, python-format
 msgid "All Sectors of Activity"
-msgstr "Tất cả các ngành hoạt động"
+msgstr "Tất cả các Phân khúc Hoạt động"
 
 #. module: website_customer
 #: model:ir.model.fields,help:website_customer.field_res_partner_tag_classname
@@ -79,7 +79,7 @@ msgstr "Được tạo bởi"
 #. module: website_customer
 #: model:ir.model.fields,field_description:website_customer.field_res_partner_tag_create_date
 msgid "Created on"
-msgstr "Thời điểm tạo"
+msgstr "Được tạo vào"
 
 #. module: website_customer
 #: model:ir.model.fields,field_description:website_customer.field_res_partner_tag_display_name
@@ -94,7 +94,7 @@ msgstr "ID"
 #. module: website_customer
 #: model:ir.ui.view,arch_db:website_customer.implemented_by_block
 msgid "Implemented By"
-msgstr "Thực hiện bởi"
+msgstr "Được triển khai Bởi"
 
 #. module: website_customer
 #: model:ir.model.fields,field_description:website_customer.field_res_partner_tag___last_update
@@ -109,7 +109,7 @@ msgstr "Cập nhật lần cuối bởi"
 #. module: website_customer
 #: model:ir.model.fields,field_description:website_customer.field_res_partner_tag_write_date
 msgid "Last Updated on"
-msgstr "Cập nhật lần cuối vào"
+msgstr "Cập nhật lần cuối"
 
 #. module: website_customer
 #: model:ir.actions.act_window,help:website_customer.action_partner_tag_form
@@ -133,7 +133,7 @@ msgstr "Thành tựu của chúng tôi"
 #. module: website_customer
 #: model:ir.ui.view,arch_db:website_customer.view_partner_tag_form
 msgid "Partner Tag"
-msgstr "Partner Tag"
+msgstr "Tag Đối tác"
 
 #. module: website_customer
 #: model:ir.model,name:website_customer.model_res_partner_tag
@@ -155,7 +155,7 @@ msgstr "Các tham chiếu"
 #. module: website_customer
 #: model:ir.ui.view,arch_db:website_customer.opt_country_list
 msgid "References by Country"
-msgstr "Tham vấn theo quốc gia"
+msgstr "Tham chiếu theo Quốc gia"
 
 #. module: website_customer
 #: model:ir.ui.view,arch_db:website_customer.opt_industry_list
@@ -165,12 +165,12 @@ msgstr ""
 #. module: website_customer
 #: model:ir.ui.view,arch_db:website_customer.opt_tag_list
 msgid "References by Tag"
-msgstr ""
+msgstr "Tham chiếu theo Thẻ"
 
 #. module: website_customer
 #: model:ir.ui.view,arch_db:website_customer.index
 msgid "Search"
-msgstr "Search"
+msgstr "Tìm kiếm"
 
 #. module: website_customer
 #: model:ir.ui.view,arch_db:website_customer.index

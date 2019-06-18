@@ -104,17 +104,17 @@ msgstr "${object.project_id.company_id.name}: Đề nghị Đánh giá Dịch v�
 #. module: rating_project
 #: model:ir.ui.view,arch_db:rating_project.view_project_project_rating_form
 msgid "% On tasks"
-msgstr "% trong tác vụ"
+msgstr ""
 
 #. module: rating_project
 #: model:ir.ui.view,arch_db:rating_project.view_project_project_rating_kanban
 msgid "<i class=\"fa fa-smile-o\"/> No rating yet"
-msgstr "<i class=\"fa fa-smile-o\"/>Chưa có xếp hạng "
+msgstr "<i class=\"fa fa-smile-o\"/>Chưa có đánh giá "
 
 #. module: rating_project
 #: model:ir.model.fields,field_description:rating_project.field_project_task_type_auto_validation_kanban_state
 msgid "Automatic kanban status"
-msgstr "Trạng thái kanban tự động"
+msgstr "Tình trạng kanban tự động"
 
 #. module: rating_project
 #: model:ir.model.fields,help:rating_project.field_project_task_type_auto_validation_kanban_state
@@ -129,12 +129,12 @@ msgstr ""
 #: model:ir.ui.menu,name:rating_project.rating_rating_menu_project
 #: model:ir.ui.view,arch_db:rating_project.view_project_project_rating_kanban
 msgid "Customer Ratings"
-msgstr "Khách hàng xếp hạng"
+msgstr "Đánh giá của Khách hàng"
 
 #. module: rating_project
 #: model:ir.actions.act_window,name:rating_project.rating_rating_action_task
 msgid "Customer Ratings on tasks"
-msgstr "Khách hàng xếp hạng trong tác vụ"
+msgstr "Đánh giá của Khách hàng đối với Nhiệm vụ"
 
 #. module: rating_project
 #: model:ir.actions.act_window,help:rating_project.rating_rating_action_task
@@ -142,7 +142,7 @@ msgid ""
 "Customer ratings on tasks. If you have no rating, change your project "
 "Settings to activate it."
 msgstr ""
-"Xếp hạng của khách hàng về công việc. Nếu bạn không có xếp hạng, hãy thay "
+"Đánh giá của khách hàng về nhiệm vụ. Nếu bạn không có Đánh giá, hãy thay "
 "đổi Cài đặt dự án của bạn để kích hoạt nó."
 
 #. module: rating_project
@@ -151,13 +151,13 @@ msgid ""
 "Customer ratings on tasks/issues. If you have no rating, change your project"
 " Settings to activate it."
 msgstr ""
-"Xếp hạng của khách hàng về các nhiệm vụ / vấn đề. Nếu bạn không có xếp hạng,"
+"Đánh giá của khách hàng về các nhiệm vụ. Nếu bạn không có Đánh giá,"
 " hãy thay đổi Cài đặt dự án của bạn để kích hoạt nó"
 
 #. module: rating_project
 #: model:ir.model.fields,field_description:rating_project.field_project_project_rating_status
 msgid "Customer(s) Ratings"
-msgstr "Các Khách hàng xếp hạng"
+msgstr "Đánh giá bởi Khách hàng"
 
 #. module: rating_project
 #: selection:project.project,rating_status_period:0
@@ -170,18 +170,18 @@ msgid ""
 "Edit project's stages and set an email template\n"
 "                            on the stages on which you want to activate the rating."
 msgstr ""
-"Chỉnh sửa các giai đoạn của dự án và đặt mẫu email\n"
-"trên các giai đoạn mà bạn muốn kích hoạt xếp hạng."
+"Điều chỉnh các giai đoạn của dự án và thiết lập Mẫu Email Đánh giá\n"
+"                            cho giai đoạn mà bạn cần kích hoạt việc đánh giá."
 
 #. module: rating_project
 #: model:ir.model.fields,field_description:rating_project.field_project_project_percentage_satisfaction_project
 msgid "Happy % on Project"
-msgstr "Chúc mừng % trong Dự án"
+msgstr "Hài lòng % về Dự án"
 
 #. module: rating_project
 #: model:ir.model.fields,field_description:rating_project.field_project_project_percentage_satisfaction_task
 msgid "Happy % on Task"
-msgstr "Chúc mừng % trong Tác vụ"
+msgstr "Hài lòng % về Nhiệm vụ"
 
 #. module: rating_project
 #: model:ir.model.fields,help:rating_project.field_project_project_rating_status
@@ -192,6 +192,10 @@ msgid ""
 "\n"
 "Don't forget to set up the mail templates on the stages for which you want to get the customer's feedbacks."
 msgstr ""
+"Làm thế nào để nhận phản hồi của khách hàng?"
+"- Đánh giá khi thay đổi giai đoạn: Email sẽ được gửi cho khách hàng khi một nhiệm vụ được chuyển sang một giai đoạn định trước nào đó\n"
+"- Đánh giá Định kỳ: Email sẽ được gửi định kỳ để mời khách hàng đánh giá các nhiệm vụ\n"
+"\n"
 
 #. module: rating_project
 #: model:ir.model.fields,help:rating_project.field_project_task_type_rating_template_id
@@ -200,8 +204,8 @@ msgid ""
 "stage', then an email will be sent to the customer when the task reaches "
 "this step."
 msgstr ""
-"Nếu được chọn và nếu cấu hình xếp hạng của dự án là 'Xếp hạng khi thay đổi "
-"giai đoạn', thì email sẽ được gửi tới khách hàng khi tác vụ đạt đến bước "
+"Nếu được chọn và nếu cấu hình đánh giá của dự án là 'Đánh giá khi thay đổi "
+"giai đoạn', thì email sẽ được gửi tới khách hàng khi Nhiệm vụ đạt đến bước "
 "này."
 
 #. module: rating_project
@@ -227,12 +231,12 @@ msgstr "Đánh giá mới nhất: Hài lòng"
 #. module: rating_project
 #: selection:project.project,rating_status:0
 msgid "No rating"
-msgstr "Không xếp hạng"
+msgstr "Không đánh giá"
 
 #. module: rating_project
 #: selection:project.project,rating_status_period:0
 msgid "Once a Month"
-msgstr "Mỗi tháng một lần"
+msgstr "Một tháng một lần"
 
 #. module: rating_project
 #: model:ir.ui.view,arch_db:rating_project.view_project_project_rating_kanban
@@ -240,13 +244,13 @@ msgid ""
 "Percentage of happy ratings over the past 30 days. Get rating details from "
 "the More menu."
 msgstr ""
-"Tỷ lệ phần trăm xếp hạng hài lòng trong 30 ngày qua. Nhận chi tiết xếp hạng "
+"Tỷ lệ phần trăm đánh giá hài lòng trong 30 ngày qua. Nhận chi tiết đánh giá "
 "từ menu Khác."
 
 #. module: rating_project
 #: selection:project.project,rating_status:0
 msgid "Periodical Rating"
-msgstr "Xếp hạng định kỳ"
+msgstr "Đánh giá Định kỳ"
 
 #. module: rating_project
 #: model:ir.model,name:rating_project.model_project_project
@@ -259,7 +263,7 @@ msgstr "Dự án"
 #: model:ir.cron,cron_name:rating_project.ir_cron_rating_project
 #: model:ir.cron,name:rating_project.ir_cron_rating_project
 msgid "Project: Send rating"
-msgstr "Dự án: gửi xếp hạng"
+msgstr "Dự án: gửi đánh giá"
 
 #. module: rating_project
 #: selection:project.project,rating_status_period:0
@@ -269,7 +273,7 @@ msgstr "Hàng Quý"
 #. module: rating_project
 #: model:ir.ui.view,arch_db:rating_project.project_task_view_search
 msgid "Rated tasks"
-msgstr "Tác vụ đã xếp hạng"
+msgstr "Nhiệm vụ đã được Đánh giá"
 
 #. module: rating_project
 #: model:ir.actions.act_window,name:rating_project.rating_rating_action_view_project_rating
@@ -290,12 +294,12 @@ msgstr "Tần suất Đánh giá"
 #. module: rating_project
 #: model:ir.model.fields,field_description:rating_project.field_project_project_rating_request_deadline
 msgid "Rating Request Deadline"
-msgstr "Thời hạn yêu cầu xếp hạng"
+msgstr "Hạn chót yêu cầu đánh giá"
 
 #. module: rating_project
 #: model:ir.ui.view,arch_db:rating_project.rating_rating_view_search_project
 msgid "Rating for tasks"
-msgstr "Xếp hạng cho Tác vụ"
+msgstr "Đánh giá cho Nhiệm vụ"
 
 #. module: rating_project
 #: selection:project.project,rating_status:0
@@ -305,23 +309,23 @@ msgstr "Đánh giá khi thay đổi giai đoạn"
 #. module: rating_project
 #: model:mail.message.subtype,description:rating_project.mt_task_rating
 msgid "Ratings"
-msgstr "Xếp hạng"
+msgstr "Đánh giá"
 
 #. module: rating_project
 #: code:addons/rating_project/models/project.py:107
 #, python-format
 msgid "Ratings of %s"
-msgstr "Xếp hạng của %s"
+msgstr ""
 
 #. module: rating_project
 #: model:ir.actions.act_window,name:rating_project.rating_rating_action_view_project_rating_task
 msgid "Ratings on tasks"
-msgstr "Xếp hạng tác vụ"
+msgstr "Đánh giá về Nhiệm vụ"
 
 #. module: rating_project
 #: model:ir.ui.view,arch_db:rating_project.res_config_settings_view_form
 msgid "Set Email Template to Stages"
-msgstr "Đặt mẫu Email cho Trạng thái"
+msgstr "Đặt mẫu Email cho Giai đoạn"
 
 #. module: rating_project
 #: model:ir.model,name:rating_project.model_project_task
@@ -347,7 +351,7 @@ msgstr "Hiện tại không có đánh giá cho nhiệm vụ của dự án này
 #. module: rating_project
 #: model:ir.actions.act_window,help:rating_project.rating_rating_action_view_project_rating
 msgid "There is no rating for this object at the moment."
-msgstr "Hiện tại không có xếp hạng cho đối tượng này."
+msgstr "Hiện tại không có đánh giá cho đối tượng này."
 
 #. module: rating_project
 #: selection:project.project,rating_status_period:0

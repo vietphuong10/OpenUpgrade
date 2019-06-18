@@ -28,27 +28,27 @@ msgstr ""
 #. module: hr_holidays
 #: model:ir.ui.view,arch_db:hr_holidays.report_holidayssummary
 msgid "!important &gt;&lt;/td&gt;"
-msgstr "!important &gt;&lt;/td&gt;"
+msgstr ""
 
 #. module: hr_holidays
 #: model:ir.ui.view,arch_db:hr_holidays.report_holidayssummary
 msgid "!important /&gt;"
-msgstr "!important /&gt;"
+msgstr ""
 
 #. module: hr_holidays
 #: model:ir.ui.view,arch_db:hr_holidays.report_holidayssummary
 msgid "!important/&gt;"
-msgstr "!important/&gt;"
+msgstr ""
 
 #. module: hr_holidays
 #: model:ir.ui.view,arch_db:hr_holidays.report_holidayssummary
 msgid "!important; font-size: 10px\" &gt;"
-msgstr "!important; font-size: 10px\" &gt;"
+msgstr ""
 
 #. module: hr_holidays
 #: model:ir.ui.view,arch_db:hr_holidays.report_holidayssummary
 msgid "!important; font-size: 8px; min-width: 18px\"&gt;"
-msgstr "!important; font-size: 8px; min-width: 18px\"&gt;"
+msgstr ""
 
 #. module: hr_holidays
 #: code:addons/hr_holidays/models/hr_holidays.py:123
@@ -71,12 +71,12 @@ msgstr "%s vào %s : %.2f ngày"
 #. module: hr_holidays
 #: model:ir.ui.view,arch_db:hr_holidays.report_holidayssummary
 msgid "&lt;/td&gt;"
-msgstr "&lt;/td&gt;"
+msgstr ""
 
 #. module: hr_holidays
 #: model:ir.ui.view,arch_db:hr_holidays.report_holidayssummary
 msgid "&lt;/th&gt;"
-msgstr "&lt;/th&gt;"
+msgstr ""
 
 #. module: hr_holidays
 #: model:ir.ui.view,arch_db:hr_holidays.report_holidayssummary
@@ -84,18 +84,16 @@ msgid ""
 "&lt;td class=\"text-center oe_leftfit oe_rightfit\" style=\"background-"
 "color:"
 msgstr ""
-"&lt;td class=\"text-center oe_leftfit oe_rightfit\" style=\"background-"
-"color:"
 
 #. module: hr_holidays
 #: model:ir.ui.view,arch_db:hr_holidays.report_holidayssummary
 msgid "&lt;td style=background-color:"
-msgstr "&lt;td style=background-color:"
+msgstr ""
 
 #. module: hr_holidays
 #: model:ir.ui.view,arch_db:hr_holidays.report_holidayssummary
 msgid "&lt;th class=\"text-center\" colspan="
-msgstr "&lt;th class=\"text-center\" colspan="
+msgstr ""
 
 #. module: hr_holidays
 #: model:ir.ui.view,arch_db:hr_holidays.view_hr_holidays_kanban
@@ -154,7 +152,7 @@ msgstr "Hiệu lực"
 #. module: hr_holidays
 #: model:ir.ui.view,arch_db:hr_holidays.view_hr_holidays_filter
 msgid "Active Leaves and Allocations"
-msgstr "Hoạt động và phân bổ nghỉ phép"
+msgstr "Nghỉ và Cấp phát Nghỉ đang Hiệu lực"
 
 #. module: hr_holidays
 #: model:ir.ui.view,arch_db:hr_holidays.view_hr_holidays_filter
@@ -169,12 +167,12 @@ msgstr "Thêm một lý do..."
 #. module: hr_holidays
 #: model:ir.actions.act_window,name:hr_holidays.action_hr_holidays_dashboard
 msgid "All Leaves"
-msgstr "Tất cả ngày nghỉ"
+msgstr "Tất cả người nghỉ"
 
 #. module: hr_holidays
 #: model:ir.actions.act_window,name:hr_holidays.hr_holidays_leaves_assign_legal
 msgid "Allocate Leaves for Employees"
-msgstr "Phân bổ nghỉ phép cho Nhân viên"
+msgstr "Cấp phát Nghỉ cho Nhân viên"
 
 #. module: hr_holidays
 #: model:ir.ui.view,arch_db:hr_holidays.view_holiday_allocation_tree
@@ -222,7 +220,7 @@ msgstr "Cấp phát cho %s"
 #: code:addons/hr_holidays/models/hr_holidays.py:337
 #, python-format
 msgid "Allocation of %s : %.2f day(s) To %s"
-msgstr "Phân bổ của %s : %.2f ngày đến %s"
+msgstr "Cấp phát của %s : %.2f ngày đến %s"
 
 #. module: hr_holidays
 #: model:ir.model.fields,field_description:hr_holidays.field_hr_department_allocation_to_approve_count
@@ -363,7 +361,7 @@ msgstr "Bấm để tạo mới một đề nghị Tuyển nhân sự."
 #. module: hr_holidays
 #: model:ir.actions.act_window,help:hr_holidays.open_department_holidays_allocation_approve
 msgid "Click here to create a new leave allocation."
-msgstr "Bấm để tạo mới phân bổ nghỉ phép"
+msgstr "Bấm để tạo mới Cấp phát nghỉ"
 
 #. module: hr_holidays
 #: model:ir.actions.act_window,help:hr_holidays.open_company_allocation
@@ -468,7 +466,7 @@ msgstr "Nghỉ cho Phòng ban"
 #. module: hr_holidays
 #: model:ir.actions.act_window,name:hr_holidays.open_department_holidays_allocation_approve
 msgid "Department Leaves Allocation"
-msgstr "Phân bổ nghỉ phép cho Phòng ban"
+msgstr "Cấp phát Nghỉ cho Phòng ban"
 
 #. module: hr_holidays
 #: model:ir.model.fields,field_description:hr_holidays.field_hr_holidays_summary_dept_depts
@@ -738,7 +736,7 @@ msgstr ""
 #, python-format
 msgid ""
 "Leave request must be in Draft state (\"To Submit\") in order to confirm it."
-msgstr "Yêu cầu phải ở trạng thái Dự thảo (\"To Submit\") để xác nhận."
+msgstr "Yêu cầu phải ở trạng thái Dự thảo (\"Chờ trình\") để xác nhận."
 
 #. module: hr_holidays
 #: code:addons/hr_holidays/models/hr_holidays.py:407
@@ -767,12 +765,12 @@ msgstr "Ngày nghỉ"
 #. module: hr_holidays
 #: model:ir.ui.menu,name:hr_holidays.menu_open_department_leave_allocation_approve
 msgid "Leaves Allocation"
-msgstr "Phân bổ nghỉ phép"
+msgstr "Cấp phát Nghỉ"
 
 #. module: hr_holidays
 #: model:ir.model.fields,field_description:hr_holidays.field_hr_holidays_status_leaves_taken
 msgid "Leaves Already Taken"
-msgstr "Ngày nghĩ đã dùng"
+msgstr "Ngày nghỉ đã dùng"
 
 #. module: hr_holidays
 #: model:ir.actions.act_window,name:hr_holidays.action_hr_available_holidays_report
@@ -808,7 +806,7 @@ msgstr "Tóm tắt Nghỉ"
 #. module: hr_holidays
 #: model:ir.ui.view,arch_db:hr_holidays.hr_holiday_status_view_kanban
 msgid "Leaves Taken:"
-msgstr "Ngày nghỉ đã dùng"
+msgstr "Ngày nghỉ đã dùng:"
 
 #. module: hr_holidays
 #: model:ir.actions.act_window,name:hr_holidays.action_hr_holidays_summary_dept
@@ -846,27 +844,27 @@ msgstr "Nghỉ."
 #. module: hr_holidays
 #: model:mail.message.subtype,name:hr_holidays.mt_department_holidays_approved
 msgid "Leaves/Allocation Approved"
-msgstr "Nghỉ phép/Phân bổ được Duyệt"
+msgstr "Nghỉ/Cấp phát nghỉ được Duyệt"
 
 #. module: hr_holidays
 #: model:mail.message.subtype,name:hr_holidays.mt_department_holidays_refused
 msgid "Leaves/Allocation Refused"
-msgstr "Nghỉ phép/Phân bổ bị Từ chối"
+msgstr "Nghỉ/Cấp phát nghỉ bị Từ chối"
 
 #. module: hr_holidays
 #: model:mail.message.subtype,name:hr_holidays.mt_department_holidays_confirmed
 msgid "Leaves/Allocations Confirmed"
-msgstr "Nghỉ phép/Phân bổ được Xác nhận"
+msgstr "Nghỉ/Cấp phát nghỉ được Xác nhận"
 
 #. module: hr_holidays
 #: model:mail.message.subtype,name:hr_holidays.mt_department_holidays_first_validated
 msgid "Leaves/Allocations First Approval"
-msgstr "Nghỉ phép/Phân bổ được Duyệt lần đầu"
+msgstr "Nghỉ/Cấp phát nghỉ được Duyệt lần đầu"
 
 #. module: hr_holidays
 #: model:hr.holidays.status,name:hr_holidays.holiday_status_cl
 msgid "Legal Leaves 2019"
-msgstr ""
+msgstr "Nghỉ luật định 2019"
 
 #. module: hr_holidays
 #: selection:hr.holidays.status,color_name:0
@@ -1004,7 +1002,7 @@ msgstr "Số lần Nghỉ"
 #: model:ir.model.fields,help:hr_holidays.field_hr_holidays_number_of_days_temp
 msgid ""
 "Number of days of the leave request according to your working schedule."
-msgstr "Số ngày yêu cầu nghỉ theo lịch làm việc của bạn."
+msgstr ""
 
 #. module: hr_holidays
 #: model:res.groups,name:hr_holidays.group_hr_holidays_user
@@ -1193,13 +1191,13 @@ msgstr "Chấp thuận Lần 2"
 #: code:addons/hr_holidays/models/hr_holidays.py:596
 #, python-format
 msgid "See Allocation"
-msgstr "Xem phân bổ"
+msgstr ""
 
 #. module: hr_holidays
 #: code:addons/hr_holidays/models/hr_holidays.py:596
 #, python-format
 msgid "See Leave"
-msgstr "Xem ngày nghỉ"
+msgstr ""
 
 #. module: hr_holidays
 #: model:ir.model.fields,field_description:hr_holidays.field_hr_holidays_summary_employee_holiday_type
@@ -1336,7 +1334,7 @@ msgstr "Để báo cáo ở Phiếu lương"
 #. module: hr_holidays
 #: selection:hr.holidays,state:0
 msgid "To Submit"
-msgstr "Để Trình"
+msgstr "Chờ Trình"
 
 #. module: hr_holidays
 #: model:ir.model.fields,field_description:hr_holidays.field_hr_department_total_employee
@@ -1387,7 +1385,7 @@ msgstr "Xác nhận"
 #. module: hr_holidays
 #: model:ir.ui.view,arch_db:hr_holidays.view_hr_holidays_filter
 msgid "Validator"
-msgstr "Xác thực"
+msgstr ""
 
 #. module: hr_holidays
 #: selection:hr.holidays.status,color_name:0
@@ -1412,7 +1410,7 @@ msgstr "Đang chờ Chấp thuận Thứ hai"
 #. module: hr_holidays
 #: model:mail.message.subtype,name:hr_holidays.mt_holidays_first_validated
 msgid "Waiting Second Validation"
-msgstr "Đang chờ xác nhận lần hai"
+msgstr "Chờ Thẩm định Lần hai"
 
 #. module: hr_holidays
 #: selection:hr.holidays.status,color_name:0
@@ -1426,8 +1424,8 @@ msgid ""
 "When selected, the Allocation/Leave Requests for this type require a second "
 "validation to be approved."
 msgstr ""
-"Khi được chọn, Xin nghỉ phép/Phân bổ ngày nghỉ đối với kiểu này bắt buộc qua"
-" hai lần phê duyệt."
+"Khi được chọn, Xin nghỉ/cấp phát nghỉ đối với kiểu này bắt buộc qua hai lần "
+"phê duyệt."
 
 #. module: hr_holidays
 #: model:ir.actions.act_window,help:hr_holidays.hr_holidays_leaves_assign_legal
@@ -1492,7 +1490,7 @@ msgstr "của"
 #. module: hr_holidays
 #: model:ir.model,name:hr_holidays.model_report_hr_holidays_report_holidayssummary
 msgid "report.hr_holidays.report_holidayssummary"
-msgstr "report.hr_holidays.report_holidayssummary"
+msgstr ""
 
 #. module: hr_holidays
 #: model:ir.ui.view,arch_db:hr_holidays.report_holidayssummary

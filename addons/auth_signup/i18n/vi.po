@@ -1,7 +1,7 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
 # * auth_signup
-# 
+#
 # Translators:
 # Martin Trigaux, 2018
 # Duy BQ <duybq86@gmail.com>, 2018
@@ -335,7 +335,7 @@ msgstr "Đăng ký tự do (B2C)"
 #. module: auth_signup
 #: model:ir.model,name:auth_signup.model_ir_http
 msgid "HTTP routing"
-msgstr "HTTP routing"
+msgstr ""
 
 #. module: auth_signup
 #: model:ir.ui.view,arch_db:auth_signup.res_config_settings_view_form

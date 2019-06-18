@@ -26,14 +26,14 @@ msgstr ""
 #: code:addons/website_rating/static/src/xml/website_mail.xml:24
 #, python-format
 msgid "Average"
-msgstr "Trung bình"
+msgstr "Phương thức"
 
 #. module: website_rating
 #. openerp-web
 #: code:addons/website_rating/static/src/xml/website_mail.xml:34
 #, python-format
 msgid "Details"
-msgstr "Các chi tiết"
+msgstr "Chi tiết"
 
 #. module: website_rating
 #. openerp-web

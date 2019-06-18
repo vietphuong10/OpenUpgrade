@@ -181,7 +181,7 @@ msgstr "Tên hiển thị"
 #. module: barcodes
 #: selection:barcode.rule,encoding:0
 msgid "EAN-13"
-msgstr "EAN-13"
+msgstr ""
 
 #. module: barcodes
 #: selection:barcode.nomenclature,upc_ean_conv:0
@@ -191,7 +191,7 @@ msgstr "EAN-13 sang UPC-A"
 #. module: barcodes
 #: selection:barcode.rule,encoding:0
 msgid "EAN-8"
-msgstr "EAN-8"
+msgstr ""
 
 #. module: barcodes
 #: model:ir.model.fields,field_description:barcodes.field_barcode_rule_encoding
@@ -203,7 +203,7 @@ msgstr "Mã hoá"
 #: code:addons/barcodes/static/src/js/barcode_form_view.js:301
 #, python-format
 msgid "Error : Barcode command is undefined"
-msgstr "Lỗi: Lệnh mã vạch không được xác định"
+msgstr "Lỗi: Lệnh mã vạch không xác định"
 
 #. module: barcodes
 #. openerp-web
@@ -217,7 +217,7 @@ msgstr "Lỗi: Tài liệu không thể sửa được"
 #: code:addons/barcodes/static/src/js/barcode_form_view.js:332
 #, python-format
 msgid "Error : No last scanned barcode"
-msgstr "Lỗi: Chưa có quét mã vạch nào gần đây"
+msgstr "Lỗi: Không có mã vạch được quét gần đây"
 
 #. module: barcodes
 #: model:ir.model,name:barcodes.model_ir_http
@@ -339,7 +339,7 @@ msgstr "Mã vạch khớp với mẫu"
 #. module: barcodes
 #: model:ir.model.fields,help:barcodes.field_barcode_nomenclature_rule_ids
 msgid "The list of barcode rules"
-msgstr "Danh sách quy tắt mã vạch"
+msgstr "Danh sách quy tắc mã vạch"
 
 #. module: barcodes
 #: model:ir.model.fields,help:barcodes.field_barcode_rule_alias
@@ -352,14 +352,14 @@ msgstr "Mẫu phù hợp sẽ là bí danh cho mã vạch này"
 #: code:addons/barcodes/models/barcodes.py:200
 #, python-format
 msgid "There is a syntax error in the barcode pattern "
-msgstr "Có lỗi cú pháp trong mẫu mã vạch"
+msgstr "Có một lỗi cú pháp trong mẫu mã vạch (barcode pattern)"
 
 #. module: barcodes
 #: model:ir.model.fields,help:barcodes.field_barcode_rule_encoding
 msgid ""
 "This rule will apply only if the barcode is encoded with the specified "
 "encoding"
-msgstr "Quy tắc này sẽ chỉ áp dụng nếu mã vạch chỉ định mã hóa"
+msgstr "Quy tắc này sẽ áp dụng chỉ với mã vạch mà được mã hoá quy được được thiết lập"
 
 #. module: barcodes
 #. openerp-web
@@ -395,7 +395,7 @@ msgstr ""
 #. module: barcodes
 #: selection:barcode.rule,encoding:0
 msgid "UPC-A"
-msgstr "UPC-A"
+msgstr ""
 
 #. module: barcodes
 #: selection:barcode.nomenclature,upc_ean_conv:0
@@ -411,20 +411,20 @@ msgstr "Chuyển đổi UPC/EAN"
 #: code:addons/barcodes/models/barcodes.py:184 selection:barcode.rule,type:0
 #, python-format
 msgid "Unit Product"
-msgstr "Đơn vị sản phẩm"
+msgstr "Sản phẩm Đơn vị"
 
 #. module: barcodes
 #: model:ir.model.fields,help:barcodes.field_barcode_rule_sequence
 msgid ""
 "Used to order rules such that rules with a smaller sequence match first"
 msgstr ""
-"Được sử dụng để đặt hàng các quy tắc sao cho quy tắc có khớp với chuỗi nhỏ "
+"Được sử dụng để sắp xếp các quy tắc sao cho quy tắc có khớp với chuỗi nhỏ "
 "hơn trước"
 
 #. module: barcodes
 #: model:ir.model.fields,help:barcodes.field_barcodes_barcode_events_mixin__barcode_scanned
 msgid "Value of the last barcode scanned."
-msgstr "Giá trị lần quét gần đây."
+msgstr ""
 
 #. module: barcodes
 #: selection:barcode.rule,type:0
@@ -434,7 +434,7 @@ msgstr "Sản phẩm"
 #. module: barcodes
 #: model:ir.model,name:barcodes.model_barcode_nomenclature
 msgid "barcode.nomenclature"
-msgstr "barcode.nomenclature"
+msgstr ""
 
 #. module: barcodes
 #: model:ir.model,name:barcodes.model_barcode_rule
@@ -444,4 +444,4 @@ msgstr "barcode.rule"
 #. module: barcodes
 #: model:ir.model,name:barcodes.model_barcodes_barcode_events_mixin
 msgid "barcodes.barcode_events_mixin"
-msgstr "barcodes.barcode_events_mixin"
+msgstr ""

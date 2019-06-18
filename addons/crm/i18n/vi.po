@@ -543,7 +543,7 @@ msgid ""
 msgstr ""
 "<span class=\"panel-title\">\n"
 "                                        <span class=\"fa\" data-icon=\"\"/>\n"
-"                                        <strong> Tạo bằng tay</strong><br/>\n"
+"                                        <strong> Tạo thủ công</strong><br/>\n"
 "                                        <span class=\"small\">&lt; 200 liên hệ</span>\n"
 "                                    </span>"
 
@@ -777,8 +777,8 @@ msgid ""
 "<strong>Quote template</strong> <span class=\"small\">(packaged "
 "services)</span>"
 msgstr ""
-"<strong>Mẫu báo giá</strong> <span class=\"small\">(các dịch được đóng "
-"gói)</span>"
+"<strong>Mẫu báo giá</strong> <span class=\"small\">(các dịch vụ "
+" đóng gói)</span>"
 
 #. module: crm
 #: model:ir.ui.view,arch_db:crm.crm_planner
@@ -816,7 +816,7 @@ msgstr ""
 #. module: crm
 #: model:ir.ui.view,arch_db:crm.crm_planner
 msgid "<strong>Slides</strong>"
-msgstr "<strong>Trang trình bày</strong>"
+msgstr "<strong>Thuyết trình</strong>"
 
 #. module: crm
 #: model:ir.ui.view,arch_db:crm.crm_planner
@@ -875,7 +875,7 @@ msgstr ""
 #. module: crm
 #: model:ir.ui.view,arch_db:crm.crm_planner
 msgid "<strong>Website Live Chat</strong>"
-msgstr "<strong>Website chat trực tuyến</strong>"
+msgstr "<strong>Chat trực tuyến ở Website</strong>"
 
 #. module: crm
 #: model:ir.ui.view,arch_db:crm.crm_planner
@@ -984,7 +984,7 @@ msgstr "Mục tiêu các hoạt động được hoàn thành"
 #. module: crm
 #: model:ir.ui.view,arch_db:crm.view_crm_case_opportunities_filter
 msgid "Activities Todo"
-msgstr "Việc cần làm"
+msgstr "Hoạt động Cần làm"
 
 #. module: crm
 #: model:ir.model.fields,field_description:crm.field_crm_lead_kanban_state
@@ -1186,12 +1186,12 @@ msgstr "Xác suất trung bình"
 #. module: crm
 #: model:ir.ui.view,arch_db:crm.crm_planner
 msgid "B2B"
-msgstr "B2B"
+msgstr ""
 
 #. module: crm
 #: model:ir.ui.view,arch_db:crm.crm_planner
 msgid "B2C"
-msgstr "B2C"
+msgstr ""
 
 #. module: crm
 #: model:ir.ui.view,arch_db:crm.crm_planner
@@ -1294,14 +1294,14 @@ msgid ""
 "Check this box to filter and qualify incoming requests as leads before "
 "converting them into opportunities and assigning them to a salesperson."
 msgstr ""
-"Chọn hộp này để lọc đủ điều kiện và các yêu cầu gửi đến dưới dạng khách hàng"
-" tiềm  năng trước khi chuyển đổi chúng thành các cơ hội và chỉ định chúng "
+"Đánh dấu hộp này để lọc đủ điều kiện và các yêu cầu gửi đến dưới dạng khách hàng"
+" tiềm  năng trước khi chuyển đổi chúng thành các cơ hội và phân công chúng "
 "cho nhân viên bán hàng."
 
 #. module: crm
 #: model:ir.model.fields,help:crm.field_crm_team_use_opportunities
 msgid "Check this box to manage a presales process with opportunities."
-msgstr "Chọn hộp này để quản lý quy trình đặt trước với các cơ hội."
+msgstr "Đánh dấu hộp này để quản lý quy trình đặt trước với các cơ hội."
 
 #. module: crm
 #: model:ir.model.fields,field_description:crm.field_crm_lead_city
@@ -1589,7 +1589,7 @@ msgstr "Tạo Nhà cung cấp"
 #: code:addons/crm/static/src/js/web_planner_crm.js:30
 #, python-format
 msgid "Create a Proof of Concept with consultants"
-msgstr "Tạo một khái niệm chung với các chuyên gia tư vấn"
+msgstr ""
 
 #. module: crm
 #: selection:crm.lead.convert2task,action:0
@@ -1764,8 +1764,6 @@ msgid ""
 "Dashboard graph content cannot be Pipeline if the sales channel doesn't use "
 "it. (Pipeline is unchecked.)"
 msgstr ""
-"Nội dung biểu đồ trang tổng quan không thể là Đường cơ hội nếu kênh bán hàng"
-" không sử dụng nó. (Đường cơ hội được bỏ chọn.)"
 
 #. module: crm
 #: model:ir.model.fields,field_description:crm.field_crm_activity_report_date
@@ -2055,17 +2053,17 @@ msgstr "Ngày Đóng được dự kiến"
 #. module: crm
 #: selection:crm.team,dashboard_graph_group_pipeline:0
 msgid "Expected Closing Day"
-msgstr "Ngày dự kiến đóng"
+msgstr "Ngày Dự kiến Đóng"
 
 #. module: crm
 #: selection:crm.team,dashboard_graph_group_pipeline:0
 msgid "Expected Closing Month"
-msgstr "Tháng dự kiến đóng"
+msgstr "Tháng Dự kiến Đóng"
 
 #. module: crm
 #: selection:crm.team,dashboard_graph_group_pipeline:0
 msgid "Expected Closing Week"
-msgstr "Tuần dự kiến đóng"
+msgstr "Tuần Dự kiến Đóng"
 
 #. module: crm
 #: model:ir.model.fields,field_description:crm.field_crm_lead_planned_revenue
@@ -2085,7 +2083,7 @@ msgstr "Doanh thu mong đợi"
 #. module: crm
 #: model:ir.model.fields,field_description:crm.field_crm_team_dashboard_graph_period_pipeline
 msgid "Expected to Close"
-msgstr "Dự kiến đóng"
+msgstr "Được dự kiến Đóng"
 
 #. module: crm
 #: model:ir.ui.view,arch_db:crm.crm_opportunity_report_view_search
@@ -2116,7 +2114,7 @@ msgstr "Thông tin thêm"
 #: code:addons/crm/static/src/js/web_planner_crm.js:31
 #, python-format
 msgid "Final Proposal sent"
-msgstr "Đề xuất cuối cùng đã được gửi"
+msgstr "Đề xuất Cuối cùng đã gửi"
 
 #. module: crm
 #: selection:base.partner.merge.automatic.wizard,state:0
@@ -2131,7 +2129,7 @@ msgstr "Đóng ở trong Pipeline"
 #. module: crm
 #: model:mail.activity.type,name:crm.mail_activity_demo_followup_quote
 msgid "Follow-up Quote"
-msgstr "Theo dõi báo giá"
+msgstr "Theo sát Báo giá"
 
 #. module: crm
 #: model:ir.ui.view,arch_db:crm.crm_planner
@@ -2164,7 +2162,7 @@ msgstr ""
 #. module: crm
 #: model:ir.model.fields,field_description:crm.field_crm_lead2opportunity_partner_mass_force_assignation
 msgid "Force assignation"
-msgstr "Chỉ định phân công"
+msgstr "Cưỡng bức phân công"
 
 #. module: crm
 #: model:ir.ui.view,arch_db:crm.res_config_settings_view_form
@@ -2180,17 +2178,17 @@ msgstr "Từ %s : %s"
 #. module: crm
 #: model:ir.ui.view,arch_db:crm.view_crm_case_opportunities_filter
 msgid "Future Activities"
-msgstr "Hoạt động tương lai"
+msgstr "Hoạt động Tương lai"
 
 #. module: crm
 #: model:ir.ui.view,arch_db:crm.view_crm_case_leads_filter
 msgid "Future Activities (7 days)"
-msgstr "Hoạt động tương lai (7 ngày)"
+msgstr "Hoạt động Tương lai (7 ngày)"
 
 #. module: crm
 #: model:ir.ui.view,arch_db:crm.view_crm_case_leads_filter
 msgid "Future Activities (All)"
-msgstr "Hoạt động tương lai (tất cả)"
+msgstr "Hoạt động Tương lai (Tất cả)"
 
 #. module: crm
 #. openerp-web
@@ -2439,7 +2437,7 @@ msgstr "Cải thiện thu nhập bình quân theo người bán"
 #. module: crm
 #: model:ir.ui.view,arch_db:crm.crm_planner
 msgid "In Odoo, there are 3 different ways to manage your prices.<br/>"
-msgstr "Trong Hệ thống, có 3 cách khác nhau để quản lý giá của bạn.<br/>"
+msgstr "Trong Odoo, có 3 cách khác nhau để quản lý giá của bạn.<br/>"
 
 #. module: crm
 #: model:ir.ui.view,arch_db:crm.crm_lost_reason_view_search
@@ -2520,7 +2518,7 @@ msgstr "Sửa lần cuối"
 #: model:ir.ui.view,arch_db:crm.crm_activity_report_view_search
 #: model:ir.ui.view,arch_db:crm.crm_opportunity_report_view_search
 msgid "Last Month"
-msgstr "Tháng gần đây"
+msgstr "Tháng trước"
 
 #. module: crm
 #: model:ir.model.fields,field_description:crm.field_crm_lead_date_last_stage_update
@@ -2561,7 +2559,7 @@ msgstr "Cập nhật lần cuối"
 #: model:ir.ui.view,arch_db:crm.view_crm_case_leads_filter
 #: model:ir.ui.view,arch_db:crm.view_crm_case_opportunities_filter
 msgid "Late Activities"
-msgstr "Hoạt động trễ"
+msgstr "Hoạt động bị trễ"
 
 #. module: crm
 #: code:addons/crm/models/crm_lead.py:882
@@ -2774,22 +2772,22 @@ msgstr "Thấp"
 #. module: crm
 #: model:mail.activity.type,name:crm.mail_activity_demo_make_quote
 msgid "Make Quote"
-msgstr "Tạo báo giá"
+msgstr "Tạo Báo giá"
 
 #. module: crm
 #: model:ir.model.fields,field_description:crm.field_res_config_settings_generate_lead_from_alias
 msgid "Manual Assignation of Emails"
-msgstr "Hướng dẫn sử dụng email"
+msgstr "Phân công Email Thủ công"
 
 #. module: crm
 #: model:ir.ui.view,arch_db:crm.res_config_settings_view_form
 msgid "Manually Assignation of Incoming Emails"
-msgstr "Xác định thủ công cổng nhận Email"
+msgstr ""
 
 #. module: crm
 #: model:ir.actions.server,name:crm.action_mark_activities_done
 msgid "Mark All Activities as Done"
-msgstr "Đánh dấu tất cả các hoạt động là hoàn thành"
+msgstr "Đánh dấu Tất cả các Hoạt động là Hoàn thành"
 
 #. module: crm
 #: model:ir.actions.server,name:crm.action_mark_late_activities_done
@@ -2831,7 +2829,7 @@ msgstr "Số lượng Nhóm Liên hệ tối đa"
 #: model:ir.ui.view,arch_db:crm.view_crm_case_leads_filter
 #: model:ir.ui.view,arch_db:crm.view_crm_case_opportunities_filter
 msgid "Medium"
-msgstr "Kênh / Medium"
+msgstr "Phương thức"
 
 #. module: crm
 #: code:addons/crm/models/crm_lead.py:924
@@ -3111,12 +3109,12 @@ msgstr "Số lượng Phòng"
 #. module: crm
 #: model:ir.model.fields,field_description:crm.field_crm_team_opportunities_count
 msgid "Number of open opportunities"
-msgstr "Số cơ hội mở"
+msgstr "Số cơ hội đang mở"
 
 #. module: crm
 #: model:ir.ui.view,arch_db:crm.crm_planner
 msgid "Odoo Default"
-msgstr "Mặc định theo Hệ thống"
+msgstr "Mặc định theo Odoo"
 
 #. module: crm
 #: model:ir.actions.act_window,help:crm.crm_case_form_view_salesteams_opportunity
@@ -3193,12 +3191,12 @@ msgstr ""
 #. module: crm
 #: model:ir.ui.view,arch_db:crm.crm_team_salesteams_view_kanban
 msgid "Open Opportunities"
-msgstr "Mở cơ hội"
+msgstr "Cơ hội Mở"
 
 #. module: crm
 #: model:ir.ui.view,arch_db:crm.crm_team_salesteams_view_kanban
 msgid "Open Opportunity"
-msgstr "Mở cơ hội"
+msgstr "Cơ hội Mở"
 
 #. module: crm
 #: model:ir.actions.act_window,name:crm.crm_case_form_view_salesteams_opportunity
@@ -3244,7 +3242,7 @@ msgstr ""
 #. module: crm
 #: model:ir.filters,name:crm.filter_opportunity_opportunities_cohort
 msgid "Opportunities Cohort"
-msgstr "Cơ hội nhóm"
+msgstr ""
 
 #. module: crm
 #: model:ir.filters,name:crm.filter_opportunity_opportunities_won_per_team
@@ -3344,7 +3342,7 @@ msgstr "Khác"
 #. module: crm
 #: model:ir.ui.view,arch_db:crm.view_crm_case_opportunities_filter
 msgid "Overdue Opportunities"
-msgstr "Cơ hội quá hạn"
+msgstr "Cơ hội Quá hạn"
 
 #. module: crm
 #: model:ir.model.fields,field_description:crm.field_crm_opportunity_report_delay_expected
@@ -3383,7 +3381,7 @@ msgstr "Model cha"
 #. module: crm
 #: model:ir.model.fields,field_description:crm.field_crm_team_alias_parent_thread_id
 msgid "Parent Record Thread ID"
-msgstr "Parent Record Thread ID"
+msgstr ""
 
 #. module: crm
 #: model:ir.model.fields,help:crm.field_crm_team_alias_parent_model_id
@@ -3392,9 +3390,6 @@ msgid ""
 " necessarily the model given by alias_model_id (example: project "
 "(parent_model) and task (model))"
 msgstr ""
-"Parent model holding the alias. The model holding the alias reference is not"
-" necessarily the model given by alias_model_id (example: project "
-"(parent_model) and task (model))"
 
 #. module: crm
 #: model:ir.model.fields,field_description:crm.field_crm_opportunity_report_partner_id
@@ -3430,7 +3425,7 @@ msgstr "Điện thoại"
 #. module: crm
 #: model:ir.model.fields,field_description:crm.field_res_config_settings_module_crm_phone_validation
 msgid "Phone Formatting"
-msgstr "Định dạng số điện thoại"
+msgstr "Định dạng Số Điện thoại"
 
 #. module: crm
 #. openerp-web
@@ -3499,7 +3494,7 @@ msgstr ""
 #: code:addons/crm/models/crm_team.py:231
 #, python-format
 msgid "Pipeline: Expected Revenue"
-msgstr "Cơ hội: Doanh thu dự kiến"
+msgstr "Cơ hội: Doanh thu Mong đợi"
 
 #. module: crm
 #: model:web.planner,tooltip_planner:crm.planner_crm
@@ -3578,7 +3573,7 @@ msgstr "Sản phẩm"
 #: code:addons/crm/static/src/js/web_planner_crm.js:22
 #, python-format
 msgid "Product Demonstration"
-msgstr "Sản phẩm trưng bày"
+msgstr ""
 
 #. module: crm
 #: model:ir.ui.view,arch_db:crm.crm_planner
@@ -3638,14 +3633,14 @@ msgstr "Báo giá đã gửi"
 #: code:addons/crm/static/src/js/web_planner_crm.js:19
 #, python-format
 msgid "Quotation sent to customer"
-msgstr "Gửi báo giá đến khách hàng"
+msgstr "Báo giá đã gửi đến khách hàng"
 
 #. module: crm
 #. openerp-web
 #: code:addons/crm/static/src/js/web_planner_crm.js:20
 #, python-format
 msgid "Quotation signed by the customer"
-msgstr "Báo giá do khách hàng ký"
+msgstr "Báo giá đã ký bởi khách hàng"
 
 #. module: crm
 #: model:ir.ui.view,arch_db:crm.crm_planner
@@ -3660,8 +3655,8 @@ msgid ""
 "Ready to boost your sales? Your <b>Pipeline</b> can be found here, under "
 "<b>CRM</b> app."
 msgstr ""
-"Đã sẵn sàng để tăng doanh số bán hàng của bạn? <b>Cơ hội bán hàng</b> của "
-"bạn có thể được tìm thấy ở đây, trong ứng dụng <b>CRM</b>."
+"Sẵn sàng để đẩy mạnh doanh số của bạn chưa? <b>Pipeline</b> của bạn có thể được tìm thấy ở đây, trong "
+"ứng dụng <b>CRM</b>."
 
 #. module: crm
 #: model:ir.model,name:crm.model_crm_lost_reason
@@ -3671,7 +3666,7 @@ msgstr "Lý do đánh mất tiềm năng"
 #. module: crm
 #: model:ir.model.fields,field_description:crm.field_crm_team_alias_force_thread_id
 msgid "Record Thread ID"
-msgstr "Record Thread ID"
+msgstr ""
 
 #. module: crm
 #: model:ir.model.fields,field_description:crm.field_crm_lead_referred
@@ -3735,7 +3730,7 @@ msgstr "Chu trình Bán"
 #: model:ir.ui.view,arch_db:crm.view_crm_case_leads_filter
 #: model:ir.ui.view,arch_db:crm.view_crm_case_opportunities_filter
 msgid "Sales Channel"
-msgstr "Kênh bán hàng"
+msgstr "Kênh Bán hàng"
 
 #. module: crm
 #: model:ir.ui.menu,name:crm.crm_team_config
@@ -3949,7 +3944,7 @@ msgstr ""
 #. module: crm
 #: model:ir.ui.view,arch_db:crm.view_crm_case_leads_filter
 msgid "Show all records which has next action date is before today"
-msgstr "Hiển thị tất cả hồ sơ có ngày hành động tiếp theo trước ngày hôm nay"
+msgstr "Hiển thị tất cả các bản ghi mà có ngày hành động kế tiếp trước ngày hôm nay"
 
 #. module: crm
 #: model:ir.ui.view,arch_db:crm.crm_activity_report_view_search
@@ -4005,8 +4000,8 @@ msgid ""
 "Specific team that uses this stage. Other teams will not be able to see or "
 "use this stage."
 msgstr ""
-"Các đội/kênh cụ thể mà sử dụng giai đoạn này. Các đội/kênh khác sẽ không thể"
-" thấy hoặc sử dụng giai đoạn này"
+"Các đội/kênh cụ thể mà sử dụng giai đoạn này. Các đội/kênh khác sẽ không thể "
+"thấy hoặc sử dụng giai đoạn này"
 
 #. module: crm
 #: selection:crm.team,dashboard_graph_group_pipeline:0
@@ -4059,8 +4054,8 @@ msgid ""
 "Stages allow salespersons to easily track how a specific opportunity\n"
 "            is positioned in the sales cycle."
 msgstr ""
-"Các Giai đoạn cho phép người bán hàng dễ dàng theo dõi vị trí và định vị một"
-" cơ hội            đang ở đâu trong chu kỳ bán hàng"
+"Các Giai đoạn cho phép người bán hàng dễ dàng theo dõi vị trí và định vị một cơ hội"
+"            đang ở đâu trong chu kỳ bán hàng"
 
 #. module: crm
 #: model:ir.model.fields,field_description:crm.field_base_partner_merge_automatic_wizard_state
@@ -4210,7 +4205,7 @@ msgid ""
 "<jobs@example.odoo.com>"
 msgstr ""
 "Tên của bí danh email, vd 'vieclam' nếu bạn muốn bắt thông điệp gửi đến địa "
-"chỉ email <vieclam@tencongty.com>"
+"chỉ email <vieclam@vidu.odoo.com>"
 
 #. module: crm
 #: model:ir.model.fields,help:crm.field_crm_lead_partner_name
@@ -4229,10 +4224,6 @@ msgid ""
 "the sender (From) address, or will use the Administrator account if no "
 "system user is found for that address."
 msgstr ""
-"The owner of records created upon receiving emails on this alias. If this "
-"field is not set the system will attempt to find the right owner based on "
-"the sender (From) address, or will use the Administrator account if no "
-"system user is found for that address."
 
 #. module: crm
 #: model:ir.ui.view,arch_db:crm.crm_planner
@@ -4259,7 +4250,7 @@ msgstr ""
 #. module: crm
 #: model:ir.model.fields,help:crm.field_crm_team_dashboard_graph_period_pipeline
 msgid "The time period this channel's dashboard graph will consider."
-msgstr "Khoảng thời gian biểu đồ bảng điều khiển của kênh này sẽ xem xét."
+msgstr ""
 
 #. module: crm
 #: model:ir.ui.view,arch_db:crm.crm_planner
@@ -4334,7 +4325,7 @@ msgstr "Đây là cấu hình mặc định, không có gì để cài đặt c�
 msgid ""
 "This opportunity has <b>no activity planned</b>. <i>Click to check them.</i>"
 msgstr ""
-"Cơ hội này không có hoạt động nào <b>được lên kế hoạch</b>. <i>Nhấp để kiểm "
+"Cơ hội này không có <b>hoạt động được lên kế hoạch</b>. <i>Bấm để kiểm "
 "tra.</i>"
 
 #. module: crm
@@ -4392,8 +4383,8 @@ msgid ""
 "applied to it. This is settable in the pricelist configuration if you allow "
 "discounts."
 msgstr ""
-"Để khuyến khích khách hàng của bạn, hãy cho họ xem giá công bố và chiết khấu"
-" áp dụng cho nó. Việc này có thể thiết lập được ở bảng giá nếu bạn cho phép "
+"Để khuyến khích khách hàng của bạn, hãy cho họ xem giá công bố và chiết khấu "
+"áp dụng cho nó. Việc này có thể thiết lập được ở bảng giá nếu bạn cho phép "
 "chiết khấu."
 
 #. module: crm
@@ -4439,7 +4430,7 @@ msgstr "Kiểu được sử dụng để tách riêng Tiềm năng và Cơ hộ
 #. module: crm
 #: model:ir.ui.view,arch_db:crm.crm_planner
 msgid "USD, EUR, GBP"
-msgstr "USD, EUR, GBP"
+msgstr ""
 
 #. module: crm
 #: model:ir.ui.view,arch_db:crm.view_crm_case_leads_filter
@@ -4489,7 +4480,7 @@ msgstr "Ngày Cập nhật"
 #. module: crm
 #: model:ir.ui.view,arch_db:crm.crm_planner
 msgid "Upsell more to existing customers"
-msgstr "Đăng bán thêm với khách hàng quen"
+msgstr "Bán gia tăng (upsell) thêm nữa với khách hàng quen"
 
 #. module: crm
 #: model:ir.ui.view,arch_db:crm.crm_planner
@@ -4538,7 +4529,7 @@ msgstr ""
 #. module: crm
 #: model:ir.ui.view,arch_db:crm.crm_planner
 msgid "Use our import templates to get your catalog ready in no time!"
-msgstr "Sử dụng mẫu nhập để nhập danh mục của bạn trong nháy mắt!"
+msgstr "Sử dụng mẫu nhập để nhập catalô trong nháy mắt!"
 
 #. module: crm
 #: model:ir.ui.view,arch_db:crm.crm_planner
@@ -4566,7 +4557,7 @@ msgstr ""
 #: code:addons/crm/static/src/js/tour.js:65
 #, python-format
 msgid "Use the breadcrumbs to <b>go back to your sales pipeline</b>."
-msgstr "Sử dụng đường dẫn để <b>quay lại kênh bán hàng của bạn</b>."
+msgstr ""
 
 #. module: crm
 #: model:ir.model.fields,help:crm.field_crm_lead_user_login
@@ -4665,7 +4656,7 @@ msgid ""
 "                      is not just a tool, we want it to have a major impact on your\n"
 "                      sales performance. That's our mission, and we are serious about it."
 msgstr ""
-"Chúng tôi thiết kế Hệ thống để giúp bạn tăng trưởng công việc kinh doanh. Hệ thống CRM\n"
+"Chúng tôi thiết kế Odoo để giúp bạn tăng trưởng công việc kinh doanh. Odoo CRM\n"
 "                      không chỉ là một công cụ, chúng tôi muốn nó là trở thành một yếu tố\n"
 "                      then chốt trong việc nâng cao hiệu năng bán hàng của bạn. Đó là nhiệm\n"
 "                      vụ của chúng tôi và chúng tôi hoàn toàn nghiêm túc về điều đó."
@@ -4690,7 +4681,7 @@ msgstr "Trang web"
 #. module: crm
 #: model:ir.model.fields,help:crm.field_crm_lead_website
 msgid "Website of the contact"
-msgstr "Liên hệ trên Website"
+msgstr ""
 
 #. module: crm
 #: model:ir.ui.view,arch_db:crm.crm_planner
@@ -4700,7 +4691,7 @@ msgstr "Họp mặt hàng tuần"
 #. module: crm
 #: model:ir.ui.view,arch_db:crm.crm_planner
 msgid "Welcome"
-msgstr "Xin chào"
+msgstr "Chào mừng"
 
 #. module: crm
 #: model:ir.ui.view,arch_db:crm.crm_planner
@@ -4736,9 +4727,6 @@ msgid ""
 "you with a list of matching contacts or companies.When selecting one item, "
 "the partner name, logo and website get automatically set."
 msgstr ""
-"Khi điền sổ địa chỉ của bạn, Hệ thống dựa vào API của Clearbit để cung cấp "
-"cho bạn danh sách các liên hệ hoặc công ty phù hợp. Khi chọn một mục, tên "
-"đối tác, biểu trưng và trang web sẽ tự động được đặt."
 
 #. module: crm
 #: model:ir.model.fields,help:crm.field_crm_lead_team_id
@@ -4905,7 +4893,7 @@ msgstr "LinkedIn hoặc các trang mạng xã hội"
 #. module: crm
 #: model:mail.template,subject:crm.mail_template_data_module_install_crm
 msgid "Your Odoo CRM application is running smoothly."
-msgstr "Ứng dụng Hệ thống CRM hiện đang hoạt động mượt mà."
+msgstr "Ứng dụng Odoo CRM hiện đang hoạt động mượt mà."
 
 #. module: crm
 #: model:ir.ui.view,arch_db:crm.crm_planner
@@ -4951,12 +4939,12 @@ msgstr "như một bài thực hành"
 #. module: crm
 #: model:ir.model,name:crm.model_base_partner_merge_automatic_wizard
 msgid "base.partner.merge.automatic.wizard"
-msgstr "base.partner.merge.automatic.wizard"
+msgstr ""
 
 #. module: crm
 #: model:ir.model,name:crm.model_base_partner_merge_line
 msgid "base.partner.merge.line"
-msgstr "base.partner.merge.line"
+msgstr ""
 
 #. module: crm
 #: model:ir.ui.view,arch_db:crm.crm_planner
@@ -4982,7 +4970,7 @@ msgstr "vd: Giá Sản phẩm"
 #: model:ir.ui.view,arch_db:crm.crm_case_form_view_leads
 #: model:ir.ui.view,arch_db:crm.crm_case_form_view_oppor
 msgid "e.g. www.odoo.com"
-msgstr "ví dụ: www.tencongty.com"
+msgstr ""
 
 #. module: crm
 #: code:addons/crm/models/crm_lead.py:912
@@ -4998,7 +4986,7 @@ msgstr "hoặc"
 #. module: crm
 #: model:ir.model,name:crm.model_res_config_settings
 msgid "res.config.settings"
-msgstr "res.config.settings"
+msgstr ""
 
 #. module: crm
 #: model:ir.ui.view,arch_db:crm.crm_planner

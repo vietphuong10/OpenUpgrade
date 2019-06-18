@@ -193,7 +193,7 @@ msgstr ""
 "% endif\n"
 "<br/>\n"
 "<p style=\"color: #555555;\">\n"
-"    Sent by\n"
+"    Gửi bởi\n"
 "    % if ctx.get('website_url'):\n"
 "    <a href=\"${ctx['website_url']}\" style=\"text-decoration:none; color: #875A7B;\">\n"
 "    % endif\n"
@@ -201,7 +201,7 @@ msgstr ""
 "    % if ctx.get('website_url'):\n"
 "    </a>\n"
 "    % endif\n"
-"    using\n"
+"    sử dụng\n"
 "    <a target=\"_blank\" href=\"https://www.odoo.com\" style=\"text-decoration:none; color: #875A7B;\">Odoo</a>.\n"
 "</p>\n"
 "</div>"
@@ -226,11 +226,10 @@ msgid ""
 "object.parent_id.subject) or (object.parent_id and "
 "object.parent_id.record_name and 'Re: %s' % object.parent_id.record_name)}"
 msgstr ""
-"${object.subject or (object.record_name and 'Trả lời:  %s' % "
-"object.record_name) or (object.parent_id and object.parent_id.subject and "
-"'Trả lời: %s' % object.parent_id.subject) or (object.parent_id and "
-"object.parent_id.record_name and 'Trả lời: %s' % "
-"object.parent_id.record_name)}"
+"${object.subject or (object.record_name and 'Trả lời: %s' % object.record_name) "
+"or (object.parent_id and object.parent_id.subject and 'Trả lời: %s' % "
+"object.parent_id.subject) or (object.parent_id and "
+"object.parent_id.record_name and 'Trả lời: %s' % object.parent_id.record_name)}"
 
 #. module: mail
 #: code:addons/mail/wizard/invite.py:29
@@ -358,7 +357,7 @@ msgid ""
 "href=\"#\" class=\"o_channel_redirect\" data-oe-"
 "id=\"%(channel_id)s\">#%(channel_name)s</a></div>"
 msgstr ""
-"<div class=\"o_mail_notification\">%(author)s được mời %(new_partner)s đến "
+"<div class=\"o_mail_notification\">%(author)s đã mời %(new_partner)s đến "
 "<a href=\"#\" class=\"o_channel_redirect\" data-oe-"
 "id=\"%(channel_id)s\">#%(channel_name)s</a></div>"
 
@@ -1137,12 +1136,12 @@ msgstr "Nhắn tin"
 #. module: mail
 #: selection:mail.channel,channel_type:0
 msgid "Chat Discussion"
-msgstr "Thảo luận"
+msgstr "Thảo luận Chat"
 
 #. module: mail
 #: model:ir.actions.act_window,name:mail.mail_shortcode_action
 msgid "Chat Shortcode"
-msgstr "Ký tự Chat"
+msgstr ""
 
 #. module: mail
 #: model:ir.model.fields,field_description:mail.field_mail_compose_message_child_ids
@@ -1242,14 +1241,14 @@ msgstr "Định cấu hình các loại hoạt động của bạn"
 #: code:addons/mail/static/src/xml/thread.xml:114
 #, python-format
 msgid "Congratulations, your inbox is empty"
-msgstr "Thật tuyệt vời, hộp thư đến của bạn đã không còn mail nào để xử lý"
+msgstr "Chúc mừng, hộp thư đến của bạn không còn thông điệp phải xử lý"
 
 #. module: mail
 #. openerp-web
 #: code:addons/mail/static/src/js/client_action.js:650
 #, python-format
 msgid "Congratulations, your inbox is empty!"
-msgstr "Thật tuyệt vời, hộp thư đến của bạn đã không còn mail nào để xử lý!"
+msgstr "Chúc mừng, hộp thư của bạn đang trống!"
 
 #. module: mail
 #: model:ir.model,name:mail.model_res_partner
@@ -3182,7 +3181,7 @@ msgstr "Dẫn chiếu Thông điệp, ví dụ như ID của thông điệp trư
 #: code:addons/mail/static/src/xml/client_action.xml:124
 #, python-format
 msgid "Message sent in \""
-msgstr "Thông điệp được gửi trong \""
+msgstr "Thông điệp được gửi vào \""
 
 #. module: mail
 #: model:ir.model.fields,help:mail.field_mail_message_subtype_name
@@ -3876,7 +3875,7 @@ msgstr "Số thông điệp chưa đọc"
 #. module: mail
 #: model:ir.ui.view,arch_db:mail.message_user_assigned
 msgid "Odoo"
-msgstr "Hệ thống"
+msgstr "Odoo"
 
 #. module: mail
 #. openerp-web
@@ -3884,14 +3883,14 @@ msgstr "Hệ thống"
 #, python-format
 msgid ""
 "Odoo has now the permission to send you native notifications on this device."
-msgstr "Hệ thống hiện đã có quyền để gửi thông báo trên thiết bị này."
+msgstr "Odoo hiện đã có quyền để gửi thông báo trên thiết bị này."
 
 #. module: mail
 #. openerp-web
 #: code:addons/mail/static/src/xml/client_action.xml:11
 #, python-format
 msgid "Odoo needs your permission to"
-msgstr "Hệ thống cần sự cho phép của bạn để"
+msgstr "Odoo cần sự cho phép của bạn để"
 
 #. module: mail
 #. openerp-web
@@ -3900,7 +3899,8 @@ msgstr "Hệ thống cần sự cho phép của bạn để"
 msgid ""
 "Odoo will not have the permission to send native notifications on this "
 "device."
-msgstr "Hệ thống hiện sẽ không có quyền để gửi thông báo trên thiết bị này."
+msgstr ""
+"Odoo sẽ không có quyền để gửi thông báo trên thiết bị này."
 
 #. module: mail
 #. openerp-web
@@ -3942,7 +3942,7 @@ msgstr "Giá trị Text cũ"
 #. module: mail
 #: selection:ir.model.fields,track_visibility:0
 msgid "On Change"
-msgstr "Thay đổi"
+msgstr ""
 
 #. module: mail
 #. openerp-web
@@ -3974,7 +3974,7 @@ msgstr "Trực tuyến"
 #: code:addons/mail/models/ir_model.py:28
 #, python-format
 msgid "Only custom models can be modified."
-msgstr "Chỉ có thể sửa đổi các mô hình tùy chỉnh."
+msgstr "Chỉ có thể sửa đổi các model tùy chỉnh."
 
 #. module: mail
 #: selection:mail.channel.partner,fold_state:0
@@ -4141,7 +4141,7 @@ msgstr "Cấp cha"
 #: model:ir.model.fields,field_description:mail.field_mail_message_parent_id
 #: model:ir.model.fields,field_description:mail.field_survey_mail_compose_message_parent_id
 msgid "Parent Message"
-msgstr "Thông báo cha"
+msgstr "Thông điệp cha"
 
 #. module: mail
 #: model:ir.model.fields,field_description:mail.field_mail_alias_alias_parent_model_id
@@ -4157,7 +4157,7 @@ msgstr "Model cha"
 #: model:ir.model.fields,field_description:mail.field_mail_channel_alias_parent_thread_id
 #: model:ir.model.fields,field_description:mail.field_mail_test_alias_parent_thread_id
 msgid "Parent Record Thread ID"
-msgstr "Parent Record Thread ID"
+msgstr ""
 
 #. module: mail
 #: model:ir.model.fields,help:mail.field_mail_alias_alias_parent_model_id
@@ -4169,9 +4169,6 @@ msgid ""
 " necessarily the model given by alias_model_id (example: project "
 "(parent_model) and task (model))"
 msgstr ""
-"Parent model holding the alias. The model holding the alias reference is not"
-" necessarily the model given by alias_model_id (example: project "
-"(parent_model) and task (model))"
 
 #. module: mail
 #: model:ir.model.fields,help:mail.field_mail_message_subtype_parent_id
@@ -4334,7 +4331,7 @@ msgstr "Được hỗ trợ bởi"
 #. module: mail
 #: model:ir.model.fields,field_description:mail.field_mail_activity_type_previous_type_ids
 msgid "Preceding Activities"
-msgstr "Hoạt động trước"
+msgstr "Hoạt động Liền trước"
 
 #. module: mail
 #: model:ir.ui.view,arch_db:mail.email_template_form
@@ -4437,7 +4434,7 @@ msgstr "Hoạt động Tiếp theo được Khuyến nghị"
 #: model:ir.model.fields,field_description:mail.field_mail_channel_alias_force_thread_id
 #: model:ir.model.fields,field_description:mail.field_mail_test_alias_force_thread_id
 msgid "Record Thread ID"
-msgstr "Record Thread ID"
+msgstr ""
 
 #. module: mail
 #: model:ir.model.fields,field_description:mail.field_mail_mail_references
@@ -4529,7 +4526,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:mail.field_mail_template_reply_to
 #: model:ir.model.fields,field_description:mail.field_survey_mail_compose_message_reply_to
 msgid "Reply-To"
-msgstr "Trả lời đến"
+msgstr "Trả lời Đến"
 
 #. module: mail
 #: model:ir.model.fields,field_description:mail.field_email_template_preview_report_name
@@ -4773,7 +4770,7 @@ msgstr "Phím tắt"
 #: model:ir.ui.view,arch_db:mail.mail_activity_view_search
 #: model:ir.ui.view,arch_db:mail.res_partner_view_search_inherit_mail
 msgid "Show all records which has next action date is before today"
-msgstr "Hiển thị tất cả dữ liệu có ngày xử lý tiếp theo trước ngày hôm nay"
+msgstr "Hiển thị tất cả dữ liệu có ngày xử lý tiếp theo mà trước ngày hôm nay"
 
 #. module: mail
 #: code:addons/mail/models/mail_channel.py:675
@@ -4828,7 +4825,7 @@ msgstr ""
 #. module: mail
 #: selection:mail.shortcode,shortcode_type:0
 msgid "Smiley"
-msgstr "Mặt cười"
+msgstr ""
 
 #. module: mail
 #: model:ir.model.fields,help:mail.field_mail_activity_type_res_model_id
@@ -5038,10 +5035,9 @@ msgid ""
 " email that does not reply to an existing record will cause the creation of "
 "a new record of this model (e.g. a Project Task)"
 msgstr ""
-"Model (Kiểu Tài liệu Hệ thống) mà bí danh này ứng với nó. Bất kỳ thông điệp "
-"email mà không đáp lại (reply) một bản ghi có sẵn sẽ làm cho Hệ thống tự "
-"động tạo một bản ghi mới cho model này (vd: tạo mới một Nhiệm vụ Dự án nếu "
-"model là project.task)"
+"Model (Kiểu Tài liệu Odoo) mà bí danh này ứng với nó. Bất kỳ thông điệp email mà không đáp"
+" lại (reply) một bản ghi có sẵn sẽ làm cho Odoo tự động tạo một bản ghi mới cho "
+"model này (vd: tạo mới một Nhiệm vụ Dự án nếu model là project.task)"
 
 #. module: mail
 #: model:ir.model.fields,help:mail.field_mail_alias_alias_name
@@ -5053,7 +5049,7 @@ msgid ""
 "<jobs@example.odoo.com>"
 msgstr ""
 "Tên của bí danh email, vd 'vieclam' nếu bạn muốn bắt thông điệp gửi đến địa "
-"chỉ email <vieclam@tencongty.com>"
+"chỉ email <vieclam@vidu.odoo.com>"
 
 #. module: mail
 #: model:ir.model.fields,help:mail.field_mail_alias_alias_user_id
@@ -5066,10 +5062,6 @@ msgid ""
 "the sender (From) address, or will use the Administrator account if no "
 "system user is found for that address."
 msgstr ""
-"The owner of records created upon receiving emails on this alias. If this "
-"field is not set the system will attempt to find the right owner based on "
-"the sender (From) address, or will use the Administrator account if no "
-"system user is found for that address."
 
 #. module: mail
 #: code:addons/mail/models/mail_activity.py:175
@@ -5104,7 +5096,7 @@ msgstr "Kiểu tài liệu mà mẫu này có thể được sử dụng với"
 #. module: mail
 #: model:ir.ui.view,arch_db:mail.message_origin_link
 msgid "This"
-msgstr "Đây"
+msgstr ""
 
 #. module: mail
 #: model:ir.model.fields,help:mail.field_mail_channel_image
@@ -5185,7 +5177,7 @@ msgstr "Hôm nay"
 #: model:ir.ui.view,arch_db:mail.mail_activity_view_search
 #: model:ir.ui.view,arch_db:mail.res_partner_view_search_inherit_mail
 msgid "Today Activities"
-msgstr "Hoạt động hôm nay"
+msgstr "Hoạt động Hôm nay"
 
 #. module: mail
 #: model:mail.activity.type,name:mail.mail_activity_data_todo
@@ -5460,7 +5452,7 @@ msgstr ""
 #: code:addons/mail/models/mail_template.py:510
 #, python-format
 msgid "Unsupported report type %s found."
-msgstr "Tìm thấy loại báo cáo %s không được hỗ trợ."
+msgstr "Kiểu loại báo cáo %s không được hỗ trợ."
 
 #. module: mail
 #. openerp-web
@@ -5586,8 +5578,8 @@ msgstr ""
 msgid ""
 "When set, every modification to this field will be tracked in the chatter."
 msgstr ""
-"Khi thiết lập, mọi sửa đổi đối với lĩnh vực này sẽ được theo dõi trong cuộc "
-"nói chuyện"
+"Khi thiết lập, mọi sửa đổi đối với trường này sẽ được theo dõi trong khu vực "
+"chatter."
 
 #. module: mail
 #: model:ir.model.fields,help:mail.field_mail_compose_message_is_log
@@ -5695,7 +5687,7 @@ msgstr ""
 #. module: mail
 #: model:ir.ui.view,arch_db:mail.message_user_assigned
 msgid "You have been assigned to the"
-msgstr "Bạn đã được phân công/gán cho"
+msgstr "Bạn đã được phân công cho"
 
 #. module: mail
 #. openerp-web
@@ -5819,7 +5811,7 @@ msgstr "từ:"
 #. module: mail
 #: model:mail.channel,name:mail.channel_all_employees
 msgid "general"
-msgstr "Chung chung"
+msgstr "chung chung"
 
 #. module: mail
 #: model:ir.ui.view,arch_db:mail.message_origin_link
@@ -5882,7 +5874,7 @@ msgstr "đã được chỉnh sửa"
 #. module: mail
 #: model:ir.ui.view,arch_db:mail.res_config_settings_view_form
 msgid "mycompany.odoo.com"
-msgstr "mycompany.odoo.com"
+msgstr "mycompany.erponline.com"
 
 #. module: mail
 #. openerp-web
@@ -5961,7 +5953,7 @@ msgstr "trả lời tài liệu bị thiếu (%s,%s), rơi vào việc tạo tà
 #. module: mail
 #: model:ir.model,name:mail.model_res_config_settings
 msgid "res.config.settings"
-msgstr "res.config.settings"
+msgstr ""
 
 #. module: mail
 #: code:addons/mail/models/mail_thread.py:918

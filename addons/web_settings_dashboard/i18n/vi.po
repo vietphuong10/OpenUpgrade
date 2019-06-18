@@ -153,7 +153,7 @@ msgstr ""
 #: code:addons/web_settings_dashboard/static/src/xml/dashboard.xml:37
 #, python-format
 msgid "Installed App"
-msgstr "Ứng dụng đã cài"
+msgstr "Ứng dụng Đã cài"
 
 #. module: web_settings_dashboard
 #. openerp-web
@@ -216,7 +216,7 @@ msgstr "Odoo"
 #: code:addons/web_settings_dashboard/static/src/xml/dashboard.xml:186
 #, python-format
 msgid "Odoo Enterprise"
-msgstr "Odoo cho Doanh nghiệp"
+msgstr "Odoo Enterprise"
 
 #. module: web_settings_dashboard
 #. openerp-web

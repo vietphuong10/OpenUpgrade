@@ -1,7 +1,7 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
 # * stock_dropshipping
-# 
+#
 # Translators:
 # fanha99 <fanha99@hotmail.com>, 2017
 # Dang Hanh <hanh.dtm@komit-consulting.com>, 2017

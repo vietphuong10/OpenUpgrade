@@ -52,7 +52,7 @@ msgstr "%s (id:%s)"
 #. module: website
 #: model:ir.ui.view,arch_db:website.show_website_info
 msgid "&amp;times;"
-msgstr "&amp;times;"
+msgstr ""
 
 #. module: website
 #: model:ir.ui.view,arch_db:website.sitemap_index_xml
@@ -139,7 +139,7 @@ msgstr ", cập nhật:"
 #. module: website
 #: model:ir.ui.view,arch_db:website.website_planner
 msgid "- The Odoo Team"
-msgstr "- Đội kỹ thuật Hệ thống"
+msgstr "- The ERPOnline Team"
 
 #. module: website
 #. openerp-web
@@ -522,7 +522,7 @@ msgstr "<small>Tác giả của câu trích dẫn này</small>"
 #. module: website
 #: model:ir.ui.view,arch_db:website.s_parallax_slider
 msgid "<small>John Doe, CEO</small>"
-msgstr ""
+msgstr "<small>Trần Ngọc Tuấn, CEO</small>"
 
 #. module: website
 #: model:ir.ui.view,arch_db:website.bs_debug_page_ir_ui_view
@@ -739,6 +739,9 @@ msgid ""
 "                                social proofs about your products or services; customer quotes, videos,\n"
 "                                photos of your products in actions, twitter quotes, etc."
 msgstr ""
+"<strong>Hiển thị minh chứng ở mạng xã hội</strong><br/>\n"
+"                                Phía dưới banner chính hoặc call-to-action, thực nghiệm tốt là, hãy đưa các minh chứng ở mạng xã hội về sản phẩm và\n"
+"                                dịch vụ của bạn; trích dẫn lời nói của khách hàng, videos,                                hình ảnh sản phẩm thực tế của bạn, trích dẫn từ Twitter, v.v."
 
 #. module: website
 #: model:ir.ui.view,arch_db:website.http_error_debug
@@ -751,6 +754,8 @@ msgid ""
 "<strong>Find 3 websites that you like</strong> and write down what you like "
 "about them."
 msgstr ""
+"<strong>Hãy tìm 3 website mà bạn thích</strong> và viết ra điều gì làm bạn "
+"thích chúng."
 
 #. module: website
 #: model:ir.ui.view,arch_db:website.website_planner
@@ -777,7 +782,7 @@ msgstr ""
 #. module: website
 #: model:ir.ui.view,arch_db:website.website_planner
 msgid "<strong>Launch a forum</strong>"
-msgstr "<strong>Vào diễn đàn</strong>"
+msgstr "<strong>Khởi động một diễn đàn</strong>"
 
 #. module: website
 #: model:ir.ui.view,arch_db:website.website_planner
@@ -921,7 +926,7 @@ msgstr ""
 #. module: website
 #: model:ir.model.fields,field_description:website.field_res_config_settings_module_website_version
 msgid "A/B Testing"
-msgstr "Phiên bản thử nghiệ A/B"
+msgstr "Thử nghiệm A/B"
 
 #. module: website
 #: model:ir.ui.view,arch_db:website.res_config_settings_view_form
@@ -1537,7 +1542,7 @@ msgstr "Tạo một cộng đồng"
 #. module: website
 #: model:ir.ui.view,arch_db:website.res_config_settings_view_form
 msgid "Create several versions of your website pages"
-msgstr "Tạo một số phiên bản của các trang trên trang web của bạn"
+msgstr "Tạo một số phiên bản của các trang trên website của bạn"
 
 #. module: website
 #: model:ir.model.fields,field_description:website.field_website_create_uid
@@ -1585,7 +1590,7 @@ msgstr ""
 #: model:ir.actions.client,name:website.backend_dashboard
 #: model:ir.ui.menu,name:website.menu_dashboard
 msgid "Dashboard"
-msgstr "Bảng thông tin"
+msgstr "Bảng tin"
 
 #. module: website
 #: model:ir.ui.view,arch_db:website.bs_debug_page_ir_ui_view
@@ -1701,7 +1706,7 @@ msgstr "Huỷ bỏ"
 #. module: website
 #: model:ir.ui.view,arch_db:website.template_partner_comment
 msgid "Discuss and Comments"
-msgstr "Thảo luận và nhận xét"
+msgstr "Bàn bạc và Bình luận"
 
 #. module: website
 #: model:ir.ui.view,arch_db:website.external_snippets
@@ -1740,7 +1745,7 @@ msgstr "Tên miền"
 #: code:addons/website/static/src/xml/website.xml:35
 #, python-format
 msgid "Don't forget to update all links referring to this page."
-msgstr "Đừng quên cập nhật tất cả liên kết liên quan đến trang này."
+msgstr "Đừng quên cập nhật tất cả liên kết dẫn chiếu đến trang này."
 
 #. module: website
 #: model:ir.ui.view,arch_db:website.website_planner
@@ -1904,7 +1909,7 @@ msgstr "Ví dụ"
 #: code:addons/website/static/src/xml/website.contentMenu.xml:61
 #, python-format
 msgid "Existing Page, URL or Email"
-msgstr "Trang, URL hoặc Email hiện tại"
+msgstr "Trang, URL hoặc Email đang tồn tại"
 
 #. module: website
 #: model:ir.ui.view,arch_db:website.s_comparisons
@@ -1949,7 +1954,7 @@ msgstr "Nhanh"
 #. module: website
 #: model:ir.model.fields,field_description:website.field_res_config_settings_favicon
 msgid "Favicon"
-msgstr "Biểu tượng"
+msgstr ""
 
 #. module: website
 #: model:ir.ui.view,arch_db:website.s_three_columns
@@ -2068,7 +2073,7 @@ msgstr ""
 #. module: website
 #: model:ir.ui.view,arch_db:website.s_faq_collapse
 msgid "General Terms and Conditions / Service Policies"
-msgstr "Điều khoản/Chính sách dịch vụ"
+msgstr "Điều khoản và Điều kiện Tổng quats / Chính sách dịch vụ"
 
 #. module: website
 #: model:ir.ui.view,arch_db:website.website_planner
@@ -2126,7 +2131,7 @@ msgstr "Đến Liên kết"
 #. module: website
 #: model:ir.ui.view,arch_db:website.view_view_form_extend
 msgid "Go to Page Manager"
-msgstr "Đi đến Quản lý trang"
+msgstr "Đi đến Quản lý Trang"
 
 #. module: website
 #. openerp-web
@@ -2134,7 +2139,7 @@ msgstr "Đi đến Quản lý trang"
 #: code:addons/website/static/src/xml/website.backend.xml:22
 #, python-format
 msgid "Go to Website"
-msgstr "Đi dến trang web"
+msgstr "Mở Website"
 
 #. module: website
 #: model:ir.ui.view,arch_db:website.website_planner
@@ -2169,12 +2174,12 @@ msgstr "Google Analytics"
 #: model:ir.model.fields,field_description:website.field_res_config_settings_google_analytics_key
 #: model:ir.model.fields,field_description:website.field_website_google_analytics_key
 msgid "Google Analytics Key"
-msgstr "Khóa Google Analytics"
+msgstr ""
 
 #. module: website
 #: model:ir.model.fields,field_description:website.field_res_config_settings_has_google_analytics_dashboard
 msgid "Google Analytics in Dashboard"
-msgstr "Bảng thông tin trong Google Analytics"
+msgstr "Google Analytics trong Bảng tin"
 
 #. module: website
 #. openerp-web
@@ -2253,7 +2258,7 @@ msgstr "Nhóm"
 #. module: website
 #: model:ir.ui.view,arch_db:website.website_planner
 msgid "Grow"
-msgstr "Phát triển"
+msgstr "Tăng trưởng"
 
 #. module: website
 #: model:ir.ui.view,arch_db:website.user_navbar
@@ -2366,7 +2371,7 @@ msgstr "Trang chủ 0.0.0.0"
 #: model:ir.ui.view,arch_db:website.res_config_settings_view_form
 #, python-format
 msgid "How to get my Client ID"
-msgstr "Làm sao lấy được Client ID"
+msgstr "Cách lấy Client ID của tôi"
 
 #. module: website
 #. openerp-web
@@ -2374,7 +2379,7 @@ msgstr "Làm sao lấy được Client ID"
 #: model:ir.ui.view,arch_db:website.res_config_settings_view_form
 #, python-format
 msgid "How to get my Tracking ID"
-msgstr "Làm sao lấy được Tracking ID"
+msgstr "Cách lấy Tracking ID của tôi"
 
 #. module: website
 #: model:ir.model.fields,field_description:website.field_website_id
@@ -2512,7 +2517,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:website.field_website_menu_is_visible
 #: model:ir.model.fields,field_description:website.field_website_page_is_visible
 msgid "Is Visible"
-msgstr "Đang hiển thị"
+msgstr "Có thể Nhìn thấy"
 
 #. module: website
 #: model:ir.ui.view,arch_db:website.website_planner
@@ -2601,7 +2606,7 @@ msgstr "Các ngôn ngữ"
 #. module: website
 #: model:ir.ui.view,arch_db:website.res_config_settings_view_form
 msgid "Languages available on your website"
-msgstr "Ngôn ngữ đang có trên trang web của bạn"
+msgstr "Ngôn ngữ đang có trên website của bạn"
 
 #. module: website
 #: model:ir.ui.view,arch_db:website.bs_debug_page_ir_ui_view
@@ -2648,14 +2653,14 @@ msgstr "Cập nhật lần cuối"
 #: code:addons/website/static/src/xml/website.backend.xml:109
 #, python-format
 msgid "Last Week"
-msgstr "Tuần gần nhất"
+msgstr "Tuần trước"
 
 #. module: website
 #. openerp-web
 #: code:addons/website/static/src/xml/website.backend.xml:111
 #, python-format
 msgid "Last Year"
-msgstr "Năm gần nhất"
+msgstr "Năm trước"
 
 #. module: website
 #: model:ir.ui.view,arch_db:website.website_planner
@@ -2734,7 +2739,7 @@ msgstr "Tài khoản LinkedIn"
 #. module: website
 #: model:ir.ui.view,arch_db:website.s_faq_collapse
 msgid "Links to other websites"
-msgstr "Liên kết với website khác"
+msgstr "Liên kết đến website khác"
 
 #. module: website
 #: model:ir.ui.view,arch_db:website.s_feature_grid
@@ -2751,7 +2756,7 @@ msgstr "Đang nạp..."
 #. module: website
 #: model:ir.ui.view,arch_db:website.external_snippets
 msgid "Local Events"
-msgstr "Sự kiện nội bộ"
+msgstr "Sự kiện Cục bộ"
 
 #. module: website
 #: model:ir.model.fields,field_description:website.field_website_menu_id
@@ -2762,22 +2767,22 @@ msgstr "Trình đơn chính"
 #. module: website
 #: model:ir.ui.view,arch_db:website.user_navbar
 msgid "Manage Pages"
-msgstr "Quản lý trang"
+msgstr "Quản lý Trang"
 
 #. module: website
 #: model:ir.ui.view,arch_db:website.edit_website_pages
 msgid "Manage Your Pages"
-msgstr "Quản lý trang của bạn"
+msgstr "Quản lý Trang của bạn"
 
 #. module: website
 #: model:ir.ui.view,arch_db:website.user_navbar
 msgid "Manage Your Website Pages"
-msgstr "Quản lý Trang Web của bạn"
+msgstr "Quản lý Trang trên Website của bạn"
 
 #. module: website
 #: model:ir.ui.view,arch_db:website.website_planner
 msgid "Manage channels to structure your content"
-msgstr "Quản lý kênh để sắp xếp nội dung của bạn"
+msgstr "Quản lý các kênh để cấu trúc nội dung của bạn"
 
 #. module: website
 #: model:ir.ui.view,arch_db:website.edit_website_pages
@@ -2802,7 +2807,7 @@ msgstr "Trung bình"
 #. module: website
 #: model:ir.ui.view,arch_db:website.s_company_team
 msgid "Meet the Executive Team"
-msgstr "Gặp gỡ đội ngũ điều hành"
+msgstr "Gặp gỡ Ban Điều hành"
 
 #. module: website
 #: code:addons/website/models/website.py:241
@@ -2816,7 +2821,7 @@ msgstr "Trình đơn"
 #: code:addons/website/static/src/js/menu/content.js:338
 #, python-format
 msgid "Menu Label"
-msgstr "Nhãn trình đơn"
+msgstr "Nhãn Trình đơn"
 
 #. module: website
 #: code:addons/website/models/website.py:243
@@ -2897,12 +2902,12 @@ msgstr "Về trước"
 #. module: website
 #: selection:website.redirect,type:0
 msgid "Moved permanently"
-msgstr "Đã chuyển vĩnh viễn"
+msgstr "Được di chuyển vĩnh viễn"
 
 #. module: website
 #: selection:website.redirect,type:0
 msgid "Moved temporarily"
-msgstr "Đã chuyển tạm thời"
+msgstr "Được di chuyển tạm thời"
 
 #. module: website
 #: model:ir.ui.view,arch_db:website.layout
@@ -2921,7 +2926,7 @@ msgstr "Tên"
 #. module: website
 #: model:ir.ui.view,arch_db:website.res_config_settings_view_form
 msgid "Name and favicon of your website"
-msgstr "Tên và biểu tượng website của bạn"
+msgstr "Tên và favicon cho website của bạn"
 
 #. module: website
 #: model:ir.ui.view,arch_db:website.website_planner
@@ -2963,7 +2968,7 @@ msgstr "Tiếp"
 #. module: website
 #: model:ir.ui.view,arch_db:website.s_comparisons
 msgid "No customization"
-msgstr "Không có tùy chỉnh"
+msgstr "Không tùy chỉnh"
 
 #. module: website
 #: model:ir.ui.view,arch_db:website.s_comparisons
@@ -2990,12 +2995,12 @@ msgstr "Không dùng"
 #. module: website
 #: model:ir.ui.view,arch_db:website.show_website_info
 msgid "Note: To hide this page, uncheck it from the top Customize menu."
-msgstr "Chú ý: Để ẩn trang này, bỏ chọn nó từ Trình đơn tùy chỉnh phía trên"
+msgstr "Chú ý: Để ẩn trang này, bỏ chọn nó từ trình đơn Tùy chỉnh phía trên"
 
 #. module: website
 #: model:ir.model.fields,field_description:website.field_res_config_settings_language_count
 msgid "Number of languages"
-msgstr "Số lượng ngôn ngữ"
+msgstr "Số lượng Ngôn ngữ"
 
 #. module: website
 #: model:ir.ui.view,arch_db:website.website_planner
@@ -3010,7 +3015,7 @@ msgstr "Mục tiêu"
 #. module: website
 #: model:ir.ui.view,arch_db:website.layout_footer_copyright
 msgid "Odoo"
-msgstr "Hệ thống"
+msgstr "Odoo"
 
 #. module: website
 #: model:ir.ui.view,arch_db:website.s_three_columns
@@ -3040,7 +3045,7 @@ msgstr ""
 #. module: website
 #: model:ir.ui.view,arch_db:website.show_website_info
 msgid "Odoo Version"
-msgstr "Phiên bản Hệ thống"
+msgstr "Phiên bản Odoo"
 
 #. module: website
 #: model:ir.ui.view,arch_db:website.s_image_text
@@ -3078,7 +3083,7 @@ msgstr ""
 #. module: website
 #: model:ir.ui.view,arch_db:website.website_planner
 msgid "Online users:"
-msgstr "Người dùng trực tuyến:"
+msgstr "Người dùng Trực tuyến:"
 
 #. module: website
 #: model:ir.model.fields,help:website.field_website_page_mode
@@ -3111,7 +3116,7 @@ msgstr "ERP Mã nguồn mở"
 #. module: website
 #: model:ir.ui.view,arch_db:website.layout_footer_copyright
 msgid "Open Source eCommerce"
-msgstr "Thương mại điện tử mã nguồn mở"
+msgstr "Thương mại điện tử Mã nguồn mở"
 
 #. module: website
 #: model:ir.ui.view,arch_db:website.user_navbar
@@ -3215,7 +3220,7 @@ msgstr "Tên trang"
 #: model:ir.ui.view,arch_db:website.user_navbar
 #, python-format
 msgid "Page Properties"
-msgstr "Thuột tính trang"
+msgstr "Thuột tính Trang"
 
 #. module: website
 #. openerp-web
@@ -3287,7 +3292,7 @@ msgstr ""
 #. module: website
 #: model:ir.ui.view,arch_db:website.template_partner_post
 msgid "Partner Detail"
-msgstr ""
+msgstr "Chi tiết Đối tác"
 
 #. module: website
 #: model:ir.model.fields,help:website.field_website_partner_id
@@ -3402,12 +3407,12 @@ msgstr ""
 #. module: website
 #: model:ir.model.fields,field_description:website.field_website_partner_id
 msgid "Public Partner"
-msgstr "Khác hàng công khai"
+msgstr "Đối tác Công khai"
 
 #. module: website
 #: model:ir.model.fields,field_description:website.field_website_user_id
 msgid "Public User"
-msgstr "Người dùng công khai"
+msgstr "Người dùng Công khai"
 
 #. module: website
 #. openerp-web
@@ -3415,12 +3420,14 @@ msgstr "Người dùng công khai"
 #: code:addons/website/static/src/xml/website.pageProperties.xml:122
 #, python-format
 msgid "Publish"
-msgstr "Công khai"
+msgstr "Xuất bản"
 
 #. module: website
 #: model:ir.ui.view,arch_db:website.website_planner
 msgid "Publish multimedias to document your products/services"
-msgstr "Công khai các tài liệu liên quan đến sản phẩm/dịch vụ của bạn"
+msgstr ""
+"Xuất bản nội dung truyền thông đa phương tiện để tài liệu hoá các sản "
+"phẩm/dịch vụ của bạn"
 
 #. module: website
 #: model:ir.ui.view,arch_db:website.website_planner
@@ -3434,7 +3441,7 @@ msgstr ""
 #: code:addons/website/static/src/js/tours/banner.js:42
 #, python-format
 msgid "Publish your page by clicking on the <b>Save</b> button."
-msgstr "Để công khai trang của bạn hãy bấm vào nút <b>Lưu</b>."
+msgstr "Xuất bản trang của bạn bằng cách bấm vào nút <b>Lưu</b>."
 
 #. module: website
 #. openerp-web
@@ -3451,7 +3458,7 @@ msgstr "Đã xuất bản"
 #: model:ir.model.fields,field_description:website.field_website_page_date_publish
 #, python-format
 msgid "Publishing Date"
-msgstr "Ngày xuất bản"
+msgstr "Ngày Xuất bản"
 
 #. module: website
 #: model:ir.ui.view,arch_db:website.http_error_debug
@@ -3463,8 +3470,7 @@ msgstr "QWeb"
 msgid ""
 "Qualify your visitors in order to reach them out with marketing campaigns"
 msgstr ""
-"Đủ điều kiện cho khách truy cập của bạn để tiếp cận họ với chiến dịch tiếp "
-"thị"
+"Thẩm địn khách truy cập của bạn để tiếp cận họ với các chiến dịch marketing"
 
 #. module: website
 #: model:ir.ui.view,arch_db:website.website_planner
@@ -3528,7 +3534,7 @@ msgstr ""
 #. module: website
 #: model:ir.ui.view,arch_db:website.website_pages_form_view
 msgid "Related Menu Items"
-msgstr "Mục trình đơn liên quan"
+msgstr "Hạng mục trình đơn liên quan"
 
 #. module: website
 #: model:ir.model.fields,field_description:website.field_website_page_menu_ids
@@ -3545,7 +3551,7 @@ msgstr "Trang liên quan"
 #: code:addons/website/static/src/xml/website.backend.xml:58
 #, python-format
 msgid "Remove this suggestion from dashboard"
-msgstr "Xóa đề xuất này khỏi trang tổng quan"
+msgstr "Xóa đề xuất này khỏi bảng tin"
 
 #. module: website
 #. openerp-web
@@ -3612,7 +3618,7 @@ msgstr "Tìm"
 #. module: website
 #: model:ir.ui.view,arch_db:website.menu_search
 msgid "Search Menus"
-msgstr "Tìm trình đơn"
+msgstr "Tìm Trình đơn"
 
 #. module: website
 #: model:ir.ui.view,arch_db:website.website_search_box
@@ -3632,7 +3638,7 @@ msgstr "Danh mục thứ hai"
 #. module: website
 #: model:ir.ui.view,arch_db:website.res_config_settings_view_form
 msgid "See Google Analytics data on your Website Dashboard"
-msgstr "Xem dữ liệu Google Analytics trên Trang tổng quan trang web của bạn"
+msgstr "Xem dữ liệu Google Analytics trên Bảng tin Website của bạn"
 
 #. module: website
 #: model:ir.ui.view,arch_db:website.website_planner
@@ -3642,7 +3648,7 @@ msgstr "Xem và mua các sản phẩm của bạn"
 #. module: website
 #: model:ir.ui.view,arch_db:website.website_planner
 msgid "See how to translate on your own"
-msgstr "Xem cách ngôn ngữ đã dịch của bạn"
+msgstr "Xem cách để dịch nội dung của chính bạn"
 
 #. module: website
 #. openerp-web
@@ -3674,7 +3680,7 @@ msgstr "Gửi <span class=\"fa fa-long-arrow-right\"/>"
 #. module: website
 #: model:ir.ui.view,arch_db:website.template_partner_comment
 msgid "Send a Message to our Partners"
-msgstr "Gửi một thông điệp đến Đối tác bên ngoài"
+msgstr "Gửi một thông điệp đến Đối tác của chúng ta"
 
 #. module: website
 #: model:ir.ui.view,arch_db:website.website_planner
@@ -3724,7 +3730,8 @@ msgstr "Chia sẻ kinh nghiệm về các sản phẩm tương tự"
 #. module: website
 #: model:ir.model.fields,help:website.field_website_auto_redirect_lang
 msgid "Should users be redirected to their browser's language"
-msgstr "Người dùng nên được chuyển hướng đến ngôn ngữ của trình duyệt của họ"
+msgstr ""
+"Người dùng nên được chuyển hướng đến theo ngôn ngữ của trình duyệt của họ"
 
 #. module: website
 #: model:ir.model.fields,field_description:website.field_ir_ui_view_customize_show
@@ -3737,12 +3744,12 @@ msgstr "Hiển thị như Kế thừa tùy chọn"
 #: code:addons/website/static/src/xml/website.pageProperties.xml:86
 #, python-format
 msgid "Show in Top Menu"
-msgstr "Hiển thị trong Trình đơn phía trên"
+msgstr "Hiển thị trong Trình đơn Top"
 
 #. module: website
 #: model:ir.ui.view,arch_db:website.res_config_settings_view_form
 msgid "Show your address on a map in the"
-msgstr "Hiển thị địa chỉ của bạn trên bản đồ trong"
+msgstr "Hiển thị địa chỉ của bạn trên bản đồ ở"
 
 #. module: website
 #: model:ir.ui.view,arch_db:website.website_planner
@@ -3882,7 +3889,7 @@ msgstr "Mẫu <b>%s (id:%s)</b> chứa liên kết đến trang này"
 #: code:addons/website/models/website.py:301
 #, python-format
 msgid "Template <b>%s (id:%s)</b> is calling this file"
-msgstr "Mẫu <b>%s (id:%s)</b> thì đang gọi file này"
+msgstr "Mẫu <b>%s (id:%s)</b> đang gọi tập tin này"
 
 #. module: website
 #: model:ir.ui.view,arch_db:website.500
@@ -3899,7 +3906,7 @@ msgstr "Các mẫu"
 #. module: website
 #: model:ir.ui.view,arch_db:website.s_faq_collapse
 msgid "Terms of service"
-msgstr "Điều khoản dịch vụ"
+msgstr "Điều khoản Dịch vụ"
 
 #. module: website
 #: model:ir.ui.view,arch_db:website.template_partner_post
@@ -3915,12 +3922,12 @@ msgstr ""
 #. module: website
 #: model:ir.ui.view,arch_db:website.http_error_debug
 msgid "The error occured while rendering the template"
-msgstr "Đã xảy ra lỗi trong khi hiển thị mẫu"
+msgstr "Đã xảy ra lỗi trong khi biểu thị mẫu"
 
 #. module: website
 #: model:ir.ui.view,arch_db:website.http_error_debug
 msgid "The following error was raised in the website controller"
-msgstr "Lỗi sau được nêu trong bộ điều khiển trang web"
+msgstr "Lỗi sau đã được sinh ra trong website controller"
 
 #. module: website
 #: model:ir.model.fields,help:website.field_blog_post_website_url
@@ -4105,7 +4112,7 @@ msgstr ""
 #. module: website
 #: model:ir.ui.view,arch_db:website.res_config_settings_view_form
 msgid "Track visits in Google Analytics"
-msgstr "Theo dõi lượt truy cập trong Google Analytics"
+msgstr "Theo vết truy cập trong Google Analytics"
 
 #. module: website
 #: model:ir.ui.view,arch_db:website.res_config_settings_view_form
@@ -4155,7 +4162,7 @@ msgid ""
 "Type '<i class=\"confirm_word\">yes</i>' in the box below if you want to "
 "confirm."
 msgstr ""
-"Kiểu '<i class=\"confirm_word\">đồng ý</i>' trong hộp bên dưới nếu bạn muốn "
+"Gõ '<i class=\"confirm_word\">yes</i>' trong hộp bên dưới nếu bạn muốn "
 "xác nhận."
 
 #. module: website
@@ -4165,7 +4172,7 @@ msgstr ""
 #: model:ir.ui.view,arch_db:website.view_website_form
 #, python-format
 msgid "UA-XXXXXXXX-Y"
-msgstr "UA-XXXXXXXX-Y"
+msgstr ""
 
 #. module: website
 #: model:ir.model.fields,help:website.field_res_config_settings_cdn_filters
@@ -4254,8 +4261,6 @@ msgid ""
 "User-agent: *\n"
 "Sitemap:"
 msgstr ""
-"User-agent: *\n"
-"Sitemap:"
 
 #. module: website
 #: model:ir.ui.view,arch_db:website.bs_debug_page_ir_ui_view
@@ -4276,33 +4281,33 @@ msgstr "Rất chậm"
 #. module: website
 #: model:ir.model.fields,field_description:website.field_website_page_view_id
 msgid "View"
-msgstr "Hiển thị"
+msgstr "Giao diện"
 
 #. module: website
 #: model:ir.model.fields,field_description:website.field_website_page_arch
 #: model:ir.model.fields,field_description:website.field_website_page_arch_base
 msgid "View Architecture"
-msgstr "Kiến trúc hiển thị"
+msgstr "Kiến trúc Giao diện"
 
 #. module: website
 #: model:ir.model.fields,field_description:website.field_website_page_name
 msgid "View Name"
-msgstr "Tên hiển thị"
+msgstr "Tên Giao diện"
 
 #. module: website
 #: model:ir.model.fields,field_description:website.field_website_page_type
 msgid "View Type"
-msgstr "View Type"
+msgstr "Kiểu Giao diện"
 
 #. module: website
 #: model:ir.model.fields,field_description:website.field_website_page_mode
 msgid "View inheritance mode"
-msgstr "Xem chế độ thừa kế"
+msgstr "Chế độ kế thừa Giao diện"
 
 #. module: website
 #: model:ir.model.fields,field_description:website.field_website_page_inherit_children_ids
 msgid "Views which inherit from this one"
-msgstr "Giao diện mà kế thừa từ giao diện này"
+msgstr "Các giao diện mà kế thừa từ giao diện này"
 
 #. module: website
 #: model:ir.model.fields,field_description:website.field_blog_post_website_published
@@ -4411,7 +4416,7 @@ msgstr "Tên miền Website"
 #. module: website
 #: model:ir.model.fields,field_description:website.field_website_favicon
 msgid "Website Favicon"
-msgstr "Biểu tượng Website"
+msgstr ""
 
 #. module: website
 #: model:ir.actions.act_url,name:website.action_website_homepage
@@ -4433,13 +4438,13 @@ msgstr "Tên Website"
 #. module: website
 #: model:ir.ui.view,arch_db:website.website_pages_form_view
 msgid "Website Page Settings"
-msgstr "Thiết lập trang Website"
+msgstr "Thiết lập Trang của Website"
 
 #. module: website
 #: model:ir.actions.act_window,name:website.action_website_pages_list
 #: model:ir.ui.view,arch_db:website.website_pages_tree_view
 msgid "Website Pages"
-msgstr "Trang Website"
+msgstr "Trang của Website"
 
 #. module: website
 #: model:ir.model.fields,field_description:website.field_ir_act_server_website_path
@@ -4449,18 +4454,18 @@ msgstr "Đường dẫn website"
 #. module: website
 #: model:ir.model,name:website.model_website_redirect
 msgid "Website Redirect"
-msgstr "Điều hướng Website"
+msgstr "Chuyển hướng Website"
 
 #. module: website
 #: model:ir.ui.view,arch_db:website.website_redirect_form_view
 msgid "Website Redirect Settings"
-msgstr "Thiết lập điều hướng Website"
+msgstr "Thiết lập Chuyển hướng Website"
 
 #. module: website
 #: model:ir.actions.act_window,name:website.action_website_redirect_list
 #: model:ir.ui.view,arch_db:website.website_redirect_tree_view
 msgid "Website Redirects"
-msgstr "Điều hướng Website"
+msgstr "Chuyển hướng Website"
 
 #. module: website
 #: model:ir.ui.view,arch_db:website.view_website_form
@@ -4494,12 +4499,12 @@ msgstr "Tiêu đề Website"
 #: model:ir.model.fields,field_description:website.field_website_page_website_url
 #: model:ir.model.fields,field_description:website.field_website_published_mixin_website_url
 msgid "Website URL"
-msgstr "Đường dẫn Website"
+msgstr ""
 
 #. module: website
 #: model:ir.model.fields,field_description:website.field_ir_act_server_website_url
 msgid "Website Url"
-msgstr "Đường dẫn Website"
+msgstr ""
 
 #. module: website
 #: model:ir.ui.view,arch_db:website.s_faq_collapse
@@ -4583,17 +4588,17 @@ msgstr "Website dữ liệu Tiêu đề"
 #. module: website
 #: model:ir.actions.server,name:website.ir_actions_server_website_dashboard
 msgid "Website: Dashboard"
-msgstr "Website: Trang tổng quan"
+msgstr "Website: Bảng tin"
 
 #. module: website
 #: model:ir.actions.server,name:website.action_partner_post
 msgid "Website: Partner Post and Thanks Demo"
-msgstr "Website: Bài đăng và Lời cảm ơn của Đối tác Demo"
+msgstr ""
 
 #. module: website
 #: model:ir.actions.server,name:website.action_partner_comment
 msgid "Website: Partners Comment Form"
-msgstr "Website: Mẫu nhận xét của Đối tác"
+msgstr ""
 
 #. module: website
 #: model:ir.model.fields,field_description:website.field_website_page_website_ids
@@ -4725,7 +4730,7 @@ msgstr "Dường như bạn không có quyền truy cập vào Tài khoản Anal
 msgid ""
 "You have many blocks available: References, Quotes Slider, Twitter "
 "Scroller,etc."
-msgstr "Bạn có nhiều khối có sẵn: Tham khảo, Báo giá trượt, Twitter cuộn, vv"
+msgstr ""
 
 #. module: website
 #. openerp-web
@@ -4758,14 +4763,14 @@ msgstr ""
 #. module: website
 #: model:ir.ui.view,arch_db:website.s_banner
 msgid "Your Slide Title"
-msgstr "Tiêu đề Slide của bạn"
+msgstr "Tiêu đề Trình chiếu của bạn"
 
 #. module: website
 #. openerp-web
 #: code:addons/website/static/src/xml/website.backend.xml:95
 #, python-format
 msgid "Your Tracking ID:"
-msgstr "ID theo dõi của bạn"
+msgstr ""
 
 #. module: website
 #: model:ir.ui.view,arch_db:website.s_title
@@ -4937,7 +4942,7 @@ msgstr ""
 #. module: website
 #: model:ir.ui.view,arch_db:website.website_planner
 msgid "in their SEO metadata, including tags, title and description."
-msgstr "trong metadata SEO của họ, bao gồm thẻ, tiêu đề và mô tả."
+msgstr ""
 
 #. module: website
 #: model:ir.ui.view,arch_db:website.show_website_info
@@ -4957,7 +4962,7 @@ msgstr "ir.attachment"
 #. module: website
 #: model:ir.model,name:website.model_ir_qweb
 msgid "ir.qweb"
-msgstr "ir.qweb"
+msgstr ""
 
 #. module: website
 #: model:ir.model,name:website.model_ir_ui_view
@@ -4998,12 +5003,12 @@ msgstr "trang"
 #. module: website
 #: model:ir.ui.view,arch_db:website.website_planner
 msgid "peek.usertesting.com"
-msgstr "peek.usertesting.com"
+msgstr ""
 
 #. module: website
 #: model:ir.model,name:website.model_res_config_settings
 msgid "res.config.settings"
-msgstr "res.config.settings"
+msgstr ""
 
 #. module: website
 #: model:ir.ui.view,arch_db:website.website_planner
@@ -5020,7 +5025,7 @@ msgstr "để làm cho website của bạn sẵn sàng ngay lập tức."
 #. module: website
 #: model:ir.ui.view,arch_db:website.robots
 msgid "sitemap.xml"
-msgstr "sitemap.xml"
+msgstr ""
 
 #. module: website
 #: model:ir.ui.view,arch_db:website.website_planner
@@ -5058,7 +5063,7 @@ msgstr "hiểu về khách đến site của bạn,"
 #. module: website
 #: model:ir.ui.view,arch_db:website.menu_search
 msgid "url"
-msgstr "url"
+msgstr ""
 
 #. module: website
 #: model:ir.ui.view,arch_db:website.s_comparisons
@@ -5074,7 +5079,7 @@ msgstr "Trang web"
 #. module: website
 #: model:ir.model,name:website.model_website_published_mixin
 msgid "website.published.mixin"
-msgstr "website.published.mixin"
+msgstr ""
 
 #. module: website
 #: model:ir.ui.view,arch_db:website.website_planner

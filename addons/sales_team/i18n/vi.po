@@ -1,7 +1,7 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
 # * sales_team
-# 
+#
 # Translators:
 # son dang <son.dang@doda100.com>, 2017
 # Duy BQ <duybq86@gmail.com>, 2017
@@ -231,7 +231,7 @@ msgstr ""
 #. module: sales_team
 #: selection:crm.team,dashboard_graph_model:0
 msgid "Invoices"
-msgstr "Các hoá đơn"
+msgstr "Hoá đơn"
 
 #. module: sales_team
 #: model:ir.model.fields,field_description:sales_team.field_crm_team___last_update

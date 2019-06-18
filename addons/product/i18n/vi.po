@@ -1385,7 +1385,7 @@ msgstr "How to get your groove on."
 #: model:ir.model.fields,field_description:product.field_product_uom_id
 #: model:ir.model.fields,field_description:product.field_report_product_report_pricelist_id
 msgid "ID"
-msgstr "ID"
+msgstr ""
 
 #. module: product
 #: model:product.product,website_description:product.product_product_6
@@ -1609,7 +1609,7 @@ msgstr ""
 #. module: product
 #: model:ir.model.fields,field_description:product.field_product_category_parent_left
 msgid "Left Parent"
-msgstr "Left Parent"
+msgstr ""
 
 #. module: product
 #: model:product.uom.categ,name:product.uom_categ_length
@@ -2234,7 +2234,7 @@ msgstr "Sửa chữa"
 #. module: product
 #: model:ir.model.fields,field_description:product.field_product_category_parent_right
 msgid "Right Parent"
-msgstr "Right Parent"
+msgstr ""
 
 #. module: product
 #: model:product.product,website_description:product.product_product_6
@@ -2375,7 +2375,7 @@ msgstr "Trình tự"
 #: model:product.product,name:product.consu_delivery_01
 #: model:product.template,name:product.consu_delivery_01_product_template
 msgid "Server"
-msgstr "Server"
+msgstr "Máy chủ"
 
 #. module: product
 #: selection:product.template,type:0
@@ -3312,7 +3312,7 @@ msgstr "ngày"
 #. module: product
 #: model:ir.model,name:product.model_decimal_precision
 msgid "decimal.precision"
-msgstr "decimal.precision"
+msgstr ""
 
 #. module: product
 #: model:ir.ui.view,arch_db:product.product_category_form_view
@@ -3475,7 +3475,7 @@ msgstr "report.product.report_pricelist"
 #. module: product
 #: model:ir.model,name:product.model_res_config_settings
 msgid "res.config.settings"
-msgstr "res.config.settings"
+msgstr ""
 
 #. module: product
 #: model:ir.ui.view,arch_db:product.view_partner_property_form

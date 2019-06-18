@@ -130,9 +130,9 @@ msgid ""
 "check in. Your attendances have probably been modified manually by human "
 "resources."
 msgstr ""
-"Không thể thực hiện việc đăng xuất cho nhân viên %(empl_name)s, do không tìm"
-" thấy lần đăng nhập tương ứng. Số liệu vào/ra của bạn chắc là đã được điều "
-"chỉnh bởi bộ phận nhân sự."
+"Không thể thực hiện việc đăng xuất cho nhân viên %(empl_name)s, do không tìm thấy "
+"lần đăng nhập tương ứng. Số liệu vào/ra của bạn chắc là đã được điều chỉnh "
+"bởi bộ phận nhân sự."
 
 #. module: hr_attendance
 #: model:ir.model.fields,field_description:hr_attendance.field_hr_attendance_check_in
@@ -225,8 +225,8 @@ msgid ""
 "Create a few employees to be able to select an employee here and perform his"
 " check in / check out."
 msgstr ""
-"Hãy tạo một vài nhân viên để có thể chọn một nhân viên ở đây và thực hiện "
-"việc đănh nhập / đăng xuất (vào/ra)"
+"Hãy tạo một vài nhân viên để có thể chọn một nhân viên ở đây và thực hiện việc"
+" đănh nhập / đăng xuất (vào/ra)"
 
 #. module: hr_attendance
 #: model:ir.model.fields,field_description:hr_attendance.field_hr_attendance_create_uid

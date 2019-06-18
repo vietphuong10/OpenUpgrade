@@ -47,9 +47,7 @@ msgid ""
 "If this checkbox is ticked, you will not be able to save a contact if its "
 "VAT number cannot be verified by the European VIES service."
 msgstr ""
-"Nếu ô này được đánh dấu, bạn sẽ không thể lưu các liên hệ mà có mã số thuế "
-"không thể thẩm định được bởi dịch vụ European VIES (một hệ thống trao đổi "
-"thông tin VAT của châu Âu)"
+"Nếu ô này được đánh dấu, bạn sẽ không thể lưu các liên hệ mà có mã số thuế không thể thẩm định được bởi dịch vụ European VIES (một hệ thống trao đổi thông tin VAT của châu Âu)"
 
 #. module: base_vat
 #: code:addons/base_vat/models/res_partner.py:134

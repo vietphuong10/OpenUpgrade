@@ -1,7 +1,7 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
 # * board
-# 
+#
 # Translators:
 # Martin Trigaux, 2017
 # file aio <fileaio@gmail.com>, 2017

@@ -25,7 +25,7 @@ msgstr ""
 #. module: sale_crm
 #: model:ir.ui.view,arch_db:sale_crm.crm_case_form_view_oppor
 msgid "<span class=\"o_stat_text\"> Orders</span>"
-msgstr "<span class=\"o_stat_text\">Đơn đặt hàng</span>"
+msgstr "<span class=\"o_stat_text\"> Đơn hàng</span>"
 
 #. module: sale_crm
 #: model:ir.ui.view,arch_db:sale_crm.crm_case_form_view_oppor
@@ -35,32 +35,32 @@ msgstr "<span class=\"o_stat_text\"> Báo giá </span>"
 #. module: sale_crm
 #: model:ir.model,name:sale_crm.model_account_invoice
 msgid "Invoice"
-msgstr "Hóa đơn"
+msgstr "Hoá đơn"
 
 #. module: sale_crm
 #: model:ir.model.fields,field_description:sale_crm.field_res_users_target_sales_invoiced
 msgid "Invoiced in Sales Orders Target"
-msgstr "Chỉ định hóa đơn trong Đơn bán hàng"
+msgstr "Đã xuất hoá đơn trong Mục tiêu Đơn bán"
 
 #. module: sale_crm
 #: model:ir.model,name:sale_crm.model_crm_lead
 msgid "Lead/Opportunity"
-msgstr "Đầu mối/Cơ hội"
+msgstr "Tiềm năng/Cơ hội"
 
 #. module: sale_crm
 #: model:ir.ui.view,arch_db:sale_crm.sale_view_inherit123
 msgid "Log in the chatter from which opportunity the order originates"
-msgstr "Đăng nhập vào cuộc trò chuyện mà từ đó cơ hội bắt nguồn"
+msgstr "Ghi chú cuộc trò chuyện mà từ đó cơ hội bắt nguồn"
 
 #. module: sale_crm
 #: model:ir.ui.view,arch_db:sale_crm.crm_case_form_view_oppor
 msgid "New Quotation"
-msgstr "Báo giá mới"
+msgstr "Báo giá Mới"
 
 #. module: sale_crm
 #: model:ir.model.fields,field_description:sale_crm.field_crm_lead_sale_number
 msgid "Number of Quotations"
-msgstr "Số lượng báo giá"
+msgstr "SL Báo giá"
 
 #. module: sale_crm
 #: model:ir.model.fields,field_description:sale_crm.field_sale_order_opportunity_id
@@ -92,7 +92,7 @@ msgstr "Báo giá"
 #. module: sale_crm
 #: model:ir.actions.act_window,name:sale_crm.sale_action_orders
 msgid "Sale orders"
-msgstr "Đơn bán hàng"
+msgstr "Đơn bán"
 
 #. module: sale_crm
 #: model:ir.model,name:sale_crm.model_crm_team
@@ -102,22 +102,22 @@ msgstr "Kênh bán hàng"
 #. module: sale_crm
 #: model:ir.model,name:sale_crm.model_sale_order
 msgid "Sales Order"
-msgstr "Đơn hàng"
+msgstr "Đơn Bán"
 
 #. module: sale_crm
 #: model:ir.model.fields,field_description:sale_crm.field_crm_lead_sale_amount_total
 msgid "Sum of Orders"
-msgstr "Tổng đơn hàng"
+msgstr "Tổng các Đơn hàng"
 
 #. module: sale_crm
 #: model:ir.model.fields,field_description:sale_crm.field_sale_order_tag_ids
 msgid "Tags"
-msgstr "Từ khóa"
+msgstr "Thẻ"
 
 #. module: sale_crm
 #: model:ir.model.fields,help:sale_crm.field_crm_lead_sale_amount_total
 msgid "Untaxed Total of Confirmed Orders"
-msgstr "Tổng số đơn đặt hàng đã xác nhận chưa được xử lý"
+msgstr "Tổng trước thuế của các Đơn đã Xác nhận"
 
 #. module: sale_crm
 #: model:ir.model,name:sale_crm.model_res_users

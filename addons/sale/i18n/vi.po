@@ -40,7 +40,8 @@ msgid ""
 "% set is_online = access_action and access_action['type'] == 'ir.actions.act_url'\n"
 "% set doc_name = 'quotation' if object.state in ('draft', 'sent') else 'order confirmation'\n"
 "% set pay_sign_name =  object.get_portal_confirmation_action()\n"
-"% set access_name = is_online and object.state in ('draft', 'sent') and pay_sign_name in ('pay', 'sign') and 'Accept and %s online' % pay_sign_name or 'View %s' % doc_name\n"
+"% set pay_sign_name_text =  pay_sign_name == 'pay' and 'Pay' or 'Sign'\n"
+"% set access_name = is_online and object.state in ('draft', 'sent') and pay_sign_name in ('pay', 'sign') and 'Accept and %s online' % pay_sign_name_text or 'View %s' % doc_name\n"
 "% set access_url = is_online and object.get_mail_url() or ''\n"
 "\n"
 "% if object.partner_id.parent_id:\n"
@@ -81,12 +82,13 @@ msgid ""
 "</p>\n"
 msgstr ""
 "\n"
-"<p>Gửi đối tác ${object.partner_id.name}\n"
+"<p>Dear ${object.partner_id.name}\n"
 "% set access_action = object.with_context(force_website=True).get_access_action()\n"
 "% set is_online = access_action and access_action['type'] == 'ir.actions.act_url'\n"
-"% set doc_name = 'quotation' if object.state in ('draft', 'sent') else 'order confirmation'\n"
-"% set pay_sign_name = object.get_portal_confirmation_action()\n"
-"% set access_name = is_online and object.state in ('draft', 'sent') and pay_sign_name in ('pay', 'sign') and 'Xác nhận %s trực tuyến' % pay_sign_name or 'Xem %s' % doc_name\n"
+"% set doc_name = 'báo giá' if object.state in ('draft', 'sent') else 'xác nhận đặt hàng'\n"
+"% set pay_sign_name =  object.get_portal_confirmation_action()\n"
+"% set pay_sign_name_text =  pay_sign_name == 'pay' and 'Thanh toán' or 'Ký'\n"
+"% set access_name = is_online and object.state in ('draft', 'sent') and pay_sign_name in ('pay', 'sign') and 'Chấp thuận và %s trực tuyến' % pay_sign_name_text or 'Xem %s' % doc_name\n"
 "% set access_url = is_online and object.get_mail_url() or ''\n"
 "\n"
 "% if object.partner_id.parent_id:\n"
@@ -96,14 +98,14 @@ msgstr ""
 "<p>\n"
 "Đây là\n"
 "% if ctx.get('proforma')\n"
-"đính kèm theo, hóa đơn dự thảo của bạn\n"
+"hoá đơn pro-forma đính kèm\n"
 "% else\n"
-"the ${doc_name} <strong>${object.name}</strong>\n"
+"${doc_name} <strong>${object.name}</strong>\n"
 "% endif\n"
 "% if object.origin:\n"
-"(tham khảo: ${object.origin} )\n"
+"(với tham chiếu: ${object.origin} )\n"
 "% endif\n"
-"Với số tiền là <strong>${format_amount(object.amount_total, object.currency_id)}</strong>\n"
+"có giá trị <strong>${format_amount(object.amount_total, object.currency_id)}</strong>\n"
 "từ ${object.company_id.name}.\n"
 "</p>\n"
 "\n"
@@ -112,13 +114,13 @@ msgstr ""
 "<center>\n"
 "<a href=\"${access_url}\" style=\"background-color: #1abc9c; padding: 20px; text-decoration: none; color: #fff; border-radius: 5px; font-size: 16px;\" class=\"o_default_snippet_text\">${access_name}</a>\n"
 "<br/><br/><br/>\n"
-"<span style=\"color:#888888\">(hoặc xem file PDF đính kèm)</span>\n"
+"<span style=\"color:#888888\">(hoặc xem PDF đính kèm)</span>\n"
 "</center>\n"
 "<br/>\n"
 "% endif\n"
 "\n"
-"<p>Bạn hãy phản hồi lại mail này nếu có bất kỳ thắc mắc nào.</p>\n"
-"<p>Xin chân thành cảm ơn,</p>\n"
+"<p>Đừng ngần ngại trả lời email này nếu bạn có bất kỳ câu hỏi.</p>\n"
+"<p>Trân trọng,</p>\n"
 "\n"
 "<p style=\"color:#888888;\">\n"
 "% if object.user_id and object.user_id.signature:\n"
@@ -174,24 +176,24 @@ msgstr ""
 #. module: sale
 #: model:mail.template,subject:sale.mail_template_data_notification_email_sale_order
 msgid "${object.subject}"
-msgstr "${object.subject}"
+msgstr ""
 
 #. module: sale
 #: model:ir.ui.view,arch_db:sale.report_invoice_layouted
 #: model:ir.ui.view,arch_db:sale.report_saleorder_document
 msgid "&amp;bull;"
-msgstr "&amp;bull;"
+msgstr ""
 
 #. module: sale
 #: model:ir.ui.view,arch_db:sale.portal_my_orders
 msgid "&amp;nbsp;"
-msgstr "&amp;nbsp;"
+msgstr ""
 
 #. module: sale
 #: model:ir.ui.view,arch_db:sale.portal_order_page
 #: model:ir.ui.view,arch_db:sale.report_saleorder_document
 msgid "&amp;nbsp;<span>on</span>&amp;nbsp;"
-msgstr "&amp;nbsp;<span>vào</span>&amp;nbsp;"
+msgstr "&amp;nbsp;<span>trên cơ sở</span>&amp;nbsp;"
 
 #. module: sale
 #: model:mail.template,body_html:sale.mail_template_data_notification_email_sale_order
@@ -450,13 +452,13 @@ msgstr "<strong>Nhân viên bán hàng</strong>"
 #. module: sale
 #: model:ir.ui.view,arch_db:sale.portal_order_page
 msgid "<strong>Shipping Address</strong>"
-msgstr "<strong>Địa chỉ Giao hàng</strong>"
+msgstr "<strong>Địa chỉ Bàn giao</strong>"
 
 #. module: sale
 #: model:ir.ui.view,arch_db:sale.report_invoice_document_inherit_sale
 #: model:ir.ui.view,arch_db:sale.report_saleorder_document
 msgid "<strong>Shipping address:</strong>"
-msgstr "<strong>Địa chỉ giao hàng</strong>"
+msgstr "<strong>Địa chỉ Bàn giao:</strong>"
 
 #. module: sale
 #: model:ir.ui.view,arch_db:sale.report_invoice_layouted
@@ -572,7 +574,7 @@ msgstr "Cho phép bạn gửi hoá đơn Chiếu lệ"
 #: model:ir.ui.view,arch_db:sale.report_invoice_layouted
 #: model:ir.ui.view,arch_db:sale.report_saleorder_document
 msgid "Amount"
-msgstr "Tổng tiền"
+msgstr "Thành tiền"
 
 #. module: sale
 #: model:ir.model.fields,field_description:sale.field_sale_order_line_amt_invoiced
@@ -665,7 +667,7 @@ msgstr "Theo Người bán hàng"
 #. module: sale
 #: model:ir.filters,name:sale.filter_sale_report_salesteam
 msgid "By Salesteam"
-msgstr "Bởi đội Kinh doanh"
+msgstr "Bởi đội Bán hàng"
 
 #. module: sale
 #: model:ir.model.fields,field_description:sale.field_sale_order_line_qty_delivered_updateable
@@ -691,7 +693,7 @@ msgstr "Đã hủy"
 #. module: sale
 #: model:ir.ui.menu,name:sale.product_menu_catalog
 msgid "Catalog"
-msgstr "Danh mục"
+msgstr "Catalô"
 
 #. module: sale
 #: model:ir.model.fields,help:sale.field_crm_team_use_quotations
@@ -788,7 +790,7 @@ msgstr "Liên hệ"
 #. module: sale
 #: model:ir.model.fields,field_description:sale.field_res_config_settings_module_sale_coupon
 msgid "Coupons & Promotions"
-msgstr "Phiếu giảm giá & Khuyến mãi"
+msgstr "Mã giảm giá & Khuyến mãi"
 
 #. module: sale
 #: model:ir.ui.view,arch_db:sale.view_sale_advance_payment_inv
@@ -1158,7 +1160,7 @@ msgid ""
 "still be able to invoice or deliver."
 msgstr ""
 "Nếu đơn hàng bị khóa, bạn không thể sửa nó nữa. Tuy nhiên, bạn vẫn có thể "
-"lên hóa đơn hoặc giao hàng."
+"xuất hóa đơn hoặc giao hàng."
 
 #. module: sale
 #: model:ir.model.fields,help:sale.field_sale_order_line_product_image
@@ -1298,17 +1300,17 @@ msgstr "Đã xuất Hoá đơn Tháng này"
 #: model:ir.ui.view,arch_db:sale.crm_team_salesteams_view_kanban
 #: model:ir.ui.view,arch_db:sale.view_order_form
 msgid "Invoices"
-msgstr "Các hoá đơn"
+msgstr "Hoá đơn"
 
 #. module: sale
 #: model:ir.actions.act_window,name:sale.action_account_invoice_report_salesteam
 msgid "Invoices Analysis"
-msgstr "Phân tích hoá đơn"
+msgstr "Phân tích Hoá đơn"
 
 #. module: sale
 #: model:ir.model,name:sale.model_account_invoice_report
 msgid "Invoices Statistics"
-msgstr "Thống kê hoá đơn"
+msgstr "Thống kê Hoá đơn"
 
 #. module: sale
 #: model:ir.ui.view,arch_db:sale.view_sale_advance_payment_inv
@@ -1323,7 +1325,7 @@ msgstr ""
 #: code:addons/sale/models/sales_team.py:96
 #, python-format
 msgid "Invoices: Untaxed Total"
-msgstr "Hóa đơn: Tổng số chưa được xử lý"
+msgstr "Hóa đơn: Tổng trước Thuế"
 
 #. module: sale
 #: model:ir.ui.menu,name:sale.menu_sale_invoicing
@@ -1344,7 +1346,7 @@ msgstr "Chính sách Xuất Hoá đơn"
 #. module: sale
 #: model:ir.model.fields,field_description:sale.field_crm_team_invoiced_target
 msgid "Invoicing Target"
-msgstr "Mục tiêu hóa đơn"
+msgstr "Mục tiêu xuất hóa đơn"
 
 #. module: sale
 #: model:ir.ui.view,arch_db:sale.report_saleorder_document
@@ -1359,7 +1361,7 @@ msgstr "Địa chỉ giao hàng và xuất hoá đơn:"
 #. module: sale
 #: model:ir.model.fields,field_description:sale.field_sale_order_line_is_downpayment
 msgid "Is a down payment"
-msgstr "Đã giảm giá"
+msgstr "Là một khoản Ứng trước"
 
 #. module: sale
 #: model:ir.model.fields,field_description:sale.field_sale_order_is_expired
@@ -1373,7 +1375,7 @@ msgid ""
 "It is forbidden to modify the following fields in a locked order:\n"
 "%s"
 msgstr ""
-"Không được sửa đổi các trường sau theo thứ tự bị khóa:\n"
+"Không được sửa đổi các trường sau trong một đơn bị khóa:\n"
 "%s"
 
 #. module: sale
@@ -1453,7 +1455,7 @@ msgstr "Đã Khoá"
 #. module: sale
 #: model:ir.ui.view,arch_db:sale.res_config_settings_view_form
 msgid "Manage promotion &amp; coupon programs"
-msgstr "Quản lý các chương trình Phiếu giảm giá &amp; Khuyến mãi"
+msgstr "Quản lý các chương trình Mã giảm giá &amp; Khuyến mãi"
 
 #. module: sale
 #: selection:product.template,service_type:0
@@ -1634,7 +1636,7 @@ msgstr "Hoạt động không được phép"
 #: model:ir.ui.view,arch_db:sale.portal_order_page
 #: model:ir.ui.view,arch_db:sale.view_sales_order_line_filter
 msgid "Order"
-msgstr "Đơn hàng Bán"
+msgstr "Đơn Bán"
 
 #. module: sale
 #: model:ir.ui.view,arch_db:sale.report_saleorder_document
@@ -1702,7 +1704,7 @@ msgstr "Đơn đặt hàng được ký bởi %s"
 #. module: sale
 #: model:ir.ui.view,arch_db:sale.crm_team_salesteams_view_kanban
 msgid "Order to Invoice"
-msgstr "Đơn hàng chờ hóa đơn"
+msgstr "Đơn chờ Xuất Hoá đơn"
 
 #. module: sale
 #: model:ir.ui.view,arch_db:sale.view_order_form
@@ -1753,7 +1755,7 @@ msgstr "Chờ xuất Hoá đơn"
 #: model:ir.actions.act_window,name:sale.action_orders_upselling
 #: model:ir.ui.menu,name:sale.menu_sale_order_upselling
 msgid "Orders to Upsell"
-msgstr "Đơn hàng Bán gia tăng"
+msgstr "Đơn Bán gia tăng"
 
 #. module: sale
 #: model:ir.actions.act_window,help:sale.action_orders_upselling
@@ -1843,7 +1845,7 @@ msgstr "Giảm Giá gồm Thuế"
 #. module: sale
 #: model:ir.model.fields,field_description:sale.field_report_all_channels_sales_price_subtotal
 msgid "Price Subtotal"
-msgstr "In tổng phụ"
+msgstr "Tổng Phụ"
 
 #. module: sale
 #: selection:res.config.settings,sale_pricelist_setting:0
@@ -2136,7 +2138,7 @@ msgstr "Báo cáo"
 #: model:ir.ui.view,arch_db:sale.sale_order_view_search_inherit_sale
 #: model:ir.ui.view,arch_db:sale.view_order_product_search
 msgid "Sales"
-msgstr "Kinh doanh"
+msgstr "Bán"
 
 #. module: sale
 #: model:ir.model,name:sale.model_sale_advance_payment_inv
@@ -2150,7 +2152,7 @@ msgstr "Hoá đơn thanh toán tạm ứng"
 #: model:ir.ui.view,arch_db:sale.view_order_product_pivot
 #: model:ir.ui.view,arch_db:sale.view_order_product_search
 msgid "Sales Analysis"
-msgstr "Phân tích Kinh doanh"
+msgstr "Phân tích Bán"
 
 #. module: sale
 #: model:ir.model,name:sale.model_crm_team
@@ -2165,13 +2167,13 @@ msgstr "Phân tích Kinh doanh"
 #: model:ir.ui.view,arch_db:sale.view_order_product_search
 #: model:ir.ui.view,arch_db:sale.view_sales_order_filter
 msgid "Sales Channel"
-msgstr "Kênh Kinh doanh"
+msgstr "Kênh Bán"
 
 #. module: sale
 #: model:ir.ui.menu,name:sale.report_sales_team
 #: model:ir.ui.menu,name:sale.sales_team_config
 msgid "Sales Channels"
-msgstr "Kênh Kinh doanh"
+msgstr "Kênh Bán"
 
 #. module: sale
 #: selection:sale.report,state:0
@@ -2186,7 +2188,7 @@ msgstr "Phễu Bán hàng"
 #. module: sale
 #: model:ir.ui.view,arch_db:sale.view_order_form
 msgid "Sales Information"
-msgstr "Các thông tin Kinh doanh"
+msgstr "Các thông tin Bán"
 
 #. module: sale
 #: model:ir.model.fields,field_description:sale.field_res_partner_sale_order_ids
@@ -2198,13 +2200,13 @@ msgstr "Các thông tin Kinh doanh"
 #: model:res.request.link,name:sale.req_link_sale_order
 #: selection:sale.order,state:0 selection:sale.report,state:0
 msgid "Sales Order"
-msgstr "Đơn bán hàng"
+msgstr "Đơn Bán"
 
 #. module: sale
 #: model:mail.message.subtype,name:sale.mt_order_confirmed
 #: model:mail.message.subtype,name:sale.mt_salesteam_order_confirmed
 msgid "Sales Order Confirmed"
-msgstr "Đơn hàng được Xác nhận"
+msgstr "Đơn Bán được Xác nhận"
 
 #. module: sale
 #: model:ir.model,name:sale.model_sale_order_line
@@ -2212,7 +2214,7 @@ msgstr "Đơn hàng được Xác nhận"
 #: model:ir.model.fields,field_description:sale.field_product_product_sale_line_warn
 #: model:ir.model.fields,field_description:sale.field_product_template_sale_line_warn
 msgid "Sales Order Line"
-msgstr "Chi tiết Đơn hàng Bán"
+msgstr "Chi tiết Đơn Bán"
 
 #. module: sale
 #: model:ir.actions.act_window,name:sale.action_product_sale_list
@@ -2220,7 +2222,7 @@ msgstr "Chi tiết Đơn hàng Bán"
 #: model:ir.ui.view,arch_db:sale.view_order_form
 #: model:ir.ui.view,arch_db:sale.view_order_line_tree
 msgid "Sales Order Lines"
-msgstr "Chi tiết đơn hàng"
+msgstr "Chi tiết Đơn Bán"
 
 #. module: sale
 #: model:ir.ui.view,arch_db:sale.view_sales_order_line_filter
@@ -2230,7 +2232,7 @@ msgstr "Hạng mục sẵn sàng xuất hoá đơn"
 #. module: sale
 #: model:ir.ui.view,arch_db:sale.view_sales_order_line_filter
 msgid "Sales Order Lines related to a Sales Order of mine"
-msgstr "Các chi tiết Kinh doanh liên quan đến một Đơn bán hàng của tôi"
+msgstr "Các dòng đơn bán liên quan đến một Đơn bán hàng của tôi"
 
 #. module: sale
 #: code:addons/sale/models/sales_team.py:102
@@ -2248,12 +2250,12 @@ msgstr "Các chi tiết Kinh doanh liên quan đến một Đơn bán hàng củ
 #: model:ir.ui.view,arch_db:sale.view_sale_order_pivot
 #, python-format
 msgid "Sales Orders"
-msgstr "Đơn hàng Bán"
+msgstr "Đơn Bán"
 
 #. module: sale
 #: model:ir.model,name:sale.model_sale_report
 msgid "Sales Orders Statistics"
-msgstr "Thống kê Đơn hàng Bán"
+msgstr "Thống kê Đơn Bán"
 
 #. module: sale
 #: selection:product.template,expense_policy:0
@@ -2331,7 +2333,7 @@ msgstr "Bán sản phẩm theo bội số số lượng theo mỗi đóng gói"
 #. module: sale
 #: model:ir.ui.view,arch_db:sale.view_order_form
 msgid "Send PRO-FORMA Invoice"
-msgstr "Gửi hoá đơn Chiếu lệ"
+msgstr "Gửi hoá đơn CHIẾU LỆ"
 
 #. module: sale
 #: model:ir.ui.view,arch_db:sale.res_config_settings_view_form
@@ -2559,7 +2561,7 @@ msgstr "Các thuế được dùng cho các khoản đặt cọc"
 #. module: sale
 #: model:ir.model.fields,help:sale.field_res_config_settings_module_sale_payment
 msgid "Technical field implied by user choice of online_confirmation"
-msgstr "Trường kỹ thuật với ý nghĩa người dùng lựa chọn xác nhận online"
+msgstr "Trường kỹ thuật với ý nghĩa người dùng lựa chọn xác nhận trực tuyến"
 
 #. module: sale
 #: model:ir.model.fields,field_description:sale.field_res_config_settings_sale_note
@@ -2680,7 +2682,7 @@ msgstr ""
 #: code:addons/sale/models/sale.py:438 code:addons/sale/models/sale.py:442
 #, python-format
 msgid "There is no invoiceable line."
-msgstr "Không có chi tiết nào được lập hóa đơn tại đây"
+msgstr "Không có chi tiết nào có thể xuất được hóa đơn"
 
 #. module: sale
 #: model:ir.ui.view,arch_db:sale.portal_order_error
@@ -2859,13 +2861,13 @@ msgstr "Giá trị Trước Thuế"
 #. module: sale
 #: model:ir.ui.view,arch_db:sale.sale_order_view_search_inherit_sale
 msgid "Upselling"
-msgstr "Bày bán"
+msgstr ""
 
 #. module: sale
 #: selection:sale.order,invoice_status:0
 #: selection:sale.order.line,invoice_status:0
 msgid "Upselling Opportunity"
-msgstr "Cơ hội thăng tiến"
+msgstr ""
 
 #. module: sale
 #: model:ir.ui.view,arch_db:sale.portal_my_quotations
@@ -3009,4 +3011,4 @@ msgstr "res.config.settings"
 #. module: sale
 #: model:ir.model,name:sale.model_sale_layout_category
 msgid "sale.layout_category"
-msgstr "sale.layout_category"
+msgstr ""
