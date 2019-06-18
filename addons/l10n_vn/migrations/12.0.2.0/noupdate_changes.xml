@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<record id="vn_template" model="account.chart.template">
+		<field name="transfer_account_code_prefix">113</field>
+	</record>
+</odoo>
