@@ -28,6 +28,10 @@ renamed_modules = {
     
     # tvtmaaddons
     'to_odoo_module_website_quote': 'to_odoo_module_sale_template',
+    'to_mrp_repair_extend': 'to_repair_extend',
+    'to_repair_request_from_waraantee': 'to_repair_request_from_warranty',
+    'to_warrantee_management': 'to_warranty_management',
+
     # tvtma
     'to_refesh_sale_order': 'to_refresh_sale_order',
 }
