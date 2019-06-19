@@ -66,56 +66,36 @@ obsolete model stock.location.path
 obsolete model web.planner
 ---XML records in module 'general'---
 ERROR: module not in list of installed modules:
----Fields in module 'website_quote'---
----XML records in module 'website_quote'---
+---Fields in module 'to_vietnam_states'---
+---XML records in module 'to_vietnam_states'---
 ---nothing has changed in this module--
 ERROR: module not in list of installed modules:
 ---Fields in module 'to_multi_website_blog'---
 ---XML records in module 'to_multi_website_blog'---
 ---nothing has changed in this module--
 ERROR: module not in list of installed modules:
----Fields in module 'account_cash_basis_base_account'---
----XML records in module 'account_cash_basis_base_account'---
+---Fields in module 'to_refesh_sale_order'---
+---XML records in module 'to_refesh_sale_order'---
 ---nothing has changed in this module--
 ERROR: module not in list of installed modules:
----Fields in module 'to_odoo_module_website_quote'---
----XML records in module 'to_odoo_module_website_quote'---
+---Fields in module 'website_quote'---
+---XML records in module 'website_quote'---
 ---nothing has changed in this module--
 ERROR: module not in list of installed modules:
----Fields in module 'to_vietnam_states'---
----XML records in module 'to_vietnam_states'---
----nothing has changed in this module--
-ERROR: module not in list of installed modules:
----Fields in module 'auth_crypt'---
----XML records in module 'auth_crypt'---
+---Fields in module 'to_account_invoice_tax_analytic_tags'---
+---XML records in module 'to_account_invoice_tax_analytic_tags'---
 ---nothing has changed in this module--
 ERROR: module not in list of installed modules:
 ---Fields in module 'account_invoicing'---
 ---XML records in module 'account_invoicing'---
 ---nothing has changed in this module--
 ERROR: module not in list of installed modules:
----Fields in module 'to_refesh_sale_order'---
----XML records in module 'to_refesh_sale_order'---
+---Fields in module 'auth_crypt'---
+---XML records in module 'auth_crypt'---
 ---nothing has changed in this module--
 ERROR: module not in list of installed modules:
----Fields in module 'sale_payment'---
----XML records in module 'sale_payment'---
----nothing has changed in this module--
-ERROR: module not in list of installed modules:
----Fields in module 'sale_order_dates'---
----XML records in module 'sale_order_dates'---
----nothing has changed in this module--
-ERROR: module not in list of installed modules:
----Fields in module 'account_asset'---
----XML records in module 'account_asset'---
----nothing has changed in this module--
-ERROR: module not in list of installed modules:
----Fields in module 'web_planner'---
----XML records in module 'web_planner'---
----nothing has changed in this module--
-ERROR: module not in list of installed modules:
----Fields in module 'to_multi_website'---
----XML records in module 'to_multi_website'---
+---Fields in module 'account_cash_basis_base_account'---
+---XML records in module 'account_cash_basis_base_account'---
 ---nothing has changed in this module--
 ERROR: module not in list of installed modules:
 ---Fields in module 'to_sale_subscription'---
@@ -223,10 +203,30 @@ DEL sale.subscription.close.reason: to_sale_subscription.close_reason_3
 DEL sale.subscription.close.reason: to_sale_subscription.close_reason_4
 DEL sale.subscription.close.reason: to_sale_subscription.close_reason_5
 ERROR: module not in list of installed modules:
----Fields in module 'to_account_invoice_tax_analytic_tags'---
----XML records in module 'to_account_invoice_tax_analytic_tags'---
+---Fields in module 'account_asset'---
+---XML records in module 'account_asset'---
+---nothing has changed in this module--
+ERROR: module not in list of installed modules:
+---Fields in module 'to_odoo_module_website_quote'---
+---XML records in module 'to_odoo_module_website_quote'---
+---nothing has changed in this module--
+ERROR: module not in list of installed modules:
+---Fields in module 'sale_order_dates'---
+---XML records in module 'sale_order_dates'---
 ---nothing has changed in this module--
 ERROR: module not in list of installed modules:
 ---Fields in module 'account_accountant'---
 ---XML records in module 'account_accountant'---
+---nothing has changed in this module--
+ERROR: module not in list of installed modules:
+---Fields in module 'to_multi_website'---
+---XML records in module 'to_multi_website'---
+---nothing has changed in this module--
+ERROR: module not in list of installed modules:
+---Fields in module 'web_planner'---
+---XML records in module 'web_planner'---
+---nothing has changed in this module--
+ERROR: module not in list of installed modules:
+---Fields in module 'sale_payment'---
+---XML records in module 'sale_payment'---
 ---nothing has changed in this module--
