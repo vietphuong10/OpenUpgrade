@@ -1,6 +1,6 @@
 ---Fields in module 'website_hr_recruitment'---
 website_hr_recruitment / hr.job                   / website_id (many2one)         : NEW relation: website
-# NOTHING TO DO
+# DONE: set website.default_website as the website for hr jobs having no website defined
 
 website_hr_recruitment / hr.job                   / website_meta_og_img (char)    : NEW
 # NOTHING TO DO: used for linking the image that is going to be showed when linking the page on social media. Default one is company logo.
