@@ -24,9 +24,31 @@ _table_renames = [
     ('procurement_rule', 'stock_rule'),
 ]
 
+def set_noupdate(cr):
+    
+    noupdate=(
+        'stock_location_stock',
+        'stock_location_company',
+        'stock_location_output',
+        'location_pack_zone',
+        'picking_type_internal',
+        'picking_type_in',
+        'picking_type_out')
+    
+    openupgrade.logged_query(
+        cr, """
+        UPDATE ir_model_data
+        SET noupdate=True
+        WHERE name in %s
+            AND module='stock'
+        """, (
+            noupdate,
+        ),
+    )
 
 @openupgrade.migrate(use_env=False)
 def migrate(cr, version):
+    set_noupdate(cr)
     openupgrade.copy_columns(cr, _column_copies)
     openupgrade.rename_columns(cr, _column_renames)
     openupgrade.rename_models(cr, _model_renames)
@@ -46,3 +68,5 @@ def migrate(cr, version):
                 ('product_product_id', 'product_id'),
             ],
         })
+        
+    
