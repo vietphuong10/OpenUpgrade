@@ -1,6 +1,7 @@
 # Copyright 2019 Eficent <http://www.eficent.com>
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 from openupgradelib import openupgrade
+from psycopg2.extensions import AsIs
 
 
 def type_change_payment_transaction_and_sale_order(env):
@@ -76,6 +77,35 @@ def fill_sale_order_line_qty_delivered_method(cr):
     )
 
 
+def fill_sale_order_requires(env):
+    # if website_quote is installed
+    if openupgrade.column_exists(env.cr, 'sale_order', openupgrade.get_legacy_name('require_payment')):
+        openupgrade.logged_query(
+            env.cr, """
+            UPDATE sale_order
+            SET require_signature = TRUE
+            WHERE %s = 0
+            """, (AsIs(openupgrade.get_legacy_name('require_payment')),),
+        )
+        openupgrade.logged_query(
+            env.cr, """
+            UPDATE sale_order
+            SET require_payment = TRUE
+            WHERE %s = 1
+            """, (AsIs(openupgrade.get_legacy_name('require_payment')),),
+        )
+
+
+def update_config(env):
+    # if website_quote is installed
+    if openupgrade.column_exists(env.cr, 'sale_order', openupgrade.get_legacy_name('require_payment')):
+        res_config_id = env['res.config.settings'].create({
+            'portal_confirmation_sign': True,
+            'portal_confirmation_pay': True,
+            })
+        res_config_id.execute()
+
+
 @openupgrade.migrate()
 def migrate(env, version):
     type_change_payment_transaction_and_sale_order(env)
@@ -88,3 +118,6 @@ def migrate(env, version):
             'sale.mail_template_data_notification_email_sale_order',
         ],
     )
+
+    fill_sale_order_requires(env)
+    update_config(env)

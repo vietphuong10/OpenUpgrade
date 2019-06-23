@@ -13,7 +13,7 @@ website_quote / sale.order               / quote_viewed (boolean)        : DEL
 
 website_quote / sale.order               / require_payment (selection)   : selection_keys is now 'False' ('[0, 1]')
 website_quote / sale.order               / require_payment (selection)   : type is now 'boolean' ('selection')
-# DONE: Nothing to do, processed in sale_management
+# DONE: Nothing to do, processed in module sale
 
 website_quote / sale.order               / template_id (many2one)        : DEL relation: sale.quote.template
 # DONE: pre-migration, renamed field to sale_order template_id

@@ -73,7 +73,18 @@ def fill_sale_order_line_sections(cr):
 
 @openupgrade.migrate()
 def migrate(env, version):
+
+    # if website_quote is installed in v11, the column require_payment should exists
+    # in this case, we need to make a backup for the column so that we will not lose
+    # the data since this column is now a boolean field in sale module instead of
+    # website_quote as it was in Odoo 11 in post-migration, we will use this backup
+    # field to fill the value for the new field require_payment and require_signature
+    if openupgrade.column_exists(env.cr, 'sale_order', 'require_payment'):
+        _column_copies['sale_order'] = [
+            ('require_payment', None, None),
+        ]
     openupgrade.copy_columns(env.cr, _column_copies)
+
     if openupgrade.column_exists(env.cr, 'sale_order', 'payment_tx_id'):
         # from sale_payment module
         openupgrade.rename_columns(env.cr, _column_renames)
