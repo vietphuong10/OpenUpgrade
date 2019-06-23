@@ -1,7 +1,7 @@
 ---Fields in module 'sale_quotation_builder'---
 sale_quotation_builder / product.template         / quotation_only_description (html): NEW
 website_quote / product.template         / quote_description (html)      : DEL
-# DONE: Premigration rename_fields. Although this is even not visibly used in Odoo 12
+# DONE: Pre-migration rename_fields. Although this is even not visibly used in Odoo 12
 
 website_quote / product.template         / website_description (html)    : DEL
 # DONE: nothing to do. website_description was declared in both website_quote and website_sale in Odoo 11 and now is declared in website_sale only in Odoo 12
@@ -13,7 +13,7 @@ website_quote / sale.order               / quote_viewed (boolean)        : DEL
 
 website_quote / sale.order               / require_payment (selection)   : selection_keys is now 'False' ('[0, 1]')
 website_quote / sale.order               / require_payment (selection)   : type is now 'boolean' ('selection')
-# DONE: pre-migration fill_sale_order_require_signature_and_payment
+# DONE: Nothing to do, processed in sale_management
 
 website_quote / sale.order               / template_id (many2one)        : DEL relation: sale.quote.template
 # DONE: pre-migration, renamed field to sale_order template_id
@@ -69,7 +69,7 @@ website_quote / sale.quote.template      / quote_line (one2many)         : DEL r
 
 website_quote / sale.quote.template      / require_payment (selection)   : selection_keys is now 'False' ('[0, 1]')
 website_quote / sale.quote.template      / require_payment (selection)   : type is now 'boolean' ('selection')
-# DONE: pre-migration fill_sale_order_template_require_signature_and_payment
+# DONE: Nothing to do, processed in sale_management
 
 ---XML records in module 'sale_quotation_builder'---
 DEL ir.actions.act_window: sale.action_quotations [potentially moved to sale_management module]

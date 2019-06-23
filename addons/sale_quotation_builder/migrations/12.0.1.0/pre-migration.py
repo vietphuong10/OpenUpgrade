@@ -10,48 +10,8 @@ xmlid_renames = [
 ]
 
 
-def fill_sale_order_require_signature_and_payment(cr):
-    openupgrade.logged_query(
-        cr, """
-        UPDATE sale_order
-        SET require_signature = TRUE
-        WHERE require_payment = 0
-        """
-    )
-
-    openupgrade.logged_query(
-        cr, """
-        UPDATE sale_order
-        SET require_payment = TRUE
-        WHERE require_payment = 1
-        """
-    )
-
-
-def fill_sale_order_template_require_signature_and_payment(cr):
-    openupgrade.logged_query(
-        cr, """
-        UPDATE sale_order_template
-        SET require_signature = TRUE
-        WHERE require_payment = 0
-        """
-    )
-
-    openupgrade.logged_query(
-        cr, """
-        UPDATE sale_order_template
-        SET require_payment = TRUE
-        WHERE require_payment = 1
-        """
-    )
-
-
 @openupgrade.migrate()
 def migrate(env, version):
     cr = env.cr
     openupgrade.rename_fields(env, _field_renames)
     openupgrade.rename_xmlids(cr, xmlid_renames)
-
-    fill_sale_order_require_signature_and_payment(cr)
-    fill_sale_order_template_require_signature_and_payment(cr)
-

@@ -7,6 +7,7 @@ renamed_modules = {
     'base_vat_autocomplete': 'partner_autocomplete',
     'mrp_repair': 'repair',
     'product_extended': 'mrp_bom_cost',
+    'website_quote': 'sale_quotation_builder',
     # OCA/account-payment
     'account_payment_return_import_sepa_pain': (
         'account_payment_return_import_iso20022'
@@ -46,7 +47,6 @@ merged_modules = {
     'sale_payment': 'sale',
     'sale_service_rating': 'sale_timesheet',
     'web_planner': 'web',
-    'website_quote': 'sale_quotation_builder',
     'website_rating_project': 'project',
     'website_sale_options': 'website_sale',
     'website_sale_stock_options': 'website_sale_stock',
