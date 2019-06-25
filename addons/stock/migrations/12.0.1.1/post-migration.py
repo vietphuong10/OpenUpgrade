@@ -59,7 +59,7 @@ def merge_stock_location_path_stock_rule(env):
             picking_type_id, delay, propagate, warehouse_id, auto,
             create_uid, create_date, write_uid, write_date, id
         FROM stock_location_path
-        """, (AsIs(openupgrade.get_legacy_name('loc_path_id')), ),
+        """, (AsIs(openupgrade.get_legacy_name('loc_path_id')),),
     )
     openupgrade.logged_query(
         env.cr, """
@@ -67,7 +67,7 @@ def merge_stock_location_path_stock_rule(env):
         SET model = 'stock.rule', res_id = sr.id
         FROM stock_rule sr
         WHERE imd.res_id = sr.%s AND model = 'stock.location.path'
-        """, (AsIs(openupgrade.get_legacy_name('loc_path_id')), ),
+        """, (AsIs(openupgrade.get_legacy_name('loc_path_id')),),
     )
     env.cr.execute(
         """
@@ -133,6 +133,18 @@ def fill_stock_package_level(env):
             })
 
 
+def synch_stock_rule_company(env):
+    # Validate PO will raise an error if the related stock rule has no company defined
+    # So, we fill the company field using the related route's company
+    rule_ids = env['stock.rule'].with_context(active_test=False).search([('route_id','!=', False)])
+    for rule_id in rule_ids:
+        if rule_id.route_id.company_id:
+            company_id = rule_id.route_id.company_id.id
+        else:
+            company_id = False
+        rule_id.write({'company_id': company_id})
+
+
 @openupgrade.migrate()
 def migrate(env, version):
     cr = env.cr
@@ -148,3 +160,4 @@ def migrate(env, version):
             'stock.stock_location_path_comp_rule',
         ],
     )
+    synch_stock_rule_company(env)
