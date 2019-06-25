@@ -104,6 +104,12 @@ def sync_menu_views_pages_websites(env):
                 })
 
 
+def update_google_maps_api_key(env):
+    google_maps_api_key = env['ir.config_parameter'].sudo().get_param('google_maps_api_key')
+    if google_maps_api_key:
+        website_ids = env['website'].search([('google_maps_api_key', '=', False)]).write({'google_maps_api_key': google_maps_api_key})
+
+
 @openupgrade.migrate()
 def migrate(env, version):
     cr = env.cr
@@ -121,3 +127,4 @@ def migrate(env, version):
     )
     enable_multiwebsites(env)
     sync_menu_views_pages_websites(env)
+    update_google_maps_api_key(env)
