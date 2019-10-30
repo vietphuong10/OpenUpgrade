@@ -1,15 +1,18 @@
+---Models in module 'digest'---
+new model digest.digest
+new model digest.tip
 ---Fields in module 'digest'---
-digest       / digest.digest            / company_id (many2one)         : NEW relation: res.company
+digest       / digest.digest            / company_id (many2one)         : NEW relation: res.company, hasdefault
 digest       / digest.digest            / kpi_mail_message_total (boolean): NEW
 digest       / digest.digest            / kpi_res_users_connected (boolean): NEW
-digest       / digest.digest            / name (char)                   : NEW required: required
+digest       / digest.digest            / name (char)                   : NEW required
 digest       / digest.digest            / next_run_date (date)          : NEW
-digest       / digest.digest            / periodicity (selection)       : NEW required: required, selection_keys: ['monthly', 'quarterly', 'weekly'], req_default: function
-digest       / digest.digest            / state (selection)             : NEW selection_keys: ['activated', 'deactivated']
-digest       / digest.digest            / template_id (many2one)        : NEW relation: mail.template, required: required, req_default: function
+digest       / digest.digest            / periodicity (selection)       : NEW required, selection_keys: ['monthly', 'quarterly', 'weekly'], req_default: function, hasdefault
+digest       / digest.digest            / state (selection)             : NEW selection_keys: ['activated', 'deactivated'], hasdefault
+digest       / digest.digest            / template_id (many2one)        : NEW relation: mail.template, required, req_default: function, hasdefault
 digest       / digest.digest            / user_ids (many2many)          : NEW relation: res.users
-digest       / digest.tip               / group_id (many2one)           : NEW relation: res.groups
-digest       / digest.tip               / sequence (integer)            : NEW
+digest       / digest.tip               / group_id (many2one)           : NEW relation: res.groups, hasdefault
+digest       / digest.tip               / sequence (integer)            : NEW hasdefault
 digest       / digest.tip               / tip_description (html)        : NEW
 digest       / digest.tip               / user_ids (many2many)          : NEW relation: res.users
 ---XML records in module 'digest'---
@@ -17,8 +20,8 @@ NEW digest.digest: digest.digest_digest_default (noupdate)
 NEW digest.tip: digest.digest_tip_mail_0
 NEW digest.tip: digest.digest_tip_mail_1
 NEW ir.actions.act_window: digest.digest_digest_action
-NEW ir.config_parameter: digest.default_digest
-NEW ir.config_parameter: digest.default_emails_digest
+NEW ir.config_parameter: digest.default_digest (noupdate)
+NEW ir.config_parameter: digest.default_emails_digest (noupdate)
 NEW ir.cron: digest.ir_cron_digest_scheduler_action
 NEW ir.model.access: digest.access_digest_digest_system
 NEW ir.model.access: digest.access_digest_digest_user

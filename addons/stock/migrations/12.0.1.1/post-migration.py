@@ -10,7 +10,7 @@ def map_stock_rule_action(cr):
         cr,
         openupgrade.get_legacy_name('action'),
         'action',
-        [('move', 'pull_push'),
+        [('move', 'pull'),
          ],
         table='stock_rule', write='sql')
 
@@ -59,7 +59,7 @@ def merge_stock_location_path_stock_rule(env):
             picking_type_id, delay, propagate, warehouse_id, auto,
             create_uid, create_date, write_uid, write_date, id
         FROM stock_location_path
-        """, (AsIs(openupgrade.get_legacy_name('loc_path_id')),),
+        """, (AsIs(openupgrade.get_legacy_name('loc_path_id')), ),
     )
     openupgrade.logged_query(
         env.cr, """
@@ -67,7 +67,7 @@ def merge_stock_location_path_stock_rule(env):
         SET model = 'stock.rule', res_id = sr.id
         FROM stock_rule sr
         WHERE imd.res_id = sr.%s AND model = 'stock.location.path'
-        """, (AsIs(openupgrade.get_legacy_name('loc_path_id')),),
+        """, (AsIs(openupgrade.get_legacy_name('loc_path_id')), ),
     )
     env.cr.execute(
         """
@@ -100,6 +100,14 @@ def merge_stock_location_path_stock_rule(env):
             env, 'stock.rule',
             [row[1]],
             row[0],
+        )
+    pull_push_rule_ids = tuple(set([r[0] for r in rules_to_merge]))
+    if pull_push_rule_ids:
+        openupgrade.logged_query(
+            env.cr, """
+            UPDATE stock_rule
+            SET action = 'pull_push'
+            WHERE id in %s""", (pull_push_rule_ids, ),
         )
 
 
@@ -145,6 +153,20 @@ def synch_stock_rule_company(env):
         rule_id.write({'company_id': company_id})
 
 
+def merge_stock_putaway_product(cr):
+    if openupgrade.table_exists(cr, 'stock_product_putaway_strategy'):
+        openupgrade.logged_query(
+            cr, """
+            INSERT INTO stock_fixed_putaway_strat (product_id, putaway_id,
+                fixed_location_id, sequence,
+                create_uid, create_date, write_uid, write_date, %s)
+            SELECT product_product_id, putaway_id, fixed_location_id, sequence,
+                create_uid, create_date, write_uid, write_date, id
+            FROM stock_product_putaway_strategy
+        """, (AsIs(openupgrade.get_legacy_name('old_strat_id')), ),
+        )
+
+
 @openupgrade.migrate()
 def migrate(env, version):
     cr = env.cr
@@ -153,6 +175,7 @@ def migrate(env, version):
     fill_stock_picking_type_barcode(env)
     merge_stock_location_path_stock_rule(env)
     fill_stock_package_level(env)
+    merge_stock_putaway_product(cr)
     openupgrade.load_data(
         cr, 'stock', 'migrations/12.0.1.1/noupdate_changes.xml')
     openupgrade.delete_records_safely_by_xml_id(

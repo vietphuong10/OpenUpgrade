@@ -871,8 +871,13 @@ class IrModelFields(models.Model):
                 keys = [key for key in new_vals if old_vals[key] != new_vals[key]]
                 self.pool.post_init(record.modified, keys)
                 old_vals.update(new_vals)
-            if module and not field.manual and (module == model._original_module or module in field._modules):
-                to_xmlids.append(name)
+            if module and (module == model._original_module or module in field._modules):
+                # remove this and only keep the else clause if version >= saas-12.4
+                if field.manual:
+                    self.pool.loaded_xmlids.add(
+                        '%s.field_%s__%s' % (module, model._name.replace('.', '_'), name))
+                else:
+                    to_xmlids.append(name)
 
         if to_insert:
             # insert missing fields
@@ -1143,6 +1148,11 @@ class IrModelRelation(models.Model):
 
         # drop m2m relation tables
         for table in to_drop:
+            # OpenUpgrade: do not run the new table cleanup
+            openupgrade.message(
+                self._cr, 'Unknown', False, False,
+                "Not dropping the many2many table %s", table)
+            continue
             self._cr.execute('DROP TABLE "%s" CASCADE' % table,)
             _logger.info('Dropped table %s', table)
 
@@ -1283,7 +1293,7 @@ class IrModelAccess(models.Model):
             else:
                 msg_tail = _("Please contact your system administrator if you think this is an error.") + "\n\n(" + _("Document model") + ": %s)"
                 msg_params = (model,)
-            msg_tail += ' - ({} {}, {} {})'.format(_('Operation:'), mode, _('User:'), self._uid)
+            msg_tail += u' - ({} {}, {} {})'.format(_('Operation:'), mode, _('User:'), self._uid)
             _logger.info('Access Denied by ACLs for operation: %s, uid: %s, model: %s', mode, self._uid, model)
             msg = '%s %s' % (msg_heads[mode], msg_tail)
             raise AccessError(msg % msg_params)
@@ -1705,6 +1715,9 @@ class IrModelData(models.Model):
                                 res_id, model)
                         # /OpenUpgrade
                     else:
+                        # OpenUpgrade: don't delete xmlids. Use database_cleanup instead
+                        continue
+                        # /OpenUpgrade
                         bad_imd_ids.append(id)
         if bad_imd_ids:
             self.browse(bad_imd_ids).unlink()

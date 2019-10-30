@@ -71,6 +71,19 @@ xmlid_renames = [
 ]
 
 
+def switch_noupdate_flag(env):
+    """"Some renamed XML-IDs have changed their noupdate status, so we change
+    it as well.
+    """
+    openupgrade.logged_query(
+        env.cr, """
+        UPDATE ir_model_data
+        SET noupdate=False
+        WHERE module='base' AND name
+            IN ('default_template_user_config', 'template_portal_user_id')""",
+    )
+
+
 def eliminate_duplicate_translations(cr):
     # Deduplicate code translations
     openupgrade.logged_query(
@@ -136,6 +149,22 @@ def fill_ir_ui_view_key(cr):
     )
 
 
+def fill_ir_attachment_res_model_name(cr):
+    # fast compute the res_model_name in ir.attachment
+    if not openupgrade.column_exists(cr, 'ir_attachment', 'res_model_name'):
+        openupgrade.logged_query(
+            cr, """
+            ALTER TABLE ir_attachment ADD COLUMN res_model_name varchar""",
+        )
+        openupgrade.logged_query(
+            cr, """
+            UPDATE ir_attachment ia
+            SET res_model_name = im.name
+            FROM ir_model im
+            WHERE im.model = ia.res_model""",
+        )
+
+
 @openupgrade.migrate(use_env=True)
 def migrate(env, version):
     # Deactivate the noupdate flag (hardcoded on initial SQL load) for allowing
@@ -156,15 +185,28 @@ def migrate(env, version):
         openupgrade.rename_models(env.cr, model_renames_stock)
         openupgrade.rename_tables(env.cr, table_renames_stock)
     openupgrade.rename_xmlids(env.cr, xmlid_renames)
+    switch_noupdate_flag(env)
     eliminate_duplicate_translations(env.cr)
 
     # Make the system and admin user XML ids refer to the same entry for now to
     # prevent errors when base data is loaded. The users are picked apart in
     # this module's end stage migration script.
-    env.cr.execute(
-        """ INSERT INTO ir_model_data
-        (module, name, model, res_id, noupdate)
-        VALUES('base', 'user_admin', 'res.users', 1, true)""")
+    # Safely, we check first if the `base.user_admin` already exists to
+    # avoid possible conflicts: very old databases may have this record.
+    env.cr.execute("""
+        SELECT id
+        FROM ir_model_data
+        WHERE name='user_admin' AND module='base' AND model='res.users'""")
+    if env.cr.fetchone():
+        env.cr.execute("""
+            UPDATE ir_model_data
+            SET model='res.users',res_id=1,noupdate=true
+            WHERE name='user_admin' AND module='base' AND model='res.users'""")
+    else:
+        env.cr.execute("""
+            INSERT INTO ir_model_data
+            (module, name, model, res_id, noupdate)
+            VALUES('base', 'user_admin', 'res.users', 1, true)""")
     env.cr.execute(
         """ INSERT INTO ir_model_data
         (module, name, model, res_id, noupdate)
@@ -173,8 +215,16 @@ def migrate(env, version):
         """)
     fix_lang_constraints(env)
     fix_lang_table(env)
+    # fast compute of res_model_name
+    fill_ir_attachment_res_model_name(env.cr)
     # for migration of web module
     openupgrade.rename_columns(
         env.cr, {'res_company': [('external_report_layout', None)]})
     # for migration of website module
     fill_ir_ui_view_key(env.cr)
+    openupgrade.set_xml_ids_noupdate_value(
+        env, 'base', [
+            'default_template_user_config',
+            'view_menu',
+            'lang_km',
+        ], False)

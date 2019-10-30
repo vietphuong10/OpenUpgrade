@@ -252,7 +252,7 @@ class MassMailingContact(models.Model):
             contacts = self.env['mail.mass_mailing.list_contact_rel'].search([('list_id', '=', active_list_id)])
             return [('id', 'in', [record.contact_id.id for record in contacts if record.opt_out == value])]
         else:
-            raise UserError('Search opt out cannot be executed without a unique and valid active mailing list context.')
+            raise UserError(_('Search opt out cannot be executed without a unique and valid active mailing list context.'))
 
     @api.depends('subscription_list_ids')
     def _compute_opt_out(self):
@@ -308,7 +308,7 @@ class MassMailingCampaign(models.Model):
     _rec_name = "campaign_id"
     _inherits = {'utm.campaign': 'campaign_id'}
 
-    stage_id = fields.Many2one('mail.mass_mailing.stage', string='Stage', ondelete='restrict', required=True, 
+    stage_id = fields.Many2one('mail.mass_mailing.stage', string='Stage', ondelete='restrict', required=True,
         default=lambda self: self.env['mail.mass_mailing.stage'].search([], limit=1),
         group_expand='_group_expand_stage_ids')
     user_id = fields.Many2one(

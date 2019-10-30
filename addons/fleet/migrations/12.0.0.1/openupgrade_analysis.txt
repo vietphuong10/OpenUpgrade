@@ -1,18 +1,20 @@
+---Models in module 'fleet'---
+new model fleet.vehicle.assignation.log
 ---Fields in module 'fleet'---
 fleet        / fleet.vehicle            / activity_ids (one2many)       : NEW relation: mail.activity
-fleet        / fleet.vehicle            / brand_id (many2one)           : NEW relation: fleet.vehicle.model.brand
-fleet        / fleet.vehicle            / first_contract_date (date)    : NEW
+fleet        / fleet.vehicle            / brand_id (many2one)           : NEW relation: fleet.vehicle.model.brand, isrelated: related, stored
+fleet        / fleet.vehicle            / first_contract_date (date)    : NEW hasdefault
 fleet        / fleet.vehicle            / log_drivers (one2many)        : NEW relation: fleet.vehicle.assignation.log
 fleet        / fleet.vehicle            / message_last_post (datetime)  : DEL
 fleet        / fleet.vehicle            / message_main_attachment_id (many2one): NEW relation: ir.attachment
 fleet        / fleet.vehicle.assignation.log / date_end (date)               : NEW
 fleet        / fleet.vehicle.assignation.log / date_start (date)             : NEW
-fleet        / fleet.vehicle.assignation.log / driver_id (many2one)          : NEW relation: res.partner, required: required
-fleet        / fleet.vehicle.assignation.log / vehicle_id (many2one)         : NEW relation: fleet.vehicle, required: required
+fleet        / fleet.vehicle.assignation.log / driver_id (many2one)          : NEW relation: res.partner, required
+fleet        / fleet.vehicle.assignation.log / vehicle_id (many2one)         : NEW relation: fleet.vehicle, required
 fleet        / fleet.vehicle.log.contract / activity_ids (one2many)       : NEW relation: mail.activity
 fleet        / fleet.vehicle.log.contract / message_last_post (datetime)  : DEL
 fleet        / fleet.vehicle.log.contract / message_main_attachment_id (many2one): NEW relation: ir.attachment
-fleet        / fleet.vehicle.log.contract / user_id (many2one)            : NEW relation: res.users
+fleet        / fleet.vehicle.log.contract / user_id (many2one)            : NEW relation: res.users, hasdefault
 ---XML records in module 'fleet'---
 DEL fleet.service.type: fleet.type_contract_leasing
 DEL fleet.service.type: fleet.type_contract_omnium
@@ -144,6 +146,7 @@ DEL fleet.vehicle.tag: fleet.vehicle_tag_purchased
 DEL fleet.vehicle.tag: fleet.vehicle_tag_sedan
 DEL fleet.vehicle.tag: fleet.vehicle_tag_senior
 NEW ir.actions.act_window: fleet.mail_activity_type_action_config_fleet
+ir.cron: fleet.ir_cron_contract_costs_generator (noupdate) (noupdate switched)
 NEW ir.model.access: fleet.access_fleet_vehicle_assignation_log_fleet_group_user
 NEW ir.model.access: fleet.access_mail_activity_type_fleet_manager
 NEW ir.ui.menu: fleet.fleet_menu_config_activity_type

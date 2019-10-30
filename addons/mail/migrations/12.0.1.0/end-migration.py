@@ -1,6 +1,7 @@
 # Copyright 2018 Eficent <http://www.eficent.com>
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 from openupgradelib import openupgrade
+from psycopg2.extensions import AsIs
 
 
 def fill_mail_tracking_value_track_sequence(env):
@@ -35,32 +36,46 @@ def fill_mail_thread_message_main_attachment_id(env):
     thread_models = [k for k in env.registry if issubclass(
         type(env[k]), type(env['mail.thread'])) and env[k]._auto]
     for model in thread_models:
-        records = env[model].with_context(active_test=False).search(
-            [('message_main_attachment_id', '=', False)])
-        attachment_obj = env['ir.attachment'].with_context(
-            prefetch_fields=False,
+        # the query groups the attachments by their kind of mimetype and
+        # res_id. For each res_id, you will have one, two or three of this
+        # groups if they exist (and labeled them by 1, 2 or 3), but the query
+        # always will select the existing group with the lower label.
+        # The max(id) is because the order in attachment model is defined as
+        # id DESC.
+        openupgrade.logged_query(
+            env.cr, """
+            UPDATE %s t
+            SET message_main_attachment_id = ia.id
+            FROM (
+                SELECT id, res_id
+                FROM (
+                    SELECT max(id) as id, res_id, CASE
+                        WHEN mimetype LIKE '%%pdf' THEN 1
+                        WHEN mimetype LIKE 'image%%' THEN 2
+                        ELSE 3
+                    END as mt, row_number() over (partition by res_id) row_num
+                    FROM ir_attachment
+                    WHERE res_model = %s
+                    GROUP BY res_id, mt) pre_ia
+                WHERE row_num = 1) ia
+            WHERE t.message_main_attachment_id IS NULL
+                AND ia.res_id = t.id""",
+            (AsIs(env[model]._table), model),
         )
-        grouped_attachments = attachment_obj.read_group(
-            [('res_model', '=', model)],
-            fields=['res_id'],
-            groupby=['res_id'])
-        attachs = {
-            a['res_id']: attachment_obj.search(a['__domain'])
-            for a in grouped_attachments
-        }
-        for record in records:
-            all_attachments = attachs.get(record.id, attachment_obj)
-            if all_attachments:
-                prioritary_attachments = all_attachments.filtered(
-                    lambda x: x.mimetype and x.mimetype.endswith('pdf')
-                ) or all_attachments.filtered(
-                    lambda x: x.mimetype and x.mimetype.startswith('image')
-                ) or all_attachments
-                record.write({'message_main_attachment_id':
-                              prioritary_attachments[0].id})
+
+
+def remove_activity_date_deadline_column(env):
+    activity_mixin_models = [k for k in env.registry if issubclass(
+        type(env[k]), type(env['mail.activity.mixin'])) and env[k]._auto]
+    _column_renames = {
+        env[model]._table: [('activity_date_deadline', None)]
+        for model in activity_mixin_models if openupgrade.column_exists(
+            env.cr, env[model]._table, 'activity_date_deadline')}
+    openupgrade.rename_columns(env.cr, _column_renames)
 
 
 @openupgrade.migrate(use_env=True)
 def migrate(env, version):
     fill_mail_tracking_value_track_sequence(env)
     fill_mail_thread_message_main_attachment_id(env)
+    remove_activity_date_deadline_column(env)

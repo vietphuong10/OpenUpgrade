@@ -12,6 +12,5 @@ xmlid_renames = [
 
 @openupgrade.migrate()
 def migrate(env, version):
-    cr = env.cr
     openupgrade.rename_fields(env, _field_renames)
-    openupgrade.rename_xmlids(cr, xmlid_renames)
+    openupgrade.rename_xmlids(env.cr, xmlid_renames)

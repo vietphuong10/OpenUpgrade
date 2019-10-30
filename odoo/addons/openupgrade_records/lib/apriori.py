@@ -7,7 +7,6 @@ renamed_modules = {
     'base_vat_autocomplete': 'partner_autocomplete',
     'mrp_repair': 'repair',
     'product_extended': 'mrp_bom_cost',
-    'website_quote': 'sale_quotation_builder',
     # OCA/account-payment
     'account_payment_return_import_sepa_pain': (
         'account_payment_return_import_iso20022'
@@ -16,7 +15,12 @@ renamed_modules = {
     'product_uom_unece': 'uom_unece',
     # OCA/crm > OCA/partner-contact
     'crm_deduplicate_acl': 'partner_deduplicate_acl',
+    'crm_deduplicate_by_ref': 'partner_deduplicate_by_ref',
+    'crm_deduplicate_by_website': 'partner_deduplicate_by_website',
     'crm_deduplicate_filter': 'partner_deduplicate_filter',
+    # OCA/hr
+    'hr_employee_seniority': 'hr_employee_service_contract',
+    'hr_family': 'hr_employee_relative',
 
     # erponline-enterprise
     'account_accountant': 'to_account_accountant',
@@ -24,6 +28,8 @@ renamed_modules = {
     'mrp_account': 'to_mrp_account',
     'quality': 'to_quality',
     'stock_barcode': 'to_stock_barcode',
+    # OCA/server-brand
+    'res_config_settings_enterprise_remove': 'remove_odoo_enterprise',
     # OCA/stock-logistics-workflow
     'stock_pack_operation_auto_fill': 'stock_move_line_auto_fill',
     
@@ -47,10 +53,14 @@ merged_modules = {
     'sale_payment': 'sale',
     'sale_service_rating': 'sale_timesheet',
     'web_planner': 'web',
+    'website_quote': 'sale_quotation_builder',
     'website_rating_project': 'project',
     'website_sale_options': 'website_sale',
     'website_sale_stock_options': 'website_sale_stock',
     'test_pylint': 'test_lint',
+    # OCA/account-analytic
+    # although model is defined in "analytic", logic is in "account"
+    'account_analytic_distribution': 'account',
     # OCA/account-financial-reporting
     'customer_activity_statement': 'partner_statement',
     'customer_outstanding_statement': 'partner_statement',
@@ -60,6 +70,8 @@ merged_modules = {
     'website_sale_default_country': 'website_sale',
     # OCA/event
     'event_registration_mass_mailing': 'mass_mailing_event',
+    # OCA/hr
+    'hr_expense_analytic_tag': 'hr_expense',
     # OCA/manufacture-reporting
     'mrp_bom_structure_html': 'mrp',
     'mrp_bom_structure_report': 'mrp',
@@ -97,8 +109,10 @@ renamed_models = {
     'hr.holidays': 'hr.leave',
     'hr.holidays.status': 'hr.leave.type',
     'mrp.repair': 'repair.order',
+    'mrp.repair.cancel': 'repair.cancel',
     'mrp.repair.fee': 'repair.fee',
     'mrp.repair.line': 'repair.line',
+    'mrp.repair.make_invoice': 'repair.order.make_invoice',
     'procurement.rule': 'stock.rule',
     'product.attribute.line': 'product.template.attribute.line',
     'product.attribute.price': 'product.template.attribute.value',
@@ -109,4 +123,9 @@ renamed_models = {
     'sale.quote.template': 'sale.order.template',
     'stock.incoterms': 'account.incoterms',
     # 'stock.location.path': 'stock.rule', handled in 'stock'
+}
+# only used here for openupgrade_records analysis:
+merged_models = {
+    # Odoo
+    'stock.location.path': 'stock.rule',
 }

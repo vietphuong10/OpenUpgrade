@@ -1,6 +1,8 @@
 # Copyright 2019 Eficent <http://www.eficent.com>
 # Copyright 2019 Tecnativa - Pedro M. Baeza
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
+import json
+
 from base64 import b64encode
 from itertools import chain, product
 from os import listdir
@@ -48,29 +50,56 @@ def _preserve_v11_dummy_images(env):
     return replacements
 
 
-def noupdate_changes(env):
-    """Set some specific noupdate=1 records to noupdate=0"""
-    noupdates = env["ir.model.data"].search([
-        ("module", "=", "website"),
-        ("name", "in", ["aboutus", "contactus", "homepage"]),
-        ("noupdate", "=", True),
-    ])
-    noupdates.write({"noupdate": False})
-
-
 def bootstrap_4_migration(env):
-    """Convert customized website views to Bootstrap 4."""
+    """Convert customized website views to Bootstrap 4 and multiwebsite.
+
+    This process is a bit complex, so here's the big picture:
+
+    In v11, there's no upstream support for multi-websites, but databases
+    can actually have several websites and some records (pages, menus, views)
+    get multi-website features behind the scenes, so we have to treat them
+    like semi-supported. Usually it follows this logic:
+
+    - Website-specific records only appear in their website.
+    - Website-agnostic records appear in all websites.
+    - View changes affect all websites.
+
+    In v12, there's full multi-website support, usually following this logic:
+
+    - Website-specific records override website-agnostic ones.
+    - View changes create a website-specific copy (Copy-On-Write, COW) always.
+
+    This migration tries to make v11 changes look like they were done in v12:
+
+    - Unmodified views (noupdate=0) are not touched.
+    - Website-agnostic modified (noupdate=1) views are copied and
+      marked as noupdate=0. Those copied views are made website-specific
+      and migrated to Bootstrap 4.
+
+    This must be done in the "pre" stage, because the "mid" stage could
+    update or even delete missing views now that they are marked as
+    noupdate=0, but that's exactly what you want because when you create a
+    new website with the UI in v12, that website will be "virgin",
+    including only the raw views that come directly from the modules,
+    without any modifications made for other websites.
+    """
     # Preserve old dummy images that have changed
     image_replacements = _preserve_v11_dummy_images(env)
     # Create a column to remember where do new views come from
-    col_name = openupgrade.get_legacy_name("bs4_migrated_from")
+    oldview_id_col = openupgrade.get_legacy_name("bs4_migrated_from")
     table_name = env["ir.ui.view"]._table
-    if not openupgrade.column_exists(env.cr, table_name, col_name):
-        openupgrade.logged_query(
-            env.cr,
-            "ALTER TABLE %s ADD COLUMN %s INTEGER",
-            (AsIs(table_name), AsIs(col_name)),
-        )
+    openupgrade.logged_query(
+        env.cr,
+        "ALTER TABLE %s ADD COLUMN %s INTEGER",
+        (AsIs(table_name), AsIs(oldview_id_col)),
+    )
+    # Create another column to store migration metadata
+    old_metadata_col = openupgrade.get_legacy_name("bs4_migration_metadata")
+    openupgrade.logged_query(
+        env.cr,
+        "ALTER TABLE %s ADD COLUMN %s TEXT",
+        (AsIs(table_name), AsIs(old_metadata_col)),
+    )
     # Find report views, which should never be converted here
     report_names = env["ir.actions.report"].search([
         ("report_name", "!=", False),
@@ -163,17 +192,69 @@ def bootstrap_4_migration(env):
             "arch_db": new_arch,
             "key": oldview.key,  # Avoid automatic deduplication
         })
+        # Website-specific copy of the related website.page record
         openupgrade.logged_query(
             env.cr,
-            "UPDATE %s SET %s = %s, website_id = %s WHERE id = %s",
+            """INSERT INTO website_page (
+                    create_date, create_uid, write_date, write_uid,
+                    date_publish, is_published, url, website_indexed, view_id)
+               SELECT
+                    create_date, create_uid, write_date, write_uid,
+                    date_publish, is_published, url, website_indexed, %(new)s
+               FROM website_page
+               WHERE view_id = %(old)s""",
+            {"new": newview.id, "old": oldview.id},
+        )
+        # Obtain related website.menu details
+        env.cr.execute(
+            """SELECT
+                    wm.create_date, wm.create_uid, wm.write_date, wm.write_uid,
+                    wm.name, wm.url, wm.new_window, wm.sequence, wm.parent_id
+               FROM website_menu AS wm
+               INNER JOIN website_page AS wp ON wm.page_id = wp.id
+               INNER JOIN ir_ui_view AS v ON wp.view_id = v.id
+               WHERE view_id = %s AND wm.website_id IS NULL""",
+            (oldview.id,)
+        )
+        menus = []
+        # Use only JSON-serializable types
+        for menu in env.cr.dictfetchall():
+            for key in menu:
+                if not isinstance(menu[key], (str, int, float,
+                                              bool, type(None))):
+                    menu[key] = str(menu[key])
+            menus.append(menu)
+        # Store needed info in the migration columns
+        openupgrade.logged_query(
+            env.cr,
+            "UPDATE %s SET %s = %s, %s = %s, website_id = %s WHERE id = %s",
             (
                 AsIs(table_name),
-                AsIs(col_name),
+                AsIs(oldview_id_col),
                 oldview.id,
+                AsIs(old_metadata_col),
+                json.dumps({
+                    "menus": menus,
+                }),
                 website_id,
                 newview.id,
             )
         )
+    # Inherit translated SEO metadata from original views
+    openupgrade.copy_fields_multilang(
+        env.cr, "ir.ui.view", env["ir.ui.view"]._table,
+        ["website_meta_title",
+         "website_meta_description",
+         "website_meta_keywords"],
+        oldview_id_col,
+    )
+    # Inherit arch translations from parent views
+    openupgrade.copy_fields_multilang(
+        env.cr, "ir.ui.view", env["ir.ui.view"]._table,
+        ["arch_db"],
+        oldview_id_col,
+        translations_only=True,
+    )
     # Set website-agnostic views as updatable
     model_data = env["ir.model.data"].search([
         ("model", "=", "ir.ui.view"),
@@ -250,10 +331,11 @@ def migrate(env, version):
     cr = env.cr
     openupgrade.rename_fields(env, _field_renames)
     openupgrade.rename_xmlids(cr, _xml_ids_renames)
-    noupdate_changes(env)
     fill_website_company_id(cr)
     fill_website_name(cr)
     fill_website_redirect_type(cr)
     fill_website_redirect_urls(cr)
     disable_less_customizations(env)
     bootstrap_4_migration(env)
+    openupgrade.set_xml_ids_noupdate_value(
+        env, 'website', ['aboutus', 'contactus', 'homepage'], False)

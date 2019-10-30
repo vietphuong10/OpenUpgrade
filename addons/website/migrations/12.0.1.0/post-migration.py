@@ -1,6 +1,8 @@
 # Copyright 2018-19 Eficent <http://www.eficent.com>
 # Copyright 2019 Tecnativa - Pedro M. Baeza
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
+import json
+
 from psycopg2.extensions import AsIs
 
 from openupgradelib import openupgrade
@@ -47,61 +49,112 @@ def sync_menu_views_pages_websites(env):
     # Main menu and children must be website-agnostic
     main_menu = env.ref('website.main_menu')
     child_menus = env["website.menu"].search([
-        ("id", "child_of", main_menu.id),
+        ("id", "child_of", main_menu.ids),
         ("website_id", "!=", False),
     ])
     child_menus.write({"website_id": False})
-    # Duplicate the main menu for main website
-    website = env["website"].get_current_website()
-    website.copy_menu_hierarchy(main_menu)
+    # Duplicate the main menu for all websites
+    for website in env["website"].search([]):
+        website.copy_menu_hierarchy(main_menu)
     # Find views that were website-specified in pre stage
-    col_name = openupgrade.get_legacy_name("bs4_migrated_from")
+    old_metadata_col = openupgrade.get_legacy_name("bs4_migration_metadata")
     env.cr.execute(
         "SELECT %s, id FROM %s WHERE %s IS NOT NULL",
         (
-            AsIs(col_name),
+            AsIs(old_metadata_col),
             AsIs(env["ir.ui.view"]._table),
-            AsIs(col_name),
+            AsIs(old_metadata_col),
         )
     )
-    for agnostic_view_id, specific_view_id in env.cr.fetchall():
-        # Create website-specific page for the copied view
-        agnostic_view = env["ir.ui.view"].browse(agnostic_view_id)
+    for data, specific_view_id in env.cr.fetchall():
+        data = json.loads(data)
         specific_view = env["ir.ui.view"].browse(specific_view_id)
-        agnostic_page = agnostic_view.first_page_id
-        if not agnostic_page:
-            continue
-        specific_page = env["website.page"].search([
-            ("url", "=", agnostic_page.url),
-            ("website_id", "=", specific_view.website_id.id),
-        ])
-        if not specific_page:
-            specific_page = agnostic_page.copy({
-                "is_published": agnostic_page.is_published,
-                "url": agnostic_page.url,
-                "view_id": specific_view_id,
-                "website_id": specific_view.website_id.id,
-            })
-        elif specific_page.view_id == agnostic_view:
-            specific_page.view_id = specific_view_id
-        # Create website-specific menu for the copied page
-        specific_menu = env["website.menu"].search([
-            ("website_id", "=", specific_page.website_id.id),
-            ("url", "=", specific_page.url),
-        ], limit=1)
-        if specific_menu:
-            if specific_menu.page_id:
-                specific_menu.page_id = specific_page
-        else:
-            agnostic_menu = env["website.menu"].search([
-                ("website_id", "=", False),
-                ("url", "=", specific_page.url),
-            ], limit=1)
-            if agnostic_menu:
-                agnostic_menu.copy({
-                    "website_id": specific_page.website_id.id,
-                    "page_id": agnostic_menu.page_id.id and specific_page.id,
+        for page in specific_view.page_ids:
+            menus = env["website.menu"].search([
+                ("id", "child_of", page.website_id.menu_id.ids),
+                ("url", "=", page.url),
+            ])
+            # If menus exist, it means the agnostic view wasn't removed and
+            # they already contain all the needed information, except that they
+            # are linked to the website-agnostic page. Let's fix that.
+            if menus:
+                menus.write({
+                    "page_id": page.id,
                 })
+            # In case the menus disappeared, it's possibly because the
+            # website-agnostic view was removed during the normal module update
+            # and the cascade FK removed the pages and menus. In such
+            # case, let's recreate them.
+            else:
+                for menu in data["menus"]:
+                    if menu["url"] != page.url:
+                        continue
+                    # Find the new website-specific parent menu
+                    agnostic_parent = \
+                        env["website.menu"].browse(menu["parent_id"])
+                    specific_parent = env["website.menu"].search([
+                        ("id", "child_of", page.website_id.menu_id.ids),
+                        ("name", "=", agnostic_parent.name),
+                        ("url", "=", agnostic_parent.url),
+                        "|", ("parent_id", "=", page.website_id.menu_id.id),
+                        "&", ("parent_id.name", "=",
+                              agnostic_parent.parent_id.name),
+                             ("parent_id.url", "=",
+                              agnostic_parent.parent_id.url)
+                    ]) or page.website_id.menu_id
+                    # Re-create the menu
+                    menus.create(dict(
+                        menu,
+                        page_id=page.id,
+                        parent_id=specific_parent.id,
+                        website_id=page.website_id.id,
+                    ))
+
+
+def website_views_add_children(env):
+    """Add all expected children to website-specific views.
+
+    The COW system would duplicate children views when duplicating the parent
+    one, but that system wasn't loaded in the pre-migration stage, where many
+    views were COW-ed manually to perform BS4 migration on them.
+
+    Now that the COW system is loaded, it's time to ensure all views have
+    all their children in place.
+    """
+    for website in env["website"].search([]):
+        done_views = View = env["ir.ui.view"].with_context(
+            # We need to duplicate inactive views to allow users enable them
+            # from the "Customize" menu
+            active_test=False,
+            # This key enables the COW system in views
+            website_id=website.id,
+        )
+        while True:
+            # Find all views specific for this website
+            todo_views = View.search([
+                ("id", "not in", done_views.ids),
+                ("key", "!=", False),
+                ("website_id", "=", website.id),
+            ])
+            if not todo_views:
+                break
+            for parent_view in todo_views:
+                # A child view could delete a parent view in the COW process,
+                # so we need to ensure it exists before anything else
+                if not parent_view.exists():
+                    continue
+                # Search website-agnostic child views by key instead of by ID
+                child_views = View.search([
+                    ("website_id", "=", False),
+                    ("inherit_id.key", "=", parent_view.key),
+                ])
+                # Trigger the COW system in write(), which will make sure that
+                # website-specific children views inherit from their
+                # website-specific parent, creating the missing children
+                # views if needed
+                child_views.write({"inherit_id": parent_view.id})
+            # Skip these views next loop
+            done_views |= todo_views
 
 
 def update_google_maps_api_key(env):
@@ -127,4 +180,5 @@ def migrate(env, version):
     )
     enable_multiwebsites(env)
     sync_menu_views_pages_websites(env)
+    website_views_add_children(env)
     update_google_maps_api_key(env)

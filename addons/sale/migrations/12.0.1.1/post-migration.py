@@ -106,13 +106,62 @@ def update_config(env):
         res_config_id.execute()
 
 
+def set_group_sale_order_dates(cr):
+    cr.execute(
+        """SELECT res_id FROM ir_model_data WHERE module = 'base'
+        AND model = 'res.groups' AND name = 'group_user'""")
+    user_group_id = cr.fetchone()[0]
+    cr.execute(
+        """SELECT res_id FROM ir_model_data WHERE module = 'sale'
+        AND model = 'res.groups' AND name = 'group_sale_order_dates'""")
+    sale_order_dates_group_id = cr.fetchone()[0]
+    cr.execute(
+        """
+        INSERT INTO res_groups_implied_rel (gid, hid)
+        VALUES (%s, %s)
+    """, (user_group_id, sale_order_dates_group_id),
+    )
+
+
+def fill_res_company_portal_confirmation(cr):
+    if openupgrade.column_exists(
+            cr, 'sale_order',
+            openupgrade.get_legacy_name('payment_tx_id')):
+        openupgrade.logged_query(
+            cr, """
+            UPDATE res_company
+            SET portal_confirmation_pay = TRUE
+            """
+        )
+    cr.execute(
+        """SELECT value FROM ir_config_parameter
+        WHERE key = 'sale.sale_portal_confirmation_options'""")
+    value = cr.fetchone()
+    if value and value[0] == 'sign':
+        openupgrade.logged_query(
+            cr, """
+            UPDATE res_company
+            SET portal_confirmation_sign = TRUE"""
+        )
+
+
 @openupgrade.migrate()
 def migrate(env, version):
     type_change_payment_transaction_and_sale_order(env)
+    fill_res_company_portal_confirmation(env.cr)
     fill_sale_order_line_is_expense(env.cr)
     fill_sale_order_line_qty_delivered_method(env.cr)
+    if openupgrade.column_exists(
+            env.cr, 'sale_order',
+            openupgrade.get_legacy_name('commitment_date')):
+        set_group_sale_order_dates(env.cr)
     openupgrade.load_data(
         env.cr, 'sale', 'migrations/12.0.1.1/noupdate_changes.xml')
+    openupgrade.delete_record_translations(
+        env.cr, 'sale', [
+            'email_template_edi_sale',
+        ],
+    )
     openupgrade.delete_records_safely_by_xml_id(
         env, [
             'sale.mail_template_data_notification_email_sale_order',
