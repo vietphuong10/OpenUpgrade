@@ -15,6 +15,7 @@ renamed_modules = {
     'partner_financial_risk': 'account_financial_risk',
     'partner_payment_return_risk': 'account_payment_return_financial_risk',
     'partner_sale_risk': 'sale_financial_risk',
+    'partner_stock_risk': 'stock_financial_risk',
     # OCA/crm
     'crm_sector': 'crm_industry',
     # OCA/account-payment
@@ -64,6 +65,9 @@ merged_modules = {
     'website_project_issue': 'project',
     'website_project_timesheet': 'hr_timesheet',
     'test_pylint': 'test_lint',
+    # OCA/account-analytic
+    'purchase_procurement_analytic': 'procurement_mto_analytic',
+    'sale_procurement_analytic': 'procurement_mto_analytic',
     # OCA/account-invoice-reporting
     'product_brand_invoice_report': 'product_brand',
     # OCA/account-financial-reporting
@@ -78,6 +82,8 @@ merged_modules = {
     'crm_lead_website': 'crm',
     # OCA/hr-timesheet
     'hr_timesheet_sheet_week_start_day': 'hr_timesheet_sheet',
+    # OCA/l10n-italy:
+    'l10n_it_fiscalcode_invoice': 'l10n_it_fiscalcode',
     # OCA/product-variant
     'product_variant_supplierinfo': 'product',
     'sale_stock_variant_configurator': 'sale_variant_configurator',
@@ -102,6 +108,7 @@ merged_modules = {
     'stock_picking_transfer_lot_autoassign': 'stock_pack_operation_auto_fill',
     # OCA/web
     'web_sheet_full_width': 'web_responsive',
+    'web_widget_datepicker_options': 'web',
     'web_widget_domain_v11': 'web',
     # OCA/website
     'website_seo_redirection': 'website',

@@ -8,6 +8,7 @@
 # Martin Trigaux, 2018
 # Matjaz Mozetic <m.mozetic@matmoz.si>, 2019
 # Grega Vavtar <grega@hbs.si>, 2019
+# Jasmina Macur <jasmina@hbs.si>, 2019
 # 
 msgid ""
 msgstr ""
@@ -15,7 +16,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-01-03 15:07+0000\n"
 "PO-Revision-Date: 2017-09-20 10:28+0000\n"
-"Last-Translator: Grega Vavtar <grega@hbs.si>, 2019\n"
+"Last-Translator: Jasmina Macur <jasmina@hbs.si>, 2019\n"
 "Language-Team: Slovenian (https://www.transifex.com/odoo/teams/41243/sl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -362,12 +363,12 @@ msgstr ""
 #. module: website_slides
 #: model:ir.model.fields,field_description:website_slides.field_slide_channel_can_see
 msgid "Can See"
-msgstr ""
+msgstr "Lahko vidi"
 
 #. module: website_slides
 #: model:ir.model.fields,field_description:website_slides.field_slide_channel_can_upload
 msgid "Can Upload"
-msgstr ""
+msgstr "Lahko naloži"
 
 #. module: website_slides
 #: model:ir.actions.act_window,name:website_slides.action_ir_slide_category
@@ -401,7 +402,7 @@ msgstr "Kanal"
 #. module: website_slides
 #: model:ir.model.fields,field_description:website_slides.field_slide_channel_group_ids
 msgid "Channel Groups"
-msgstr ""
+msgstr "Skupine kanala"
 
 #. module: website_slides
 #: model:ir.ui.view,arch_db:website_slides.home
@@ -424,7 +425,7 @@ msgstr ""
 #. module: website_slides
 #: model:ir.ui.view,arch_db:website_slides.view_slide_channel_form
 msgid "Channel visibility"
-msgstr ""
+msgstr "Vidnost kanala"
 
 #. module: website_slides
 #: model:ir.actions.act_url,name:website_slides.action_open_channels
@@ -477,7 +478,7 @@ msgstr ""
 #: code:addons/website_slides/static/src/js/slides_upload.js:219
 #, python-format
 msgid "Create new tag '%s'"
-msgstr ""
+msgstr "Ustvari novo oznako '%s'"
 
 #. module: website_slides
 #: model:ir.model.fields,field_description:website_slides.field_slide_category_create_uid
@@ -568,7 +569,7 @@ msgstr "Prikazni naziv"
 #: model:ir.model.fields,help:website_slides.field_slide_category_sequence
 #: model:ir.model.fields,help:website_slides.field_slide_channel_sequence
 msgid "Display order"
-msgstr ""
+msgstr "Vrstni red prikaza"
 
 #. module: website_slides
 #: model:ir.ui.view,arch_db:website_slides.view_slide_slide_form
@@ -614,11 +615,13 @@ msgstr "Varnost prenosa"
 #: model:ir.model.fields,help:website_slides.field_slide_channel_publish_template_id
 msgid "Email template to send slide publication through email"
 msgstr ""
+"Predloga email sporočila uporabljna v primeru pošiljanja publikacije po "
+"emailu"
 
 #. module: website_slides
 #: model:ir.model.fields,help:website_slides.field_slide_channel_share_template_id
 msgid "Email template used when sharing a slide"
-msgstr ""
+msgstr "Predloga email sporočila uporabljna v primeru deljenja predstavitve"
 
 #. module: website_slides
 #: model:ir.model.fields,field_description:website_slides.field_slide_slide_embed_code
@@ -664,7 +667,7 @@ msgstr "Vsi"
 #. module: website_slides
 #: selection:slide.channel,promote_strategy:0
 msgid "Featured Presentation"
-msgstr ""
+msgstr "Izpostavljena prezentacija"
 
 #. module: website_slides
 #: model:slide.category,name:website_slides.category_1
@@ -674,12 +677,12 @@ msgstr ""
 #. module: website_slides
 #: model:ir.model.fields,field_description:website_slides.field_slide_channel_promoted_slide_id
 msgid "Featured Slide"
-msgstr ""
+msgstr "Izpostavljen diapozitiv"
 
 #. module: website_slides
 #: model:ir.model.fields,field_description:website_slides.field_slide_channel_promote_strategy
 msgid "Featuring Policy"
-msgstr ""
+msgstr "Pravila izpostavitve"
 
 #. module: website_slides
 #. openerp-web
@@ -722,7 +725,7 @@ msgstr "Združi po"
 #. module: website_slides
 #: model:ir.model.fields,help:website_slides.field_slide_channel_group_ids
 msgid "Groups allowed to see presentations in this channel"
-msgstr ""
+msgstr "Skupinam je dovoljeno nalaganje predstavitev v ta kanal."
 
 #. module: website_slides
 #: model:ir.model.fields,help:website_slides.field_slide_channel_upload_group_ids
@@ -730,6 +733,8 @@ msgid ""
 "Groups allowed to upload presentations in this channel. If void, every user "
 "can upload."
 msgstr ""
+"Skupinam je dovoljeno nalaganje predstavitev v ta kanal. Če odznačeno, lahko"
+" nalaga vsaj uporabnik."
 
 #. module: website_slides
 #: model:ir.model.fields,field_description:website_slides.field_slide_category_id
@@ -800,7 +805,7 @@ msgstr "Zadnjič posodobljeno"
 #. module: website_slides
 #: selection:slide.channel,promote_strategy:0
 msgid "Latest Published"
-msgstr ""
+msgstr "Nazadnje objavljeno"
 
 #. module: website_slides
 #: model:slide.slide,description:website_slides.slide_8
@@ -827,6 +832,7 @@ msgstr "Srednje"
 #: model:ir.model.fields,help:website_slides.field_slide_channel_access_error_msg
 msgid "Message to display when not accessible due to access rights"
 msgstr ""
+"Prikazno sporočilo v primeru zavrnitve dostopa zaradi uporabniških pravic"
 
 #. module: website_slides
 #: model:ir.model.fields,field_description:website_slides.field_slide_slide_mime_type
@@ -838,13 +844,13 @@ msgstr "Mime-tip"
 #: model:ir.ui.view,arch_db:website_slides.slides_channel_header
 #: selection:slide.channel,promote_strategy:0
 msgid "Most Viewed"
-msgstr ""
+msgstr "Najbolj gledan"
 
 #. module: website_slides
 #: model:ir.ui.view,arch_db:website_slides.slides_channel_header
 #: selection:slide.channel,promote_strategy:0
 msgid "Most Voted"
-msgstr ""
+msgstr "Največ glasov"
 
 #. module: website_slides
 #: model:ir.model.fields,field_description:website_slides.field_slide_category_name
@@ -868,7 +874,7 @@ msgstr "Najnovejše"
 #. module: website_slides
 #: selection:slide.channel,promote_strategy:0
 msgid "No Featured Presentation"
-msgstr ""
+msgstr "Ni izpostavljene prezentacije"
 
 #. module: website_slides
 #: selection:slide.slide,download_security:0
@@ -878,7 +884,7 @@ msgstr "Nobeden"
 #. module: website_slides
 #: model:ir.ui.view,arch_db:website_slides.channel_not_found
 msgid "No channel created or published yet."
-msgstr ""
+msgstr "Noben kanal še ni ustvarjen ali objavljen."
 
 #. module: website_slides
 #: model:ir.ui.view,arch_db:website_slides.slide_detail_view
@@ -900,19 +906,19 @@ msgstr "Število dokumentov"
 #: model:ir.model.fields,field_description:website_slides.field_slide_category_nbr_infographics
 #: model:ir.model.fields,field_description:website_slides.field_slide_channel_nbr_infographics
 msgid "Number of Infographics"
-msgstr ""
+msgstr "Število infografik"
 
 #. module: website_slides
 #: model:ir.model.fields,field_description:website_slides.field_slide_category_nbr_presentations
 #: model:ir.model.fields,field_description:website_slides.field_slide_channel_nbr_presentations
 msgid "Number of Presentations"
-msgstr ""
+msgstr "Število predstavitev"
 
 #. module: website_slides
 #: model:ir.model.fields,field_description:website_slides.field_slide_category_nbr_videos
 #: model:ir.model.fields,field_description:website_slides.field_slide_channel_nbr_videos
 msgid "Number of Videos"
-msgstr ""
+msgstr "Število videov"
 
 #. module: website_slides
 #: model:slide.slide,name:website_slides.slide_2
@@ -1012,7 +1018,7 @@ msgstr ""
 #: model:mail.message.subtype,description:website_slides.mt_channel_slide_published
 #: model:mail.message.subtype,name:website_slides.mt_channel_slide_published
 msgid "Presentation Published"
-msgstr ""
+msgstr "Predstavitev objavljena"
 
 #. module: website_slides
 #: model:ir.ui.view,arch_db:website_slides.slide_footer
@@ -1054,7 +1060,7 @@ msgstr "Objavljeno"
 #. module: website_slides
 #: model:ir.model.fields,field_description:website_slides.field_slide_channel_publish_template_id
 msgid "Published Template"
-msgstr ""
+msgstr "Objavljena podloga"
 
 #. module: website_slides
 #: model:ir.ui.view,arch_db:website_slides.slide_detail_view
@@ -1136,12 +1142,12 @@ msgstr ""
 #. module: website_slides
 #: model:ir.model.fields,field_description:website_slides.field_slide_channel_share_template_id
 msgid "Shared Template"
-msgstr ""
+msgstr "Deljena predloga"
 
 #. module: website_slides
 #: selection:slide.channel,visibility:0
 msgid "Show channel but restrict presentations"
-msgstr ""
+msgstr "Pokaži kanal, ampak omeji prezentacije"
 
 #. module: website_slides
 #: model:ir.ui.view,arch_db:website_slides.view_slide_slide_form
@@ -1156,7 +1162,7 @@ msgstr ""
 #. module: website_slides
 #: model:ir.model.fields,field_description:website_slides.field_slide_channel_custom_slide_id
 msgid "Slide to Promote"
-msgstr ""
+msgstr "Promoviraj diapozitiv"
 
 #. module: website_slides
 #: model:ir.actions.act_window,name:website_slides.action_slides_slides
@@ -1310,7 +1316,7 @@ msgstr "Neobjavljeno"
 #. module: website_slides
 #: model:ir.model.fields,field_description:website_slides.field_slide_channel_upload_group_ids
 msgid "Upload Groups"
-msgstr ""
+msgstr "Naložene skupine"
 
 #. module: website_slides
 #: model:ir.ui.view,arch_db:website_slides.home
@@ -1373,7 +1379,7 @@ msgstr "Vidljivost"
 #. module: website_slides
 #: model:ir.ui.view,arch_db:website_slides.view_slide_slide_search
 msgid "Waiting for validation"
-msgstr ""
+msgstr "Čakam na potrditev"
 
 #. module: website_slides
 #: model:slide.slide,description:website_slides.slide_7

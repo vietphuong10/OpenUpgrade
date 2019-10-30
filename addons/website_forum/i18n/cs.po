@@ -244,6 +244,10 @@ msgid ""
 "Links are welcome, but should be complementary to answer, referring sources "
 "or additional reading."
 msgstr ""
+"<b>Odpovědi by neměly poskytovat pouze odkaz na řešení</b>. Místo toho "
+"poskytněte textový popis řešení do své odpovědi, i když je to jen kopie / "
+"vložení. Odkazy jsou vítány, ale měly by doplňovat odpovědi, odkazovat "
+"zdroje nebo doplňující čtení."
 
 #. module: website_forum
 #: model:forum.forum,faq:website_forum.forum_help
@@ -269,6 +273,8 @@ msgid ""
 "<b>Please avoid asking questions that are too subjective\n"
 "    and argumentative</b> or not relevant to this community."
 msgstr ""
+"<b>Vyvarujte se otázek, které jsou příliš subjektivní\n"
+"a argumentativní</b> a pro tuto komunitu nejsou relevantní."
 
 #. module: website_forum
 #: model:ir.ui.view,arch_db:website_forum.post_answer
@@ -535,7 +541,7 @@ msgstr "Odpověď podpořena hlasováním čtyřikrát"
 #. module: website_forum
 #: model:gamification.badge,description:website_forum.badge_a_3
 msgid "Answer voted up 6 times"
-msgstr ""
+msgstr "Pro odpověď blo 6x hlasováno"
 
 #. module: website_forum
 #: model:gamification.badge,description:website_forum.badge_a_5
@@ -779,7 +785,7 @@ msgstr "Lze odpojit odkaz"
 #. module: website_forum
 #: model:ir.model.fields,field_description:website_forum.field_forum_post_can_upvote
 msgid "Can Upvote"
-msgstr ""
+msgstr "Lze hlasováním posunout nahoru"
 
 #. module: website_forum
 #: model:ir.model.fields,field_description:website_forum.field_forum_post_can_view
@@ -1507,7 +1513,7 @@ msgstr "Pomoc"
 #. module: website_forum
 #: model:forum.forum,welcome_message:website_forum.forum_help
 msgid "Hide Intro"
-msgstr ""
+msgstr "Skrýt intro"
 
 #. module: website_forum
 #: model:ir.ui.view,arch_db:website_forum.new_question
@@ -2255,7 +2261,7 @@ msgstr "Odpovědět na vlastní otázku"
 #: model:ir.ui.view,arch_db:website_forum.404
 #: model:ir.ui.view,arch_db:website_forum.private_profile
 msgid "Return to the question list."
-msgstr ""
+msgstr "Zpět k seznamu otázek"
 
 #. module: website_forum
 #: model:ir.model.fields,field_description:website_forum.field_forum_post_moderator_id
@@ -3065,7 +3071,7 @@ msgstr ""
 #. module: website_forum
 #: model:ir.ui.view,arch_db:website_forum.forum_post_template_new_answer
 msgid "has been posted. Click here to access the post :"
-msgstr ""
+msgstr "byl zveřejněn. Klepnutím sem získáte přístup k příspěvku:"
 
 #. module: website_forum
 #: model:ir.ui.view,arch_db:website_forum.forum_post_template_new_question

@@ -119,3 +119,5 @@ def migrate(env, version):
         WHERE interval_type = 'work_days'""")
     fill_cron_action_server_pre(env)
     remove_currency_rates_of_the_same_day(env)
+    openupgrade.set_xml_ids_noupdate_value(
+        env, 'base', ['lang_km'], True)
