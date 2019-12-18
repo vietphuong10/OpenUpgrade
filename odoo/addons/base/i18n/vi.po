@@ -4,7 +4,6 @@
 # 
 # Translators:
 # Linh NGuyen <tanlinh2000@yahoo.com>, 2017
-# Thang Duong Bao <nothingctrl@gmail.com>, 2017
 # Hồng Quân Nguyễn <ng.hong.quan@gmail.com>, 2017
 # Phạm Lân <phamquanglan@gmail.com>, 2017
 # W360S CORP <contact@w360s.com>, 2017
@@ -14,9 +13,10 @@
 # Martin Trigaux, 2017
 # Tuan Tran <tmtuan.projects@gmail.com>, 2017
 # Minh Nguyen <ndminh210994@gmail.com>, 2018
-# Nancy Momoland <thanhnguyen.icsc@gmail.com>, 2019
-# Chinh Chinh <trinhttp@trobz.com>, 2019
+# thanhnguyen.icsc <thanhnguyen.icsc@gmail.com>, 2019
+# Thang Duong Bao <nothingctrl@gmail.com>, 2019
 # Duy BQ <duybq86@gmail.com>, 2019
+# Chinh Chinh <trinhttp@trobz.com>, 2019
 # 
 msgid ""
 msgstr ""
@@ -24,7 +24,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-01-03 15:05+0000\n"
 "PO-Revision-Date: 2017-09-20 10:13+0000\n"
-"Last-Translator: Duy BQ <duybq86@gmail.com>, 2019\n"
+"Last-Translator: Chinh Chinh <trinhttp@trobz.com>, 2019\n"
 "Language-Team: Vietnamese (https://www.transifex.com/odoo/teams/41243/vi/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -420,11 +420,29 @@ msgstr ""
 "        Cho phép sử dụng mã Python để định nghĩa các hạng mục thuế"
 
 #. module: base
+#: model:ir.module.module,description:base.module_l10n_uk_reports_hmrc
+msgid ""
+"\n"
+"        Accounting reports send to HMRC\n"
+"    "
+msgstr ""
+
+#. module: base
 #: model:ir.module.module,summary:base.module_project_gantt
 msgid ""
 "\n"
 "        Apply Gantt to Project Task\n"
 "        "
+msgstr ""
+
+#. module: base
+#: model:ir.module.module,summary:base.module_l10n_mx_reports_closing
+msgid ""
+"\n"
+"        Allow to generate the trial balance for the closing entry.\n"
+"\n"
+"        Colloquially known as \"Month 13\"\n"
+"    "
 msgstr ""
 
 #. module: base
@@ -1077,6 +1095,17 @@ msgid ""
 "* Approve/Refuse Sales Targets\n"
 "    "
 msgstr ""
+
+#. module: base
+#: model:ir.module.module,description:base.module_l10n_be_intrastat_2019
+msgid ""
+"\n"
+"Adds the possibility to specify the origin country of goods and the partner VAT in the Intrastat XML report.\n"
+"    "
+msgstr ""
+"\n"
+"Thêm khả năng chỉ định quốc gia xuất xứ của hàng hóa và VAT đối tác trong báo cáo Intrastat XML.\n"
+"    "
 
 #. module: base
 #: model:ir.module.module,description:base.module_report_intrastat
@@ -6424,6 +6453,14 @@ msgid " - %r in %s=%r"
 msgstr ""
 
 #. module: base
+#: code:addons/model.py:148
+#, python-format
+msgid ""
+" another model requires the record being deleted. If possible, archive it "
+"instead."
+msgstr ""
+
+#. module: base
 #: model:ir.ui.view,arch_db:base.res_lang_form
 msgid "%A - Full weekday name."
 msgstr "%A - Tên đầy đủ ngày trong tuần."
@@ -6559,6 +6596,14 @@ msgstr ", chỉ đọc"
 #: model:ir.ui.view,arch_db:base.report_irmodulereference
 msgid ", required"
 msgstr ", bắt buộc"
+
+#. module: base
+#: code:addons/model.py:136
+#, python-format
+msgid ""
+"- Create/update: a mandatory field is not set.\n"
+"- Delete: another model requires the record being deleted. If possible, archive it instead."
+msgstr ""
 
 #. module: base
 #: model:ir.ui.view,arch_db:base.report_irmodeloverview
@@ -8602,6 +8647,11 @@ msgid "<u><strong>Security</strong></u>"
 msgstr ""
 
 #. module: base
+#: selection:ir.actions.server,state:0
+msgid "Add Followers"
+msgstr "Thêm Người theo dõi"
+
+#. module: base
 #: model:ir.ui.view,arch_db:base.report_irmodeloverview
 msgid "<u><strong>Views</strong></u>"
 msgstr ""
@@ -9560,6 +9610,11 @@ msgid "Accounting Integration for Manufacturing"
 msgstr ""
 
 #. module: base
+#: selection:ir.actions.server,usage:0
+msgid "Automated Action"
+msgstr "Thực hiện tự động"
+
+#. module: base
 #: model:ir.module.module,shortdesc:base.module_to_accounting_entry_report_flag
 msgid "Accounting Report Flag"
 msgstr ""
@@ -10017,6 +10072,11 @@ msgstr ""
 "Cho phép tạo hoá đơn và theo dõi thanh toán dễ dàng mà không cần kế toán "
 "viên. Đây là phiên bản giản đơn của phân hệ kế toán dành cho các nhà quản lý"
 " mà không chuyên môn về kế toán."
+
+#. module: base
+#: model:ir.module.module,shortdesc:base.module_l10n_be_intrastat_2019
+msgid "Belgian Intrastat Declaration - Complement for 2019"
+msgstr "Belgian Intrastat Declaration - Complement for 2019"
 
 #. module: base
 #: model:ir.module.module,summary:base.module_web_tree_dynamic_colored_field
@@ -11043,6 +11103,12 @@ msgid "Cape Verde"
 msgstr ""
 
 #. module: base
+#: code:addons/model.py:153
+#, python-format
+msgid "Constraint:"
+msgstr ""
+
+#. module: base
 #: selection:ir.model.fields,on_delete:0
 msgid "Cascade"
 msgstr ""
@@ -12059,6 +12125,11 @@ msgid "Create Leads From Contact Form"
 msgstr "Tạo Tiềm năng từ form Liên hệ"
 
 #. module: base
+#: model:ir.module.module,description:base.module_test_pylint
+msgid "Deprecated empty module in favor of test-lint."
+msgstr ""
+
+#. module: base
 #: model:ir.actions.act_window,name:base.act_menu_create
 #: model:ir.ui.view,arch_db:base.view_model_menu_create
 msgid "Create Menu"
@@ -12371,6 +12442,12 @@ msgstr "Tỷ giá"
 #: model:ir.ui.view,arch_db:base.view_currency_rate_tree
 msgid "Currency Rates"
 msgstr "Tỷ giá"
+
+#. module: base
+#: code:addons/models.py:2888
+#, python-format
+msgid "Document type:"
+msgstr ""
 
 #. module: base
 #: model:ir.model.fields,field_description:base.field_res_currency_currency_subunit_label
@@ -13189,6 +13266,15 @@ msgid "Ecuador"
 msgstr ""
 
 #. module: base
+#: code:addons/base/ir/ir_mail_server.py:128
+#, python-format
+msgid ""
+"Failed to encode the address %s\n"
+"from mail header:\n"
+"%s"
+msgstr ""
+
+#. module: base
 #: model:ir.module.module,shortdesc:base.module_l10n_ec
 msgid "Ecuador - Accounting"
 msgstr ""
@@ -13297,6 +13383,12 @@ msgstr ""
 #: model:ir.module.module,shortdesc:base.module_to_hr_employee_resign
 msgid "Employee Resignations Management [Experimental]"
 msgstr ""
+
+#. module: base
+#: code:addons/model.py:143
+#, python-format
+msgid "Field:"
+msgstr "Trường:"
 
 #. module: base
 #: model:ir.actions.act_window,name:base.action_partner_employee_form
@@ -13425,6 +13517,29 @@ msgstr "Chi tiết lỗi:"
 #, python-format
 msgid "Error while validating constraint"
 msgstr "Lỗi khi thẩm định tính ràng buộc"
+
+#. module: base
+#: model:ir.module.module,description:base.module_l10n_mx_reports_closing
+msgid ""
+"Fiscal Reports for Closing Entry\n"
+"================================\n"
+"\n"
+"Trial Balance report is complemented to allow generate the closing entry\n"
+"(A.K.A Month 13th move)\n"
+"\n"
+"Configuration\n"
+"=============\n"
+"\n"
+"Steps to get the report:\n"
+"\n"
+"1. The journal entry for transfer of exercises must be generated manually\n"
+"   with the end date of the fiscal year that is closing. And must be posted.\n"
+"\n"
+"2. This entry must be marked as closing entry for the fiscal year.\n"
+"\n"
+"3. The trial balance Month 13 report must be generated with dates for all the\n"
+"   fiscal year to report.\n"
+msgstr ""
 
 #. module: base
 #: code:addons/base/ir/ir_ui_menu.py:76
@@ -14753,6 +14868,11 @@ msgstr ""
 #: model:ir.module.module,shortdesc:base.module_to_hr_training
 #: model:ir.module.module,summary:base.module_to_hr_training
 msgid "HR Employee Training"
+msgstr ""
+
+#. module: base
+#: model:ir.module.module,shortdesc:base.module_account_reports_cash_flow
+msgid "Improved Cash Flow Statement"
 msgstr ""
 
 #. module: base
@@ -16659,6 +16779,12 @@ msgid "Link Tracker"
 msgstr "Theo dõi Link"
 
 #. module: base
+#: code:addons/model.py:142 code:addons/model.py:152
+#, python-format
+msgid "Model:"
+msgstr ""
+
+#. module: base
 #: model:ir.module.module,summary:base.module_pos_sale
 msgid "Link module between Point of Sale and Sales"
 msgstr ""
@@ -18096,9 +18222,20 @@ msgid "Nauru"
 msgstr ""
 
 #. module: base
+#: model:ir.module.module,shortdesc:base.module_l10n_mx_reports_closing
+msgid "Odoo Mexican Localization Reports for Closing"
+msgstr ""
+
+#. module: base
 #: model:res.country,name:base.np
 msgid "Nepal"
 msgstr "Nê-pan"
+
+#. module: base
+#: model:ir.module.module,shortdesc:base.module_l10n_mx_edi_sale_coupon
+#: model:ir.module.module,summary:base.module_l10n_mx_edi_sale_coupon
+msgid "Odoo Mexico Localization for Sale Coupon"
+msgstr ""
 
 #. module: base
 #: model:res.country,name:base.nl
@@ -19145,6 +19282,12 @@ msgid "Odoo Settings Dashboard"
 msgstr "Bảng thông tin Cấu hình Odoo"
 
 #. module: base
+#: code:addons/base/ir/ir_model.py:1215 code:addons/models.py:2888
+#, python-format
+msgid "Operation:"
+msgstr ""
+
+#. module: base
 #: model:ir.module.module,description:base.module_purchase
 msgid ""
 "Odoo Supply Chain\n"
@@ -20131,6 +20274,11 @@ msgid "Paper Format"
 msgstr "Định dạng Trang"
 
 #. module: base
+#: model:ir.module.module,summary:base.module_payment_stripe_sca
+msgid "Payment Acquirer: Stripe Implementation for the EU PSD2"
+msgstr ""
+
+#. module: base
 #: model:ir.actions.act_window,name:base.paper_format_action
 msgid "Paper Format General Configuration"
 msgstr "Cấu hình Định dạng Trang"
@@ -20902,6 +21050,14 @@ msgstr ""
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_to_project_stages
 msgid "Project Stages"
+msgstr ""
+
+#. module: base
+#: code:addons/base/ir/ir_actions.py:245 code:addons/models.py:2789
+#: code:addons/models.py:2875 code:addons/models.py:2889
+#: code:addons/models.py:3235 code:addons/models.py:4020
+#, python-format
+msgid "Records:"
 msgstr ""
 
 #. module: base
@@ -22305,6 +22461,12 @@ msgid "Singapore - Accounting"
 msgstr ""
 
 #. module: base
+#: model:ir.module.module,description:base.module_payment_stripe_sca
+#: model:ir.module.module,shortdesc:base.module_payment_stripe_sca
+msgid "Stripe Payment Acquirer - Strong Customer Authentication Update"
+msgstr ""
+
+#. module: base
 #: model:res.country,name:base.sx
 msgid "Sint Maarten (Dutch part)"
 msgstr ""
@@ -23008,6 +23170,11 @@ msgid "Test Performance"
 msgstr "Kiểm tra hiệu năng"
 
 #. module: base
+#: model:ir.module.module,shortdesc:base.module_test_rpc
+msgid "Test RPC"
+msgstr ""
+
+#. module: base
 #: model:ir.module.module,description:base.module_test_access_rights
 msgid "Testing of access restrictions"
 msgstr ""
@@ -23311,10 +23478,7 @@ msgstr ""
 #. module: base
 #: code:addons/model.py:121
 #, python-format
-msgid ""
-"The operation cannot be completed, probably due to the following:\n"
-"- deletion: you may be trying to delete a record while other records still reference it\n"
-"- creation/update: a mandatory field is not correctly set"
+msgid "The operation cannot be completed:"
 msgstr ""
 
 #. module: base
@@ -23408,6 +23572,14 @@ msgstr ""
 #: model:ir.ui.view,arch_db:base.view_base_module_upgrade_install
 msgid "The selected modules have been updated / installed !"
 msgstr "Mô đun được lựa chọn đã được cập nhật / cài đặt !"
+
+#. module: base
+#: code:addons/base/module/module.py:546
+#, python-format
+msgid ""
+"The server is busy right now, module operations are not possible at this "
+"time, please try again later."
+msgstr ""
 
 #. module: base
 #: model:ir.model.fields,help:base.field_res_country_state_code
@@ -24122,7 +24294,13 @@ msgid "Unknown"
 msgstr "Không xác định"
 
 #. module: base
-#: code:addons/models.py:994
+#: code:addons/models.py:833
+#, python-format
+msgid "Unknown database error: '%s'"
+msgstr ""
+
+#. module: base
+#: code:addons/models.py:996
 #, python-format
 msgid "Unknown database identifier '%s'"
 msgstr "Mã định danh (ID) cơ sở dữ liệu không xác đinh '%s'"
@@ -24384,6 +24562,15 @@ msgstr "Mặc định Người dùng định nghĩa"
 #: model:ir.ui.menu,name:base.menu_ir_filters
 msgid "User-defined Filters"
 msgstr "Bộ lọc Người dùng định nghĩa"
+
+#. module: base
+#: code:addons/base/ir/ir_actions.py:245 code:addons/base/ir/ir_model.py:1215
+#: code:addons/models.py:2564 code:addons/models.py:2789
+#: code:addons/models.py:2875 code:addons/models.py:2889
+#: code:addons/models.py:3235 code:addons/models.py:4020
+#, python-format
+msgid "User:"
+msgstr "Người dùng:"
 
 #. module: base
 #: model:ir.model.fields,field_description:base.field_ir_mail_server_smtp_user
@@ -26047,6 +26234,16 @@ msgstr ""
 #: model:ir.module.module,shortdesc:base.module_test_limits
 msgid "test-limits"
 msgstr ""
+
+#. module: base
+#: model:ir.module.module,shortdesc:base.module_test_lint
+msgid "test-lint"
+msgstr ""
+
+#. module: base
+#: model:ir.module.module,shortdesc:base.module_test_translation_import
+msgid "test-translation-import"
+msgstr "test-translation-import"
 
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_test_uninstall

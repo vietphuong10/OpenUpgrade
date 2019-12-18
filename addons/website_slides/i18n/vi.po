@@ -12,9 +12,10 @@
 # Martin Trigaux, 2017
 # fanha99 <fanha99@hotmail.com>, 2017
 # Duy BQ <duybq86@gmail.com>, 2018
-# Nancy Momoland <thanhnguyen.icsc@gmail.com>, 2019
+# thanhnguyen.icsc <thanhnguyen.icsc@gmail.com>, 2019
 # Chinh Chinh <trinhttp@trobz.com>, 2019
 # Dao Nguyen <trucdao.uel@gmail.com>, 2019
+# Dung Nguyen Thi <dungnt@trobz.com>, 2019
 # 
 msgid ""
 msgstr ""
@@ -22,7 +23,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-01-03 15:07+0000\n"
 "PO-Revision-Date: 2017-09-20 10:28+0000\n"
-"Last-Translator: Dao Nguyen <trucdao.uel@gmail.com>, 2019\n"
+"Last-Translator: Dung Nguyen Thi <dungnt@trobz.com>, 2019\n"
 "Language-Team: Vietnamese (https://www.transifex.com/odoo/teams/41243/vi/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -113,7 +114,7 @@ msgstr ""
 #. module: website_slides
 #: model:ir.model.fields,field_description:website_slides.field_slide_slide_slide_views
 msgid "# of Website Views"
-msgstr ""
+msgstr "# của lượt xem trang web"
 
 #. module: website_slides
 #: model:mail.template,subject:website_slides.slide_template_shared
@@ -140,6 +141,8 @@ msgid ""
 "<b class=\"oe_slide_js_embed_option_link\" data-slide-option-"
 "id=\"#slide_email\"><i class=\"fa fa-envelope\"/> Email</b>"
 msgstr ""
+"<b class=\"oe_slide_js_embed_option_link\" data-slide-option-"
+"id=\"#slide_email\"><i class=\"fa fa-envelope\"/> Email</b>"
 
 #. module: website_slides
 #: model:ir.ui.view,arch_db:website_slides.embed_slide
@@ -167,7 +170,7 @@ msgstr "<b>Chia sẻ:</b>"
 #. module: website_slides
 #: model:ir.ui.view,arch_db:website_slides.slide_detail_view
 msgid "<i class=\"fa fa-align-justify\"/> Transcript"
-msgstr ""
+msgstr "<i class=\"fa fa-align-justify\"/> Bài dịch"
 
 #. module: website_slides
 #: model:ir.ui.view,arch_db:website_slides.home
@@ -182,7 +185,7 @@ msgstr "<i class=\"fa fa-bar-chart\"/> Thống kê"
 #. module: website_slides
 #: model:ir.ui.view,arch_db:website_slides.slide_detail_view
 msgid "<i class=\"fa fa-circle-o\"/> Website Views"
-msgstr ""
+msgstr "<i class=\"fa fa-circle-o\"/> Lượt xem"
 
 #. module: website_slides
 #: model:ir.ui.view,arch_db:website_slides.home
@@ -224,7 +227,7 @@ msgstr "<i class=\"fa fa-home\"/> Về"
 #. module: website_slides
 #: model:ir.ui.view,arch_db:website_slides.slides_channel_header
 msgid "<i class=\"fa fa-home\"/> Home"
-msgstr ""
+msgstr "<i class=\"fa fa-home\"/> Trang chủ"
 
 #. module: website_slides
 #: model:ir.ui.view,arch_db:website_slides.slide_detail_view
@@ -232,6 +235,8 @@ msgid ""
 "<i class=\"fa fa-info-circle\"/>\n"
 "                                        The social sharing module will be unlocked when a moderator will allow your publication."
 msgstr ""
+"<i class=\"fa fa-info-circle\"/>\n"
+"                                        Mô-đun chia sẻ xã hội sẽ được mở khóa khi người điều hành cho phép bạn đăng bài."
 
 #. module: website_slides
 #: model:ir.ui.view,arch_db:website_slides.slide_detail_view
@@ -264,6 +269,8 @@ msgstr "<i class=\"fa fa-thumbs-up\"/> Thích"
 msgid ""
 "<p>This channel is private and its content is restricted to some users.</p>"
 msgstr ""
+"<p> Kênh này là riêng tư và nội dung của nó bị giới hạn ở một số người dùng."
+" </ p>"
 
 #. module: website_slides
 #: model:ir.ui.view,arch_db:website_slides.slide_detail_view
@@ -406,7 +413,7 @@ msgstr "Timesheet Tuyệt vời bởi Odoo"
 #. module: website_slides
 #: model:slide.tag,name:website_slides.tag1
 msgid "CMS"
-msgstr ""
+msgstr "CMS"
 
 #. module: website_slides
 #: model:ir.model.fields,field_description:website_slides.field_slide_channel_can_see
@@ -463,7 +470,7 @@ msgstr "Thiết lập Kênh"
 #, python-format
 msgid ""
 "Channel contains the given title, please change before Save or Publish."
-msgstr ""
+msgstr "Kênh chứa tiêu đề, vui lòng thay đổi trước khi Lưu hoặc Đăng."
 
 #. module: website_slides
 #: model:ir.model,name:website_slides.model_slide_channel
@@ -486,7 +493,7 @@ msgstr "Kênh"
 #. module: website_slides
 #: model:slide.slide,name:website_slides.slide_10
 msgid "Company Culture"
-msgstr ""
+msgstr "Văn hóa công ty"
 
 #. module: website_slides
 #: model:ir.model.fields,field_description:website_slides.field_slide_slide_datas
@@ -507,6 +514,8 @@ msgid ""
 "Could not fetch data from url. Document or access right not available.\n"
 "Here is the received response: %s"
 msgstr ""
+"Không thể tìm nạp dữ liệu từ đường dẫn url. Tài liệu hoặc quyền truy cập không khả dụng. \n"
+"Đây là phản hồi nhận được: %s"
 
 #. module: website_slides
 #: code:addons/website_slides/models/slides.py:322
@@ -515,6 +524,8 @@ msgid ""
 "Could not fetch data from url. Document or access right not available:\n"
 "%s"
 msgstr ""
+"Không thể tìm nạp dữ liệu từ url. Tài liệu hoặc quyền truy cập không khả dụng. \n"
+"Đây là phản hồi nhận được: %s"
 
 #. module: website_slides
 #: model:ir.ui.view,arch_db:website_slides.res_config_settings_view_form
@@ -576,7 +587,7 @@ msgstr "Hủy bỏ"
 #. module: website_slides
 #: model:slide.slide,description:website_slides.slide_6
 msgid "Discover how easy marketing your business can be with Odoo"
-msgstr ""
+msgstr "Khám phá cách tiếp thị doanh nghiệp của bạn dễ dàng với Odoo"
 
 #. module: website_slides
 #: model:slide.slide,description:website_slides.slide_0
@@ -587,11 +598,18 @@ msgid ""
 "\n"
 "Discover Odoo MRP: https://www.odoo.com/page/manufacturing"
 msgstr ""
+"Khám phá cách bạn có thể tích hợp MRP, PLM, Kiểm tra chất lượng và Bảo trì trong một ứng dụng duy nhất để tối đa hóa hiệu quả của hoạt động sản xuất của bạn. \n"
+"\n"
+"Đọc thêm về các tính năng tại: https://www.odoo.com/page/manufacturing-features\n"
+"\n"
+"Khám phá Odoo MRP: https://www.odoo.com/page/manufacturing"
 
 #. module: website_slides
 #: model:slide.slide,description:website_slides.slide_1
 msgid "Discover the CRM sales people love https://www.odoo.com/page/crm"
 msgstr ""
+"Khám phá bán hàng CRM mà mọi người đều yêu thích "
+"https://www.odoo.com/page/crm"
 
 #. module: website_slides
 #: model:slide.slide,description:website_slides.slide_2
@@ -600,6 +618,9 @@ msgid ""
 "\n"
 "Learn more at https://odoo.com"
 msgstr ""
+"Khám phá giải pháp phần mềm quản lý doanh nghiệp tất cả trong một phù hợp với mọi quy mô kinh doanh và nghiệp vụ. \n"
+"\n"
+"Tìm hiểu thêm tại https://odoo.com"
 
 #. module: website_slides
 #: model:ir.model.fields,field_description:website_slides.field_slide_slide_dislikes
@@ -635,7 +656,7 @@ msgstr "ID Tài liệu"
 #. module: website_slides
 #: model:ir.model.fields,field_description:website_slides.field_slide_slide_url
 msgid "Document URL"
-msgstr ""
+msgstr "URL tài liệu"
 
 #. module: website_slides
 #: model:ir.ui.view,arch_db:website_slides.slides_channel_header
@@ -655,6 +676,10 @@ msgid ""
 "Chrome: http://bit.ly/2613LcY\n"
 "iOS: http://bit.ly/1ZUZsZD"
 msgstr ""
+"Tải xuống Bảng chấm công tuyệt vời của Odoo và khám phá cách theo dõi thời gian và quản lý nhân viên dễ dàng như thế nào!\n"
+"\n"
+"Chrome: http://bit.ly/2613LcY\n"
+"iOS: http://bit.ly/1ZUZsZD"
 
 #. module: website_slides
 #: model:ir.model.fields,field_description:website_slides.field_slide_slide_download_security
@@ -694,7 +719,7 @@ msgstr ""
 #. module: website_slides
 #: model:ir.ui.view,arch_db:website_slides.slide_detail_view
 msgid "Embeds"
-msgstr ""
+msgstr "Nhúng"
 
 #. module: website_slides
 #: model:slide.channel,name:website_slides.channel_private
@@ -753,17 +778,17 @@ msgstr "Tổng quát"
 #. module: website_slides
 #: model:ir.model.fields,field_description:website_slides.field_res_config_settings_website_slide_google_app_key
 msgid "Google Doc Key"
-msgstr ""
+msgstr "Google Doc Key"
 
 #. module: website_slides
 #: model:ir.ui.view,arch_db:website_slides.res_config_settings_view_form
 msgid "Google Drive API Key"
-msgstr ""
+msgstr "Google Drive API Key"
 
 #. module: website_slides
 #: model:ir.ui.view,arch_db:website_slides.view_slide_slide_graph
 msgid "Graph of Slides"
-msgstr ""
+msgstr "Biểu đồ của bài viết"
 
 #. module: website_slides
 #: model:ir.ui.view,arch_db:website_slides.view_slide_slide_search
@@ -801,12 +826,12 @@ msgstr "Hình ảnh"
 #. module: website_slides
 #: selection:slide.slide,slide_type:0
 msgid "Infographic"
-msgstr ""
+msgstr "Infographic"
 
 #. module: website_slides
 #: model:ir.ui.view,arch_db:website_slides.slides_channel_header
 msgid "Infographics"
-msgstr ""
+msgstr "Infographics"
 
 #. module: website_slides
 #: code:addons/website_slides/controllers/main.py:285
@@ -860,7 +885,7 @@ msgstr "Xuất bản Mới nhất"
 #. module: website_slides
 #: model:slide.slide,description:website_slides.slide_8
 msgid "Learn more at https://www.odoo.com/page/sales"
-msgstr ""
+msgstr "Tìm hiểu thêm tại https://www.odoo.com/page/sales"
 
 #. module: website_slides
 #: model:ir.model.fields,field_description:website_slides.field_slide_slide_likes
@@ -977,7 +1002,7 @@ msgstr ""
 #. module: website_slides
 #: model:slide.slide,name:website_slides.slide_1
 msgid "Odoo CRM"
-msgstr ""
+msgstr "Odoo CRM"
 
 #. module: website_slides
 #: model:slide.category,name:website_slides.category_2
@@ -988,37 +1013,37 @@ msgstr ""
 #. module: website_slides
 #: model:slide.slide,name:website_slides.slide_7
 msgid "Odoo Inventory"
-msgstr ""
+msgstr "Odoo Inventory"
 
 #. module: website_slides
 #: model:slide.slide,name:website_slides.slide_0
 msgid "Odoo MRP"
-msgstr ""
+msgstr "Odoo MRP"
 
 #. module: website_slides
 #: model:slide.slide,name:website_slides.slide_6
 msgid "Odoo Marketing"
-msgstr ""
+msgstr "Odoo Marketing"
 
 #. module: website_slides
 #: model:slide.slide,name:website_slides.slide_8
 msgid "Odoo Sales"
-msgstr ""
+msgstr "Odoo Sales"
 
 #. module: website_slides
 #: model:slide.slide,name:website_slides.slide_3
 msgid "Odoo Sign Demonstration"
-msgstr ""
+msgstr "Odoo Sign Demonstration"
 
 #. module: website_slides
 #: model:slide.slide,name:website_slides.slide_9
 msgid "Open Days 2014 Infographic"
-msgstr ""
+msgstr "Open Days 2014 Infographic"
 
 #. module: website_slides
 #: model:slide.slide,name:website_slides.slide_11
 msgid "OpenSource CMS, A performance comparison - Mantavya Gajjar"
-msgstr ""
+msgstr "Mã nguồn mở CMS, so sánh hiệu suất - Mantavya Gajjar"
 
 #. module: website_slides
 #. openerp-web
@@ -1043,6 +1068,7 @@ msgstr "Vui lòng"
 #, python-format
 msgid "Please <a href=\"/web?redirect=%s\">login</a> to vote this slide"
 msgstr "Vui lòng <a href=\"/web?redirect=%s\">đăng nhập</a> để bầu chọn slide này"
+"Vui lòng <a href=\"/web?redirect=%s\">đăng nhập</a> để bình chọn slide này"
 
 #. module: website_slides
 #: code:addons/website_slides/models/slides.py:325
@@ -1244,6 +1270,9 @@ msgid ""
 "\n"
 "Discover more at https://www.odoo.com/page/sign"
 msgstr ""
+"Dừng thực hiện in và quét thủ công. Chuyển sang chữ ký điện tử với Odoo Sign!\n"
+"\n"
+"Khám phá thêm tại https://www.odoo.com/page/sign"
 
 #. module: website_slides
 #: model:ir.ui.view,arch_db:website_slides.view_slide_tag_form
@@ -1278,6 +1307,8 @@ msgid ""
 "The document type will be set automatically based on the document URL and "
 "properties (e.g. height and width for presentation and document)."
 msgstr ""
+"Loại tài liệu sẽ được đặt tự động dựa trên URL và thuộc tính củatài liệu (ví"
+" dụ: chiều cao và chiều rộng của bài đăng và tài liệu)."
 
 #. module: website_slides
 #: sql_constraint:slide.slide:0
@@ -1287,7 +1318,7 @@ msgstr "Tên Slide phải là duy nhất trong một kênh"
 #. module: website_slides
 #: model:ir.model.fields,field_description:website_slides.field_slide_embed_url
 msgid "Third Party Website URL"
-msgstr ""
+msgstr "Đường dẫn URL website bên thứ ba"
 
 #. module: website_slides
 #: model:slide.channel,access_error_msg:website_slides.channel_partial
@@ -1336,7 +1367,7 @@ msgstr "Tổng số lượt Xem"
 #. module: website_slides
 #: model:ir.model.fields,field_description:website_slides.field_slide_slide_index_content
 msgid "Transcript"
-msgstr ""
+msgstr "Bản dịch"
 
 #. module: website_slides
 #: model:ir.model.fields,field_description:website_slides.field_slide_slide_slide_type
@@ -1376,7 +1407,7 @@ msgstr "Nhóm Tải lên"
 msgid ""
 "Upload PDF presentations, documents, videos or infographic using the button "
 "below."
-msgstr ""
+msgstr "Tải bài đăng PDF, tài liệu, video hoặc đồ họa bằng nút bên dưới"
 "Tải lên các thuyết trình bằng PDF, tài liệu, video hoặc infographic sử dụng "
 "nút dưới đây."
 
@@ -1404,6 +1435,7 @@ msgstr "Được sử dụng để xuất bản các slide nội bộ của côn
 #: model:slide.channel,description:website_slides.channel_partial
 msgid "Used to publish slides in partner network privately."
 msgstr "Được sử dụng để xuất bản các slide trong phạm vi mạng lưới đối tác."
+"Được sử dụng để công bố các bài viết trong mạng đối tác một cách riêng tư"
 
 #. module: website_slides
 #: selection:slide.slide,slide_type:0
@@ -1443,6 +1475,9 @@ msgid ""
 "\n"
 "Discover Odoo Inventory: https://www.odoo.com/page/warehouse"
 msgstr ""
+"Phần mềm quản lý kho cho thế kỷ 21.\n"
+"\n"
+"Khám phá Odoo Inventory: https://www.odoo.com/page/warehouse"
 
 #. module: website_slides
 #: model:ir.ui.view,arch_db:website_slides.view_slide_slide_form
@@ -1526,7 +1561,7 @@ msgstr "kết quả được tìm thấy với các tiêu chí đã cho"
 #. module: website_slides
 #: model:ir.ui.view,arch_db:website_slides.embed_slide
 msgid "suggest_slide.name"
-msgstr ""
+msgstr "suggest_slide.name"
 
 #. module: website_slides
 #: model:ir.ui.view,arch_db:website_slides.slide_social_email
@@ -1536,4 +1571,4 @@ msgstr "để gửi cái này"
 #. module: website_slides
 #: model:ir.ui.view,arch_db:website_slides.slide_social_email
 msgid "your-friend@domain.com"
-msgstr ""
+msgstr "your-friend@domain.com"
