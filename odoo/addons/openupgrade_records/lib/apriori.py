@@ -21,7 +21,9 @@ renamed_modules = {
     # OCA/hr
     'hr_employee_seniority': 'hr_employee_service_contract',
     'hr_family': 'hr_employee_relative',
-
+    # OCA/sale-workflow
+    'sale_procurement_group_by_requested_date':
+        'sale_procurement_group_by_commitment_date',
     # erponline-enterprise
     'account_accountant': 'to_account_accountant',
     'account_asset': 'to_account_asset',
@@ -31,6 +33,7 @@ renamed_modules = {
     # OCA/server-brand
     'res_config_settings_enterprise_remove': 'remove_odoo_enterprise',
     # OCA/stock-logistics-workflow
+    'stock_batch_picking': 'stock_picking_batch_extended',
     'stock_pack_operation_auto_fill': 'stock_move_line_auto_fill',
     
     # tvtmaaddons
@@ -52,6 +55,7 @@ merged_modules = {
     'sale_order_dates': 'sale',
     'sale_payment': 'sale',
     'sale_service_rating': 'sale_timesheet',
+    'snippet_latest_posts': 'website_blog',
     'web_planner': 'web',
     'website_quote': 'sale_quotation_builder',
     'website_rating_project': 'project',
@@ -61,10 +65,13 @@ merged_modules = {
     # OCA/account-analytic
     # although model is defined in "analytic", logic is in "account"
     'account_analytic_distribution': 'account',
+    'account_asset_analytic': 'account_asset_management',
     # OCA/account-financial-reporting
     'customer_activity_statement': 'partner_statement',
     'customer_outstanding_statement': 'partner_statement',
     # OCA/account-financial-tools
+    'account_asset_depr_line_cancel': 'account_asset_management',
+    'account_asset_disposal': 'account_asset_management',
     'account_reversal': 'account',
     # OCA/e-commerce
     'website_sale_default_country': 'website_sale',
@@ -78,6 +85,10 @@ merged_modules = {
     # OCA/partner-contact
     'base_country_state_translatable': 'l10n_multilang',
     'base_partner_merge': 'base',
+    # OCA/purchase-workflow
+    'product_supplierinfo_discount': 'purchase_discount',
+    # OCA/pos
+    'pos_config_show_accounting': 'point_of_sale',
     # OCA/server-auth
     'auth_brute_force': 'base',
     # OCA/stock-logistics-warehouse
@@ -122,8 +133,12 @@ renamed_models = {
     'sale.quote.option': 'sale.order.template.option',
     'sale.quote.template': 'sale.order.template',
     'stock.incoterms': 'account.incoterms',
-    # 'stock.location.path': 'stock.rule', handled in 'stock'
+    # OCA/account-financial-tools
+    'account.asset.asset': 'account.asset',
+    'account.asset.depreciation.line': 'account.asset.line',
+    'account.asset.category': 'account.asset.profile',
 }
+
 # only used here for openupgrade_records analysis:
 merged_models = {
     # Odoo
