@@ -5,7 +5,7 @@ from openupgradelib import openupgrade
 
 _column_copies = {
     'sale_order_line': [
-        ('qty_delivered', None, None),
+        ('qty_delivered', 'qty_delivered_manual', None),
     ],
 }
 
@@ -125,3 +125,11 @@ def migrate(env, version):
         env.cr,
         "ALTER TABLE sale_order_line ADD COLUMN qty_delivered_method varchar",
     )
+    openupgrade.logged_query(
+        env.cr,
+        "ALTER TABLE sale_order_line ADD COLUMN untaxed_amount_invoiced "
+        "NUMERIC")
+    openupgrade.logged_query(
+        env.cr,
+        "ALTER TABLE sale_order_line ADD COLUMN untaxed_amount_to_invoice "
+        "NUMERIC")
