@@ -428,6 +428,34 @@ def install_new_modules(env):
     )
 
 
+def _update_reconciliation_date(env):
+    openupgrade.logged_query(
+        env.cr,
+        """
+        ALTER TABLE account_full_reconcile
+        ADD COLUMN IF NOT EXISTS reconciliation_date DATE;
+        UPDATE account_full_reconcile rec
+        SET reconciliation_date = CAST(rec.create_date AS DATE);
+        """,
+    )
+    openupgrade.logged_query(
+        env.cr,
+        """
+        ALTER TABLE account_move_line
+        ADD COLUMN IF NOT EXISTS reconciliation_date DATE;
+        WITH subquery AS (
+            SELECT rec.id, rec.reconciliation_date
+            FROM account_full_reconcile AS rec JOIN account_move_line AS line
+            ON line.full_reconcile_id = rec.id
+        )
+        UPDATE account_move_line line
+        SET reconciliation_date = subquery.reconciliation_date
+        FROM subquery
+        WHERE line.full_reconcile_id = subquery.id;
+        """,
+    )
+
+
 @openupgrade.migrate()
 def migrate(env, version):
     openupgrade.set_xml_ids_noupdate_value(
@@ -443,6 +471,7 @@ def migrate(env, version):
     fill_empty_partner_type_account_payment(env)
     fill_account_move_line_currency_id(env)
     fill_account_payment_partner_id(env)
+    _update_reconciliation_date(env)
     install_new_modules(env)
     # Disappeared constraint
     openupgrade.logged_query(
