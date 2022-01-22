@@ -330,22 +330,38 @@ def unfold_manual_account_groups(env):
     """For manually created groups, we check if such group is used in more than
     one company. If so, we unfold it. We also assure proper company for existing one.
     """
+
+    def _get_all_children(groups):
+        children = env["account.group"].search([("parent_id", "in", groups.ids)])
+        if children:
+            children |= _get_all_children(children)
+        return children
+
+    def _get_all_parents(groups):
+        parents = groups.mapped("parent_id")
+        if parents:
+            parents |= _get_all_parents(parents)
+        return parents
+
+    AccountGroup = env["account.group"]
+    AccountGroup._parent_store_compute()
     env.cr.execute(
         """SELECT ag.id FROM account_group ag
         LEFT JOIN ir_model_data imd
             ON ag.id = imd.res_id AND imd.model = 'account.group'
                 AND imd.module != '__export__'
-        WHERE imd.id IS NULL
-        ORDER BY ag.parent_path"""
+        WHERE imd.id IS NULL"""
     )
-    AccountGroup = env["account.group"]
-    for group_id in [x[0] for x in env.cr.fetchall()]:
-        group = AccountGroup.browse(group_id)
-        accounts = env["account.account"].search([("group_id", "=", group.id)])
+    all_groups = AccountGroup.browse([x[0] for x in env.cr.fetchall()])
+    all_groups = all_groups | _get_all_parents(all_groups)
+    relation_dict = {}
+    for group in all_groups.sorted(key="parent_path"):
+        subgroups = group | _get_all_children(group)
+        accounts = env["account.account"].search([("group_id", "in", subgroups.ids)])
         companies = accounts.mapped("company_id").sorted()
-        relation_dict = {}
-        for i, company in companies:
-            relation_dict[company] = {}
+        for i, company in enumerate(companies):
+            if company not in relation_dict:
+                relation_dict[company] = {}
             if i == 0:
                 if group.company_id != company:
                     group.company_id = company.id
