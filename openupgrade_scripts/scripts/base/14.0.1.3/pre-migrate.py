@@ -87,33 +87,6 @@ def deduplicate_ir_properties(cr):
     )
 
 
-def delete_web_diagram_assets(cr):
-    # module web_diagram that is deleted in Odoo CE 14.0
-    # to need to delete web diagram assets in ir_ui_view
-    # which causes style conflict with module to_backend_theme
-    openupgrade.logged_query(
-        cr,
-        """
-        DELETE FROM ir_ui_view
-        WHERE key = 'web_diagram.assets_backend' OR key = 'web_diagram.qunit_suite';
-        """,
-    )
-
-
-def delete_to_website_erponline_cart(cr):
-    # module to_website_erponline_cart that is deleted in odoo-tvtma
-    # to need to delete ir_ui_view in module
-    openupgrade.logged_query(
-        cr,
-        """
-        DELETE FROM ir_ui_view
-        WHERE key = 'to_website_erponline_cart.assets_frontend'
-        OR key = 'to_website_erponline_cart.sale_cart'
-        OR key = 'to_website_erponline_cart.cart';
-        """,
-    )
-
-
 @openupgrade.migrate(use_env=False)
 def migrate(cr, version):
     """
@@ -158,5 +131,3 @@ def migrate(cr, version):
         cr, "UPDATE res_partner SET lang = 'tl_PH' WHERE lang = 'fil_PH'"
     )
     deduplicate_ir_properties(cr)
-    delete_web_diagram_assets(cr)
-    delete_to_website_erponline_cart(cr)
