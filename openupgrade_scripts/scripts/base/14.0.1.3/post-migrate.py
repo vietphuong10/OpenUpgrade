@@ -20,15 +20,15 @@ def install_unmet_dependencies(env):
             "to install",
         ),
     )
-
-    openupgrade.logged_query(
-        env.cr,
-        """
-        UPDATE ir_module_module
-        SET state='to install'
-        WHERE id in (%s)"""
-        % (", ".join([str(m_id) for m_id in modules_to_install.ids]),),
-    )
+    if modules_to_install:
+        openupgrade.logged_query(
+            env.cr,
+            """
+            UPDATE ir_module_module
+            SET state='to install'
+            WHERE id in (%s)"""
+            % (", ".join([str(m_id) for m_id in modules_to_install.ids]),),
+        )
 
 
 def fix_module_category_parent_id(env):
