@@ -380,12 +380,16 @@ def fill_empty_partner_type_account_payment(env):
 
 
 def fill_account_move_line_currency_id(env):
+    # Disappeared constraint
     openupgrade.logged_query(
         env.cr,
         """
         ALTER TABLE account_move_line
         DROP CONSTRAINT IF EXISTS account_move_line_check_amount_currency_balance_sign
         """,
+    )
+    openupgrade.delete_records_safely_by_xml_id(
+        env, ["account.constraint_account_move_line_check_amount_currency_balance_sign"]
     )
     openupgrade.logged_query(
         env.cr,
@@ -406,17 +410,6 @@ def fill_account_payment_partner_id(env):
         FROM account_journal aj
         JOIN res_company rc ON aj.company_id = rc.id
         WHERE ap.payment_type = 'transfer'
-        """,
-    )
-
-
-def install_new_modules(env):
-    openupgrade.logged_query(
-        env.cr,
-        """
-        UPDATE ir_module_module
-        SET state='to install'
-        WHERE name = 'viin_account_reconciliation' AND state='uninstalled'
         """,
     )
 
@@ -465,7 +458,6 @@ def migrate(env, version):
     fill_account_move_line_currency_id(env)
     fill_account_payment_partner_id(env)
     _update_reconciliation_date(env)
-    install_new_modules(env)
     # Disappeared constraint
     openupgrade.logged_query(
         env.cr,
