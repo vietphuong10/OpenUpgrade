@@ -1,6 +1,7 @@
 # Copyright 2021 ForgeFlow S.L.  <https://www.forgeflow.com>
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 from openupgradelib import openupgrade
+from odoo.tools.sql import create_column
 
 
 def rename_fields(env):
@@ -370,46 +371,77 @@ def add_edi_state_field_account_move(env):
         )
 
 
-def fill_empty_partner_type_account_payment(env):
+def _fill_empty_partner_type_account_payment_viin_hr_account(env):
+    env.cr.execute("""SELECT COUNT(*) FROM ir_module_module WHERE name='viin_hr_account' and state='installed'""")
+    if not env.cr.fetchone():
+        return
+    if not openupgrade.column_exists(env.cr, 'account_payment', 'employee_id'):
+        openupgrade.logged_query(
+            env.cr,
+            """
+            ALTER TABLE account_payment
+            ADD COLUMN employee_id integer;
+            """
+            )
     openupgrade.logged_query(
         env.cr,
         """
-        WITH tempo_payment AS(
-            WITH payment AS (
-                SELECT
-                    DISTINCT ap.id,
-                    ap.amount,
-                    ap.payment_type,
-                    a.internal_type
-                FROM account_account AS a
-                JOIN account_ctp_account_rel AS ctp ON ctp.account_id = a.id
-                JOIN account_move_line AS aml ON aml.id = ctp.aml_id
-                JOIN account_payment AS ap ON ap.id = aml.payment_id
-                WHERE ap.partner_type IS NULL AND a.internal_type IN ('payable', 'receivable')
-            )
-            SELECT * FROM payment
-            UNION ALL
-            SELECT
-                DISTINCT ap.id,
-                ap.amount,
-                ap.payment_type,
-                'other' AS internal_type
-            FROM account_account AS a
-            JOIN account_ctp_account_rel AS ctp ON ctp.account_id = a.id
-            JOIN account_move_line AS aml ON aml.id = ctp.aml_id
-            JOIN account_payment AS ap ON ap.id = aml.payment_id
-            WHERE ap.partner_type IS NULL AND ap.id NOT IN (SELECT payment.id FROM payment)
+        UPDATE account_payment ap
+        SET partner_type = 'employee',
+            employee_id = emp.id
+        FROM res_partner p
+        JOIN hr_employee emp ON p.id = emp.address_home_id
+        WHERE p.id = ap.partner_id AND partner_type IS NULL and partner_id IS NOT NULL
+        """
         )
+
+def _fill_empty_partner_type_account_payment_to_account_counterpart(env):
+    env.cr.execute("""SELECT COUNT(*) FROM ir_module_module WHERE name='to_account_counterpart' and state='installed'""")
+    if not env.cr.fetchone():
+        return
+    openupgrade.logged_query(
+        env.cr,
+        """
+        UPDATE account_payment ap
+        SET partner_type = sub.partner_type
+        FROM (
+            SELECT DISTINCT payment_id,
+            CASE
+                WHEN internal_type = 'payable' THEN 'supplier'
+                WHEN internal_type = 'receivable' THEN 'customer'
+                WHEN internal_type = 'other' AND payment_type = 'outbound' THEN 'supplier'
+                WHEN internal_type = 'other' AND payment_type = 'inbound' THEN 'customer'
+            END as partner_type
+            FROM (
+                SELECT aml.payment_id, counter_part.internal_type, ap.payment_type
+                FROM account_move_line aml
+                JOIN account_ctp_account_rel ctp ON ctp.aml_id = aml.id
+                JOIN account_account counter_part ON ctp.account_id = counter_part.id
+                JOIN account_account hh ON hh.id = aml.account_id
+                JOIN account_payment ap ON aml.payment_id = ap.id
+                JOIN account_journal aj ON ap.journal_id = aj.id
+                WHERE ap.payment_type != 'transfer' 
+                    AND hh.internal_type = 'liquidity'
+                    AND ap.partner_type IS NULL
+                    ) x
+            ) sub
+        WHERE ap.id = sub.payment_id AND ap.partner_type IS NULL
+        """
+        )
+
+def fill_empty_partner_type_account_payment(env):
+    _fill_empty_partner_type_account_payment_viin_hr_account(env)
+    _fill_empty_partner_type_account_payment_to_account_counterpart(env)
+    openupgrade.logged_query(
+        env.cr,
+        """
         UPDATE account_payment
         SET partner_type =
-        CASE
-            WHEN tp.internal_type = 'payable' THEN 'supplier'
-            WHEN tp.internal_type = 'receivable' THEN 'customer'
-            WHEN tp.internal_type = 'other' AND tp.payment_type = 'outbound' THEN 'supplier'
-            WHEN tp.internal_type = 'other' AND tp.payment_type = 'inbound' THEN 'customer'
-        END
-        FROM tempo_payment as tp
-        WHERE account_payment.id = tp.id
+            CASE
+                WHEN payment_type = 'outbound' THEN 'supplier'
+                ELSE 'customer'
+            END
+        WHERE partner_type IS NULL
         """,
     )
 
