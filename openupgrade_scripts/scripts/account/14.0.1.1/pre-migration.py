@@ -374,13 +374,42 @@ def fill_empty_partner_type_account_payment(env):
     openupgrade.logged_query(
         env.cr,
         """
+        WITH tempo_payment AS(
+            WITH payment AS (
+                SELECT
+                    DISTINCT ap.id,
+                    ap.amount,
+                    ap.payment_type,
+                    a.internal_type
+                FROM account_account AS a
+                JOIN account_ctp_account_rel AS ctp ON ctp.account_id = a.id
+                JOIN account_move_line AS aml ON aml.id = ctp.aml_id
+                JOIN account_payment AS ap ON ap.id = aml.payment_id
+                WHERE ap.partner_type IS NULL AND a.internal_type IN ('payable', 'receivable')
+            )
+            SELECT * FROM payment
+            UNION ALL
+            SELECT
+                DISTINCT ap.id,
+                ap.amount,
+                ap.payment_type,
+                'other' AS internal_type
+            FROM account_account AS a
+            JOIN account_ctp_account_rel AS ctp ON ctp.account_id = a.id
+            JOIN account_move_line AS aml ON aml.id = ctp.aml_id
+            JOIN account_payment AS ap ON ap.id = aml.payment_id
+            WHERE ap.partner_type IS NULL AND ap.id NOT IN (SELECT payment.id FROM payment)
+        )
         UPDATE account_payment
         SET partner_type =
-            CASE
-                WHEN payment_type = 'outbound' THEN 'supplier'
-                ELSE 'customer'
-            END
-        WHERE partner_type IS NULL
+        CASE
+            WHEN tp.internal_type = 'payable' THEN 'supplier'
+            WHEN tp.internal_type = 'receivable' THEN 'customer'
+            WHEN tp.internal_type = 'other' AND tp.payment_type = 'outbound' THEN 'supplier'
+            WHEN tp.internal_type = 'other' AND tp.payment_type = 'inbound' THEN 'customer'
+        END
+        FROM tempo_payment as tp
+        WHERE account_payment.id = tp.id
         """,
     )
 
