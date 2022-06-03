@@ -10,14 +10,14 @@ def _create_account_payment_method_line(env):
         (name, payment_method_id, journal_id)
         SELECT apm.name, apm.id, aj.id
         FROM account_payment_method apm
-        JOIN payment_acquirer pa ON pa.provider = 'paypal'
+        JOIN payment_acquirer pa ON pa.provider = 'ogone'
         JOIN account_journal aj ON aj.type = 'bank' AND aj.id = pa.journal_id
-        WHERE apm.code = 'paypal'
+        WHERE apm.code = 'ogone'
         """,
     )
 
 
 @openupgrade.migrate()
 def migrate(env, version):
-    openupgrade.load_data(env.cr, "payment_paypal", "15.0.2.0/noupdate_changes.xml")
+    openupgrade.load_data(env.cr, "payment_ogone", "15.0.2.0/noupdate_changes.xml")
     _create_account_payment_method_line(env)
