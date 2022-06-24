@@ -18,6 +18,7 @@ renamed_modules = {
     "viin_hr_equipment_hierarchy": "viin_hr_maintenance",
     "to_slugify_l10n_vn": "viin_unicode_slugify",
     "to_res_state_group": "viin_base_state_group",
+    "to_l10n_vn_hr_payroll": "l10n_vn_viin_hr_payroll",
     # Viindoo/erponline-enterprise
     "to_enterprise_marks_account": "viin_hide_ent_modules_account",
     "viin_mobile_notification_firebase": "viin_mobile_firebase",
