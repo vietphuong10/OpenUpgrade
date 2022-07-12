@@ -49,9 +49,9 @@ jobs:
           # anymore
           # Roundtrip to previous release to update the test database with
           # additional test data
-          # - git fetch --depth 2 origin 13.0
+          # - git fetch --depth 2 origin 14.0
           # - git reset --hard `git ls-remote \
-          #       | grep refs/heads/13.0 \
+          #       | grep refs/heads/14.0 \
           #       | awk '{print $1}'`
           # - pip install -q -r requirements.txt
           # Line below may fail quite often due to Travis bug:
@@ -113,13 +113,14 @@ jobs:
               | sed -rn 's/((^\| *\|new\| *)|^\|)([0-9a-z_]*) *\|.*$/\3/g p' \
               | sed '/^\s*$/d' \
               | paste -d, -s)
+          echo Set the modules as not installable if they are not in the following list : $MODULES_OLD
           psql $DB -c "update ir_module_module set state='uninstalled' \
               where name not in ('$(echo $MODULES_OLD | sed -e "s/,/','/g")')"
           ADDONS_PATHS="\
               $GITHUB_WORKSPACE/odoo/addons \
               $GITHUB_WORKSPACE/odoo/odoo/addons \
               $GITHUB_WORKSPACE/openupgrade"
-          echo Testing modules $MODULES_NEW
+          echo Execution of Openupgrade with the update of the following modules : $MODULES_NEW
           # Silence redundant logs from unlinking records (1 line is enough)
           # to prevent log overflow
           OPENUPGRADE_TESTS=1 $ODOO \
