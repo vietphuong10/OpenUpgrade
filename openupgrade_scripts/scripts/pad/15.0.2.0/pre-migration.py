@@ -1,4 +1,8 @@
+import logging
+
 from openupgradelib import openupgrade
+
+_logger = logging.getLogger(__name__)
 
 
 @openupgrade.migrate()

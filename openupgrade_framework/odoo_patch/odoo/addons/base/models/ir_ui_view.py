@@ -65,3 +65,5 @@ _check_xml._original_method = View._check_xml
 View._check_xml = _check_xml
 _check._original_method = NameManager.check
 NameManager.check = _check
+_raise_view_error._original_method = View._raise_view_error
+View._raise_view_error = _raise_view_error
