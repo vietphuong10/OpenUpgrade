@@ -26,3 +26,9 @@ def migrate(env, version):
                 },
             ]
         )
+    else:
+        _logger.warning(
+            "Pad: The system has multiple pad servers. \
+            Odoo 15.0 supports only 1. No pad settings have been changed. \
+            This may require manual configuration after migration."
+        )

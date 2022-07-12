@@ -31,6 +31,7 @@ def _map_mail_notification_failure_type(env):
         "failure_type",
         [
             ("SMTP", "mail_smtp"),
+            ("BOUNCE", "mail_email_invalid"),
             ("RECIPIENT", "mail_email_invalid"),
             ("UNKNOWN", "unknown"),
         ],

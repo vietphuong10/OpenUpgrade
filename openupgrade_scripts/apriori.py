@@ -11,6 +11,8 @@ renamed_modules = {
     "l10n_eu_service": "l10n_eu_oss",
     "mail_client_extension": "mail_plugin",
     "payment_ingenico": "payment_ogone",
+    # OCA/project
+    "project_stage_state": "project_task_stage_state",
     # OCA/...
     # Viindoo/tvtmaaddons
     "to_hr_employee_birthday_filters": "viin_hr_employee_birthday",
@@ -58,6 +60,12 @@ merged_modules = {
     "website_form": "website",
     "website_sale_management": "website_sale",
     # OCA/...
+    # OCA/account-financial-tools
+    "stock_account_prepare_anglo_saxon_out_lines_hook": "stock_account",
+    # OCA/stock-logistics-workflow
+    "stock_move_assign_picking_hook": "stock",
+    # OCA/web
+    "web_decimal_numpad_dot": "web",
     # Viindoo/tvtmaaddons
     "to_partner_business_type": "viin_partner_business_nature",
     "to_partner_employee_size": "viin_partner_business_nature",

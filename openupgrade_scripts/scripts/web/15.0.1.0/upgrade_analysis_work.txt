@@ -38,4 +38,4 @@ NEW report.layout: web.report_layout_bold
 NEW report.layout: web.report_layout_striped
 DEL report.layout: web.report_layout_background
 DEL report.layout: web.report_layout_clean
-# NOTHING TO DO: noupdate="0" records
+# DONE: pre-migration to rename_xmlids
