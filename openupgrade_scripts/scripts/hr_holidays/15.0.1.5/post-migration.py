@@ -1,4 +1,5 @@
 import logging
+from datetime import timedelta
 
 from openupgradelib import openupgrade
 
@@ -85,7 +86,31 @@ def _fill_hr_leave_type_holiday_allocation_id(env):
                     break
 
 
+def _set_date_to(env):
+    env.cr.execute(
+        """
+        SELECT employee_id, holiday_status_id
+        FROM hr_leave_allocation
+        GROUP BY employee_id, holiday_status_id
+        """
+    )
+    result = env.cr.dictfetchall()
+    Allocation = env["hr.leave.allocation"]
+    for data in result:
+        allocations = Allocation.search(
+            [
+                ("employee_id", "=", data["employee_id"]),
+                ("holiday_status_id", "=", data["holiday_status_id"]),
+            ],
+            order = "date_from"
+        )
+        for i, allocation in enumerate(allocations[:-1], start=0):
+            if not allocation.date_to:
+                allocation.date_to = allocations[i + 1].date_from - timedelta(days=1)
+
+
 @openupgrade.migrate()
 def migrate(env, version):
+    _set_date_to(env)
     _fill_hr_leave_type_holiday_allocation_id(env)
     openupgrade.load_data(env.cr, "hr_holidays", "15.0.1.5/noupdate_changes.xml")

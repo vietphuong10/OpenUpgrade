@@ -238,8 +238,18 @@ def _create_column_hr_leave_holiday_allocation_id(env):
     )
 
 
+def _set_hr_leave_allocation_date_to(env):
+    openupgrade.logged_query(
+        env.cr,
+        """
+        UPDATE hr_leave_allocation
+        SET date_to = null
+        WHERE date_to < date_from""",
+    )
+
 @openupgrade.migrate()
 def migrate(env, version):
+    _set_hr_leave_allocation_date_to(env)
     _fast_fill_hr_leave_employee_company_id(env)
     _map_hr_leave_state(env)
     _map_hr_leave_allocation_approver_id(env)
