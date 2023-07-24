@@ -91,6 +91,7 @@ merged_modules = {
     "viin_project_kanban_state_notification": "viin_project",
     "viin_project_update": "viin_project",
     "viin_website_image_optimization_disable": "viin_web_editor",
+    "viin_hr_timesheet_approval_patch1": "to_hr_timesheet_approval",
     # Viindoo/enterprise
     "viin_website_seo_advisor_patch1": "viin_website_seo_advisor",
     "viin_website_patch1": "viin_website",
