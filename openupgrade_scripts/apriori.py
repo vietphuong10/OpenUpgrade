@@ -22,6 +22,9 @@ renamed_modules = {
     "mass_editing": "server_action_mass_edit",
     # OCA/...
     # Viindoo/tvtmaaddons
+    "to_affiliate": "viin_affiliate",
+    "to_affiliate_sale": "viin_affiliate_sale",
+    "to_website_affiliate": "viin_affiliate_website",
     "to_hr_skills_recruitment": "viin_hr_recruitment_skills_resume",
     "to_orderpoint_mail_thread": "viin_mail_thread_stock",
     "to_partner_tax_code": "viin_partner_tax_code",
