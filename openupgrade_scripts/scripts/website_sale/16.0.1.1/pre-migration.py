@@ -21,6 +21,38 @@ def _fill_add_to_cart_action_value(env):
     )
 
 
+def _convert_ext_view_to_base_view(env):
+    sort_view_arch = env.ref("website_sale.sort").arch_db
+    grid_view_arch = env.ref("website_sale.add_grid_or_list_option").arch_db
+    for sort_view in (
+        env["ir.ui.view"]
+        .with_context(active_test=False)
+        .search(
+            [
+                ("type", "=", "qweb"),
+                ("key", "=", "website_sale.sort"),
+            ]
+        )
+    ):
+        sort_view.write(
+            {"mode": "primary", "inherit_id": False, "arch_db": sort_view_arch}
+        )
+
+    for grid_view in (
+        env["ir.ui.view"]
+        .with_context(active_test=False)
+        .search(
+            [
+                ("type", "=", "qweb"),
+                ("key", "=", "website_sale.add_grid_or_list_option"),
+            ]
+        )
+    ):
+        grid_view.write(
+            {"mode": "primary", "inherit_id": False, "arch_db": grid_view_arch}
+        )
+
+
 @openupgrade.migrate()
 def migrate(env, version):
     _fill_add_to_cart_action_value(env)
@@ -63,3 +95,20 @@ def migrate(env, version):
         ],
         False,
     )
+
+    # As of 16, filter_products_price become active=True,
+    # so we need to remove old views to regenerate them
+    # (they also need to reset to the new arch)
+    filter_products_price_views = (
+        env["ir.ui.view"]
+        .with_context(active_test=False)
+        .search(
+            [
+                ("type", "=", "qweb"),
+                ("key", "=", "website_sale.filter_products_price"),
+            ]
+        )
+    )
+    if filter_products_price_views:
+        filter_products_price_views.unlink()
+    _convert_ext_view_to_base_view(env)
