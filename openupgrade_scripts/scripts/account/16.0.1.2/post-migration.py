@@ -1,6 +1,5 @@
 from openupgradelib import openupgrade
 
-
 _deleted_xml_records = [
     "account.data_account_off_sheet",
     "account.data_account_type_credit_card",
