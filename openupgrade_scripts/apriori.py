@@ -16,6 +16,8 @@ renamed_modules = {
     "helpdesk_sale_coupon": "helpdesk_sale_loyalty",
     "sale_coupon_taxcloud": "sale_loyalty_taxcloud",
     "sale_coupon_taxcloud_delivery": "sale_loyalty_taxcloud_delivery",
+    # OCA/bank-statement-import
+    "account_statement_import": "account_statement_import_file",
     # OCA/knowledge
     "knowledge": "document_knowledge",
     # OCA/server-ux
@@ -78,6 +80,8 @@ merged_modules = {
     "account_move_force_removal": "account",
     # OCA/account-invoice-reporting
     "account_invoice_report_due_list": "account",
+    # OCA/e-commerce
+    "website_sale_require_login": "website_sale",
     # OCA/purchase-workflow
     "product_form_purchase_link": "purchase",
     # Viindoo/tvtmaaddons
