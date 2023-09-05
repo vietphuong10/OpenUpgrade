@@ -104,6 +104,7 @@ merged_modules = {
     "viin_reverse_move_line": "viin_account",
     "viin_website_image_optimization_disable": "viin_web_editor",
     "viin_hr_timesheet_approval_patch1": "to_hr_timesheet_approval",
+    "viin_hr_holidays_patch1": "viin_hr_holidays",
     # Viindoo/enterprise
     "to_account_asset_patch1": "to_account_asset",
     "viin_hide_ent_modules_account": "to_hide_ent_modules",
