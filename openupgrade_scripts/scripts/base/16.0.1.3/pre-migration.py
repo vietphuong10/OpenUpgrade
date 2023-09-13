@@ -70,7 +70,15 @@ def migrate(cr, version):
         cr,
         """
         DELETE FROM ir_translation
-        WHERE src IS NULL OR src = '' OR value IS NULL OR value = ''
+        WHERE (src IS NULL OR src = '') AND (value IS NULL OR value = '')
+        """,
+    )
+    openupgrade.logged_query(
+        cr,
+        """
+        UPDATE ir_translation
+            SET value = src
+        WHERE value IS NULL OR value = ''
         """,
     )
     openupgrade.logged_query(
