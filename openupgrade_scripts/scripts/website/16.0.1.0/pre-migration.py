@@ -1,5 +1,6 @@
 from itertools import chain
 
+from lxml import etree
 from openupgradelib import openupgrade
 from openupgradelib.openupgrade_160 import convert_string_bootstrap_4to5
 
@@ -96,6 +97,52 @@ def boostrap_5_migration(env):
             view.arch_db = new_arch
 
 
+def _mig_s_progress_steps_contents(env):
+    views = (
+        env["ir.ui.view"]
+        .with_context(active_test=False)
+        .search(
+            [
+                ("arch_db", "ilike", '%data-snippet="s_process_steps"%'),
+                ("arch_db", "not ilike", '%s_process_steps_connector_line"%'),
+            ]
+        )
+    )
+    for view in views:
+        arch = etree.fromstring(view.arch_db)
+        step_els = arch.xpath("//section[hasclass('s_process_steps')]")
+        for step in step_els:
+            if step.get("data-vcss"):
+                continue
+            step.set(
+                "class", step.attrib.get("class") + " s_process_steps_connector_line"
+            )
+            step.set("data-vcss", "001")
+            svg_defs = """
+                <svg class="s_process_step_svg_defs position-absolute">
+                    <defs>
+                        <marker class="s_process_steps_arrow_head" markerWidth="15"
+                            markerHeight="10" refX="6" refY="6" orient="auto">
+                            <path d="M 2,2 L10,6 L2,10 L6,6 L2,2"
+                                vector-effect="non-scaling-size"/>
+                        </marker>
+                    </defs>
+                </svg>
+            """
+            step.insert(0, etree.fromstring(svg_defs))
+            icon_els = step.xpath(".//div[hasclass('s_process_step_icon')]")
+            for icon in icon_els:
+                connector = """
+                    <svg class="s_process_step_connector" viewBox="0 0 100 20"
+                        preserveAspectRatio="none">
+                        <path d="M 0 10 L 100 10" vector-effect="non-scaling-stroke"/>
+                    </svg>
+                """
+                parent = icon.getparent()
+                parent.insert(parent.index(icon), etree.fromstring(connector))
+        view.arch_db = env["ir.ui.view"]._pretty_arch(arch)
+
+
 @openupgrade.migrate()
 def migrate(env, version):
     _fill_partner_id_if_null(env)
@@ -105,3 +152,4 @@ def migrate(env, version):
     delete_constraint_website_visitor_partner_uniq(env)
     boostrap_5_migration(env)
     _fill_homepage_url(env)
+    _mig_s_progress_steps_contents(env)
