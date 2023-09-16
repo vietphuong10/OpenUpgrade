@@ -89,7 +89,7 @@ def migrate(cr, version):
         "WHERE r.view_id=v.id AND v.inherit_id IS NOT NULL AND v.mode != 'primary'"
     )
     # Renamed model in ir_translation
-    changed_models = apriori.renamed_models | apriori.merged_models
+    changed_models = dict(**apriori.renamed_models, **apriori.merged_models)
     for old_model, new_model in changed_models.items():
         openupgrade.logged_query(
             cr,
