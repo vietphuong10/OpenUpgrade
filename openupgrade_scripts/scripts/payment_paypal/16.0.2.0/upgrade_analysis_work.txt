@@ -6,7 +6,7 @@ payment_paypal / payment.provider         / code (False)                  : NEW 
 
 ---XML records in module 'payment_paypal'---
 DEL account.payment.method: payment_paypal.payment_method_paypal (noupdate)
-# DONE: post-migration: safely remove
+# NOTHING TO DO
 
 NEW ir.ui.view: payment_paypal.payment_provider_form
 DEL ir.ui.view: payment_paypal.payment_acquirer_form
