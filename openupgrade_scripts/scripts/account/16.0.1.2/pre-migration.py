@@ -364,6 +364,9 @@ def _account_analytic_distribution_model_generate(env):
                         ON tag_rel.account_analytic_default_id = analytic_default.id
                     JOIN account_analytic_distribution dist
                         ON dist.tag_id = tag_rel.account_analytic_tag_id
+                    JOIN account_analytic_tag aat
+                            ON aat.id = tag_rel.account_analytic_tag_id
+                    WHERE aat.active_analytic_distribution = true
                 ) AS all_line_data
                 GROUP BY all_line_data.analytic_default_id, all_line_data.analytic_account_id
             )
@@ -447,6 +450,9 @@ def _aml_fast_fill_analytic_distribution(env):
                         ON tag_rel.account_move_line_id = move_line.id
                     JOIN account_analytic_distribution dist
                         ON dist.tag_id = tag_rel.account_analytic_tag_id
+                    JOIN account_analytic_tag aat
+                        ON aat.id = tag_rel.account_analytic_tag_id
+                    WHERE aat.active_analytic_distribution = true
                 ) AS all_line_data
                 GROUP BY all_line_data.move_line_id, all_line_data.analytic_account_id
             )
@@ -507,6 +513,9 @@ def _arml_fast_fill_analytic_distribution(env):
                         ON tag_rel.account_reconcile_model_line_id = model_line.id
                     JOIN account_analytic_distribution dist
                         ON dist.tag_id = tag_rel.account_analytic_tag_id
+                    JOIN account_analytic_tag aat
+                            ON aat.id = tag_rel.account_analytic_tag_id
+                    WHERE aat.active_analytic_distribution = true
                 ) AS all_line_data
                 GROUP BY all_line_data.model_line_id, all_line_data.analytic_account_id
             )
