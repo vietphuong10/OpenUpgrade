@@ -20,6 +20,8 @@ renamed_modules = {
     "account_statement_import": "account_statement_import_file",
     # OCA/knowledge
     "knowledge": "document_knowledge",
+    # OCA/sale-promotion
+    "website_sale_coupon_page": "website_sale_loyalty_page",
     # OCA/server-ux
     "mass_editing": "server_action_mass_edit",
     # OCA/...
@@ -85,6 +87,10 @@ merged_modules = {
     "website_sale_require_login": "website_sale",
     # OCA/purchase-workflow
     "product_form_purchase_link": "purchase",
+    # OCA/stock-logistics-workflow
+    "stock_picking_backorder_strategy": "stock",
+    # OCA/web
+    "web_drop_target": "web",
     # Viindoo/tvtmaaddons
     "payment_zalo_atm": "payment_zalopay",
     "payment_zalo_international_card": "payment_zalopay",
