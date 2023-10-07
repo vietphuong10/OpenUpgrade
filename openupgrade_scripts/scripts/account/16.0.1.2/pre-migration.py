@@ -399,7 +399,7 @@ def _account_analytic_distribution_model_generate(env):
         FROM
             distribution_data dist
         JOIN account_analytic_default aad ON aad.id = dist.analytic_default_id
-        JOIN account_account aa ON aa.id = aad.account_id
+        LEFT JOIN account_account aa ON aa.id = aad.account_id
     """,
     )
 
